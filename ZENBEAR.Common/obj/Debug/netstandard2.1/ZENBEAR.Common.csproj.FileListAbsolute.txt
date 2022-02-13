@@ -1,0 +1,11 @@
+/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/bin/Debug/netstandard2.1/ZENBEAR.Common.deps.json
+/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/bin/Debug/netstandard2.1/ZENBEAR.Common.dll
+/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/bin/Debug/netstandard2.1/ZENBEAR.Common.pdb
+/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/obj/Debug/netstandard2.1/ZENBEAR.Common.csproj.AssemblyReference.cache
+/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/obj/Debug/netstandard2.1/ZENBEAR.Common.GeneratedMSBuildEditorConfig.editorconfig
+/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/obj/Debug/netstandard2.1/ZENBEAR.Common.AssemblyInfoInputs.cache
+/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/obj/Debug/netstandard2.1/ZENBEAR.Common.AssemblyInfo.cs
+/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/obj/Debug/netstandard2.1/ZENBEAR.Common.csproj.CoreCompileInputs.cache
+/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/obj/Debug/netstandard2.1/ZENBEAR.Common.dll
+/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/obj/Debug/netstandard2.1/ZENBEAR.Common.pdb
+/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/bin/Debug/netstandard2.1/GlobalConstants.cs

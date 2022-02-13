@@ -1,0 +1,10 @@
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/bin/Debug/netstandard2.1/ZENBEAR.Services.Mapping.deps.json
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/bin/Debug/netstandard2.1/ZENBEAR.Services.Mapping.dll
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/bin/Debug/netstandard2.1/ZENBEAR.Services.Mapping.pdb
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/obj/Debug/netstandard2.1/ZENBEAR.Services.Mapping.csproj.AssemblyReference.cache
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/obj/Debug/netstandard2.1/ZENBEAR.Services.Mapping.GeneratedMSBuildEditorConfig.editorconfig
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/obj/Debug/netstandard2.1/ZENBEAR.Services.Mapping.AssemblyInfoInputs.cache
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/obj/Debug/netstandard2.1/ZENBEAR.Services.Mapping.AssemblyInfo.cs
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/obj/Debug/netstandard2.1/ZENBEAR.Services.Mapping.csproj.CoreCompileInputs.cache
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/obj/Debug/netstandard2.1/ZENBEAR.Services.Mapping.dll
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/obj/Debug/netstandard2.1/ZENBEAR.Services.Mapping.pdb

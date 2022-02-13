@@ -1,0 +1,10 @@
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Messaging/bin/Debug/netstandard2.1/ZENBEAR.Services.Messaging.deps.json
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Messaging/bin/Debug/netstandard2.1/ZENBEAR.Services.Messaging.dll
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Messaging/bin/Debug/netstandard2.1/ZENBEAR.Services.Messaging.pdb
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Messaging/obj/Debug/netstandard2.1/ZENBEAR.Services.Messaging.csproj.AssemblyReference.cache
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Messaging/obj/Debug/netstandard2.1/ZENBEAR.Services.Messaging.GeneratedMSBuildEditorConfig.editorconfig
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Messaging/obj/Debug/netstandard2.1/ZENBEAR.Services.Messaging.AssemblyInfoInputs.cache
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Messaging/obj/Debug/netstandard2.1/ZENBEAR.Services.Messaging.AssemblyInfo.cs
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Messaging/obj/Debug/netstandard2.1/ZENBEAR.Services.Messaging.csproj.CoreCompileInputs.cache
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Messaging/obj/Debug/netstandard2.1/ZENBEAR.Services.Messaging.dll
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Messaging/obj/Debug/netstandard2.1/ZENBEAR.Services.Messaging.pdb

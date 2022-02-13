@@ -1,0 +1,58 @@
+﻿<Properties StartupConfiguration="{B90D1067-FE4C-400E-BA78-5413E30AB9ED}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Web/ZENBEAR.Web/Areas/Identity/IdentityHostingStartup.cs">
+    <Files>
+      <File FileName="Web/ZENBEAR.Web/Areas/Identity/Pages/Account/Register.cshtml.cs" Line="128" Column="101" />
+      <File FileName="Services/ZENBEAR.Services.Data/DepartmentsService.cs" Line="25" Column="51" />
+      <File FileName="Services/ZENBEAR.Services.Data/IDepartmentsService.cs" Line="5" Column="7" />
+      <File FileName="Web/ZENBEAR.Web/Startup.cs" Line="84" Column="1" />
+      <File FileName="Data/ZENBEAR.Data.Models/Department.cs" Line="10" Column="6" />
+      <File FileName="Data/ZENBEAR.Data.Models/JobTitle.cs" Line="10" Column="6" />
+      <File FileName="Data/ZENBEAR.Data/Repositories/EfDeletableEntityRepository.cs" Line="1" Column="1" />
+      <File FileName="Web/ZENBEAR.Web/Program.cs" Line="10" Column="1" />
+      <File FileName="Web/ZENBEAR.Web/Areas/Identity/IdentityHostingStartup.cs" Line="13" Column="18" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ZENBEAR" expanded="True">
+            <Node name="Data" expanded="True">
+              <Node name="ZENBEAR.Data" expanded="True">
+                <Node name="Repositories" expanded="True" />
+              </Node>
+              <Node name="ZENBEAR.Data.Models" expanded="True" />
+            </Node>
+            <Node name="Services" expanded="True">
+              <Node name="ZENBEAR.Services.Data" expanded="True" />
+            </Node>
+            <Node name="Web" expanded="True">
+              <Node name="ZENBEAR.Web" expanded="True">
+                <Node name="Areas" expanded="True">
+                  <Node name="Identity" expanded="True">
+                    <Node name="Pages" expanded="True">
+                      <Node name="Account" expanded="True">
+                        <Node name="Login.cshtml" expanded="True" />
+                        <Node name="Register.cshtml" expanded="True" />
+                      </Node>
+                    </Node>
+                    <Node name="IdentityHostingStartup.cs" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="ZENBEAR.Web.ViewModels" expanded="True">
+                <Node name="Departments" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="ZENBEAR.Common" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Web.ZENBEAR.Web PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

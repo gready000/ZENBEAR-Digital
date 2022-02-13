@@ -21,6 +21,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ZENBEAR.Data.Common\ZENBEAR.Data.Common.csproj" />
+    <ProjectReference Include="..\..\ZENBEAR.Common\ZENBEAR.Common.csproj" />
   </ItemGroup>
   
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="ApplicationUser.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="ApplicationRole.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
 </Project>

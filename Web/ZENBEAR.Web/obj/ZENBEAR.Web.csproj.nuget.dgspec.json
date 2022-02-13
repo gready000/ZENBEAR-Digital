@@ -1,0 +1,844 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/ZENBEAR.Web.csproj": {}
+  },
+  "projects": {
+    "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Common/ZENBEAR.Data.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Common/ZENBEAR.Data.Common.csproj",
+        "projectName": "ZENBEAR.Data.Common",
+        "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Common/ZENBEAR.Data.Common.csproj",
+        "packagesPath": "/Users/emilanov/.nuget/packages/",
+        "outputPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Common/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/emilanov/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Models/ZENBEAR.Data.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Models/ZENBEAR.Data.Models.csproj",
+        "projectName": "ZENBEAR.Data.Models",
+        "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Models/ZENBEAR.Data.Models.csproj",
+        "packagesPath": "/Users/emilanov/.nuget/packages/",
+        "outputPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Models/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/emilanov/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Common/ZENBEAR.Data.Common.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Common/ZENBEAR.Data.Common.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/ZENBEAR.Common.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/ZENBEAR.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data/ZENBEAR.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data/ZENBEAR.Data.csproj",
+        "projectName": "ZENBEAR.Data",
+        "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data/ZENBEAR.Data.csproj",
+        "packagesPath": "/Users/emilanov/.nuget/packages/",
+        "outputPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/emilanov/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Common/ZENBEAR.Data.Common.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Common/ZENBEAR.Data.Common.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Models/ZENBEAR.Data.Models.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Models/ZENBEAR.Data.Models.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/ZENBEAR.Common.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/ZENBEAR.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.Extensions.Configuration.UserSecrets": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/ZENBEAR.Services.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/ZENBEAR.Services.Data.csproj",
+        "projectName": "ZENBEAR.Services.Data",
+        "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/ZENBEAR.Services.Data.csproj",
+        "packagesPath": "/Users/emilanov/.nuget/packages/",
+        "outputPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/emilanov/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Common/ZENBEAR.Data.Common.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Common/ZENBEAR.Data.Common.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Models/ZENBEAR.Data.Models.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Models/ZENBEAR.Data.Models.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/ZENBEAR.Services.Mapping.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/ZENBEAR.Services.Mapping.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/ZENBEAR.Services.Mapping.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/ZENBEAR.Services.Mapping.csproj",
+        "projectName": "ZENBEAR.Services.Mapping",
+        "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/ZENBEAR.Services.Mapping.csproj",
+        "packagesPath": "/Users/emilanov/.nuget/packages/",
+        "outputPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/emilanov/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Messaging/ZENBEAR.Services.Messaging.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Messaging/ZENBEAR.Services.Messaging.csproj",
+        "projectName": "ZENBEAR.Services.Messaging",
+        "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Messaging/ZENBEAR.Services.Messaging.csproj",
+        "packagesPath": "/Users/emilanov/.nuget/packages/",
+        "outputPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Messaging/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/emilanov/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Sendgrid": {
+              "target": "Package",
+              "version": "[9.23.1, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services/ZENBEAR.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services/ZENBEAR.Services.csproj",
+        "projectName": "ZENBEAR.Services",
+        "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services/ZENBEAR.Services.csproj",
+        "packagesPath": "/Users/emilanov/.nuget/packages/",
+        "outputPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/emilanov/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.Infrastructure/ZENBEAR.Web.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.Infrastructure/ZENBEAR.Web.Infrastructure.csproj",
+        "projectName": "ZENBEAR.Web.Infrastructure",
+        "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.Infrastructure/ZENBEAR.Web.Infrastructure.csproj",
+        "packagesPath": "/Users/emilanov/.nuget/packages/",
+        "outputPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/emilanov/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/ZENBEAR.Web.ViewModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/ZENBEAR.Web.ViewModels.csproj",
+        "projectName": "ZENBEAR.Web.ViewModels",
+        "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/ZENBEAR.Web.ViewModels.csproj",
+        "packagesPath": "/Users/emilanov/.nuget/packages/",
+        "outputPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/emilanov/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Models/ZENBEAR.Data.Models.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Models/ZENBEAR.Data.Models.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/ZENBEAR.Services.Mapping.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/ZENBEAR.Services.Mapping.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/ZENBEAR.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/ZENBEAR.Web.csproj",
+        "projectName": "ZENBEAR.Web",
+        "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/ZENBEAR.Web.csproj",
+        "packagesPath": "/Users/emilanov/.nuget/packages/",
+        "outputPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/emilanov/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Models/ZENBEAR.Data.Models.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Models/ZENBEAR.Data.Models.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data/ZENBEAR.Data.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data/ZENBEAR.Data.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/ZENBEAR.Services.Data.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/ZENBEAR.Services.Data.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/ZENBEAR.Services.Mapping.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/ZENBEAR.Services.Mapping.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Messaging/ZENBEAR.Services.Messaging.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Messaging/ZENBEAR.Services.Messaging.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services/ZENBEAR.Services.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services/ZENBEAR.Services.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.Infrastructure/ZENBEAR.Web.Infrastructure.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.Infrastructure/ZENBEAR.Web.Infrastructure.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/ZENBEAR.Web.ViewModels.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/ZENBEAR.Web.ViewModels.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/ZENBEAR.Common.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/ZENBEAR.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "BuildBundlerMinifier": {
+              "target": "Package",
+              "version": "[3.2.449, )"
+            },
+            "HtmlSanitizer": {
+              "target": "Package",
+              "version": "[7.1.475, )"
+            },
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.12, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.12, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.Web.LibraryManager.Build": {
+              "target": "Package",
+              "version": "[2.1.113, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/ZENBEAR.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/ZENBEAR.Common.csproj",
+        "projectName": "ZENBEAR.Common",
+        "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/ZENBEAR.Common.csproj",
+        "packagesPath": "/Users/emilanov/.nuget/packages/",
+        "outputPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/emilanov/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Xn9r5YA8pEP9Y/OJvzYvQDVIbW51AeiE0ZABHvjtkb6hb0flQe19HafYdwGdSraHoexaOZTO6udeteIMT+QSIQ==",
+  "success": true,
+  "projectFilePath": "/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/ZENBEAR.Common.csproj",
+  "expectedPackageFiles": [
+    "/Users/emilanov/.nuget/packages/stylecop.analyzers/1.2.0-beta.312/stylecop.analyzers.1.2.0-beta.312.nupkg.sha512",
+    "/Users/emilanov/.nuget/packages/stylecop.analyzers.unstable/1.2.0.312/stylecop.analyzers.unstable.1.2.0.312.nupkg.sha512"
+  ],
+  "logs": []
+}

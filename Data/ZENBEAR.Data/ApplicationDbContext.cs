@@ -6,11 +6,10 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    using ZENBEAR.Data.Common.Models;
-    using ZENBEAR.Data.Models;
-
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
+    using ZENBEAR.Data.Common.Models;
+    using ZENBEAR.Data.Models;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
@@ -24,7 +23,13 @@
         {
         }
 
+        public DbSet<ApplicationRole> ApplicationRoles { get; set; }
+
         public DbSet<Setting> Settings { get; set; }
+
+        public DbSet<Department> Departments { get; set; }
+
+        public DbSet<JobTitle> JobTitles { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 

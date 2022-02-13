@@ -1,0 +1,73 @@
+@page
+@model LoginModel
+
+<link href="~/css/Login.css" rel="stylesheet" type="text/css">
+
+<div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-xl-10">
+            <div class="card rounded-3 text-black">
+                <div class="row g-0">
+                    <div class="col-lg-6">
+                        <div class="card-body p-md-5 mx-md-4">
+
+                            <div class="text-center">
+                                <img src="https://static1.squarespace.com/static/5ef66d7f1de9065ae3cd8f2e/t/60b776e8297d2d2c20e289d5/1622648836361/" style="width: 185px;" alt="logo">
+                                <h4 class="mt-1 mb-5 pb-1"></h4>
+                            </div>
+
+                            <form id="account" method="post">
+                                <p>Please login to your account</p>
+                                <div asp-validation-summary="All" class="text-danger"></div>
+                                <div class="form-outline mb-4">
+                                    <input asp-for="Input.Email" type="email" class="form-control" placeholder="Enter Email address" />
+                                    <label class="form-label" for="form2Example11">Username</label>
+                                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input asp-for="Input.Password" type="password" class="form-control" placeholder="Enter Password" />
+                                    <label class="form-label" for="form2Example22">Password</label>
+                                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label asp-for="Input.RememberMe">
+                                            <input asp-for="Input.RememberMe" />
+                                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="text-center pt-1 mb-5 pb-1">
+                                    <button type="submit" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3">Log in</button>
+                                    <a id="forgot-password" asp-page="./ForgotPassword">Forgot password?</a>
+                                </div>
+
+                                <div class="d-flex align-items-center justify-content-center pb-4">
+                                    <p class="mb-0 me-2">Don't have an account?</p>
+                                    <a class="btn btn-outline-danger" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Create New</a><br />
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                        <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                            <h4 class="mb-4">Who are ZENBEAR?</h4>
+                            <p class="small mb-0">We are NOT a leading company now but we hope to find our space in IT industry. We do NOT take the elevator, we take the stairs to success</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

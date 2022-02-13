@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "RbF91BhbklpTNqZ4GGmbQf5cLbcyi5c7moOigJ+jIW0Oi07qf047vZSV4wU4xZm3JoxhMTLrjg8YuhzGJEMfUQ==",
+  "success": true,
+  "projectFilePath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/ZENBEAR.Services.Mapping.csproj",
+  "expectedPackageFiles": [
+    "/Users/emilanov/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
+    "/Users/emilanov/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
+    "/Users/emilanov/.nuget/packages/stylecop.analyzers/1.2.0-beta.312/stylecop.analyzers.1.2.0-beta.312.nupkg.sha512",
+    "/Users/emilanov/.nuget/packages/stylecop.analyzers.unstable/1.2.0.312/stylecop.analyzers.unstable.1.2.0.312.nupkg.sha512",
+    "/Users/emilanov/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
