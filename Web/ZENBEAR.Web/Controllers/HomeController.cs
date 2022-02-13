@@ -2,9 +2,8 @@
 {
     using System.Diagnostics;
 
-    using ZENBEAR.Web.ViewModels;
-
     using Microsoft.AspNetCore.Mvc;
+    using ZENBEAR.Web.ViewModels;
 
     public class HomeController : BaseController
     {

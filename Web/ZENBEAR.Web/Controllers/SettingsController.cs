@@ -3,12 +3,11 @@
     using System;
     using System.Threading.Tasks;
 
+    using Microsoft.AspNetCore.Mvc;
     using ZENBEAR.Data.Common.Repositories;
     using ZENBEAR.Data.Models;
     using ZENBEAR.Services.Data;
     using ZENBEAR.Web.ViewModels.Settings;
-
-    using Microsoft.AspNetCore.Mvc;
 
     public class SettingsController : BaseController
     {

@@ -1,9 +1,8 @@
 ﻿namespace ZENBEAR.Web.Areas.Administration.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
     using ZENBEAR.Services.Data;
     using ZENBEAR.Web.ViewModels.Administration.Dashboard;
-
-    using Microsoft.AspNetCore.Mvc;
 
     public class DashboardController : AdministrationController
     {
