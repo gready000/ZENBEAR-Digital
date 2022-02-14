@@ -6,7 +6,12 @@
           <Node name="ZENBEAR" expanded="True">
             <Node name="Data" expanded="True">
               <Node name="ZENBEAR.Data" expanded="True">
+                <Node name="Configurations" expanded="True" />
+                <Node name="Migrations" expanded="True">
+                  <Node name="20220213165637_Initial.cs" selected="True" />
+                </Node>
                 <Node name="Repositories" expanded="True" />
+                <Node name="Seeding" expanded="True" />
               </Node>
               <Node name="ZENBEAR.Data.Models" expanded="True" />
             </Node>
@@ -19,9 +24,7 @@
                   <Node name="Administration" expanded="True">
                     <Node name="Controllers" expanded="True" />
                   </Node>
-                  <Node name="Identity" expanded="True">
-                    <Node name="IdentityHostingStartup.cs" selected="True" />
-                  </Node>
+                  <Node name="Identity" expanded="True" />
                 </Node>
                 <Node name="Controllers" expanded="True" />
               </Node>

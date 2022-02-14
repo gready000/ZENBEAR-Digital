@@ -7,46 +7,81 @@
     <title>@this.ViewData["Title"] - @GlobalConstants.SystemName</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/FooterCss.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
 </head>
-<body>
+<body  background="https://i.pcmag.com/imagery/articles/07J3Zzrlg7xVwiZgRJLdfju-154..v1632335902.jpg">
     <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@GlobalConstants.SystemName</a>
+            <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                        <img src="https://static1.squarespace.com/static/5ef66d7f1de9065ae3cd8f2e/t/60b776e8297d2d2c20e289d5/1622648836361/" width="80" height="40"
+                             class="me-3"
+                             alt="MDB Logo"
+                             loading="lazy" />
+                        <small></small>
+                    </a>
+                    <ul class="nav justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">All Tickets</a>
                         </li>
+                        @if (this.User.IsInRole("Admin"))
+                        {
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Settings" asp-action="Index">Settings</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+                        }
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Users & Roles
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Departments" asp-action="All">Depart&Jobs</a></li>
+                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Roles" asp-action="All">Manage Roles</a></li>
+                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Roles" asp-action="Create">Create Roles</a></li>
+                        </ul>
+                    </li>
                     </ul>
+                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
     </header>
-    
+
     <div class="container">
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @this.RenderBody()
         </main>
     </div>
-    
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; @DateTime.Now.Year - @GlobalConstants.SystemName - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+
+    <div class="footer">
+        <footer style="background-color: #FFF6E8 " class="border-top footer text-muted">
+            <div class="container d-flex justify-content-between py-6">
+                <h6 style="color: darkblue" class="footer-h6">Copyright © 2022 ZENBEAR</h6>
+                <ul class="nav flex-column flex-sm-row">
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: darkblue" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: darkblue" asp-area="" asp-controller="Home" asp-action="Privacy">Our Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: darkblue" asp-area="" asp-controller="Home" asp-action="Privacy">Our Clients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: darkblue" asp-area="" asp-controller="Home" asp-action="Privacy">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js" asp-append-version="true"></script>

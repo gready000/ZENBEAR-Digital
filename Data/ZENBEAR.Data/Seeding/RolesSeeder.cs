@@ -4,11 +4,10 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    using ZENBEAR.Common;
-    using ZENBEAR.Data.Models;
-
     using Microsoft.AspNetCore.Identity;
     using Microsoft.Extensions.DependencyInjection;
+    using ZENBEAR.Common;
+    using ZENBEAR.Data.Models;
 
     internal class RolesSeeder : ISeeder
     {

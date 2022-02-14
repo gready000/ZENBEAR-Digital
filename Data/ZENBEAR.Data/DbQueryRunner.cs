@@ -3,9 +3,8 @@
     using System;
     using System.Threading.Tasks;
 
-    using ZENBEAR.Data.Common;
-
     using Microsoft.EntityFrameworkCore;
+    using ZENBEAR.Data.Common;
 
     public class DbQueryRunner : IDbQueryRunner
     {

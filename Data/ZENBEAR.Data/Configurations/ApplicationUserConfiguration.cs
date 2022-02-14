@@ -1,8 +1,8 @@
 ﻿namespace ZENBEAR.Data.Configurations
 {
-    using ZENBEAR.Data.Models;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
+    using ZENBEAR.Data.Models;
 
     public class ApplicationUserConfiguration : IEntityTypeConfiguration<ApplicationUser>
     {

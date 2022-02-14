@@ -2,9 +2,8 @@
 {
     using System.Linq;
 
-    using ZENBEAR.Data.Common.Models;
-
     using Microsoft.EntityFrameworkCore;
+    using ZENBEAR.Data.Common.Models;
 
     internal static class EntityIndexesConfiguration
     {
