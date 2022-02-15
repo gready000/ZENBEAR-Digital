@@ -10,12 +10,15 @@
         public const int UserNameMinLength = 3;
         public const int UserNameMaxLength = 25;
 
+        // Department
+        public const int DepartmentMinLength = 3;
+
+        // Role
+        public const int RoleNameMinLength = 3;
+
         // JobTitle
         public const int JobNameMinLength = 5;
         public const int JobNameMaxLength = 30;
-
-        // Department
-        public const int DepartmentMinLength = 5;
 
         public const string ErrorLength = "The {0} must be at least {2} and at max {1} characters long.";
         public const string PassNotMatch = "The password and confirmation password do not match.";

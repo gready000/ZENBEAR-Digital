@@ -31,6 +31,7 @@ namespace ZENBEAR.Web.Areas.Identity.Pages.Account
         private readonly ApplicationDbContext dbContext;
         private readonly IDepartmentsService departmentsService;
         private readonly RoleManager<ApplicationRole> roleManager;
+        private readonly IJobtitleService jobtitleService;
 
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
@@ -39,7 +40,8 @@ namespace ZENBEAR.Web.Areas.Identity.Pages.Account
             ApplicationDbContext dbContext,
             RoleManager<ApplicationRole> roleManager,
             IEmailSender emailSender,
-            IDepartmentsService departmentsService)
+            IDepartmentsService departmentsService,
+            IJobtitleService jobtitleService)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -48,6 +50,7 @@ namespace ZENBEAR.Web.Areas.Identity.Pages.Account
             this.dbContext = dbContext;
             this.roleManager = roleManager;
             this.departmentsService = departmentsService;
+            this.jobtitleService = jobtitleService;
         }
 
         [BindProperty]
@@ -124,8 +127,8 @@ namespace ZENBEAR.Web.Areas.Identity.Pages.Account
 
             var jobName = dj[this.Input.Department].ElementAt(index);
 
-            var departmentId = this.dbContext.Departments.Where(x => x.Name == this.Input.Department).Select(x => x.Id).FirstOrDefault();
-            var jobTitleId = this.dbContext.JobTitles.Where(x => x.Name == jobName).Select(x => x.Id).FirstOrDefault();
+            var departmentId = this.departmentsService.GetIdByName(this.Input.Department);
+            var jobTitleId = this.jobtitleService.GetIdByName(jobName);
 
             if (this.ModelState.IsValid)
             {

@@ -29,6 +29,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.12" />
     <PackageReference Include="HtmlSanitizer" Version="7.1.475" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,5 +47,14 @@
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
     <None Remove="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
     <None Remove="HtmlSanitizer" />
+    <None Remove="Views\Roles\" />
+    <None Remove="Views\Departments\" />
+    <None Remove="Views\Jobtitles\" />
+    <None Remove="Microsoft.AspNetCore.Mvc.ViewFeatures" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Roles\" />
+    <Folder Include="Views\Departments\" />
+    <Folder Include="Views\Jobtitles\" />
   </ItemGroup>
 </Project>

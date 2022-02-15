@@ -1,0 +1,27 @@
+﻿@model ZENBEAR.Web.ViewModels.Roles.CreateRoleInputModel
+
+<link rel="stylesheet" href="~/css/createForm.css" asp-append-version="true" />
+
+<div class="container">
+    <!-- code here -->
+    <div class="card">
+        <div class="card-image">
+            <h2 class="card-heading">
+                <small>Let's Add New Role</small>
+            </h2>
+        </div>
+        <form method="post" class="card-form">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" type="text" class="form-control" placeholder="Role Name..." value="" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="action">
+                <input type="submit" class="action-button" value="Add Role">
+            </div>
+        </form>
+        <div class="card-info">
+        </div>
+    </div>
+</div>

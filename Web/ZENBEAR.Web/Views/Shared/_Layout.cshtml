@@ -31,20 +31,17 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">All Tickets</a>
                         </li>
-                        @if (this.User.IsInRole("Admin"))
-                        {
                         <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        }
-                    <li class="nav-item dropdown">
+                        <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-dark" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Users & Roles
+                            ADD
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Departments" asp-action="All">Depart&Jobs</a></li>
-                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Roles" asp-action="All">Manage Roles</a></li>
-                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Roles" asp-action="Create">Create Roles</a></li>
+                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Jobtitles" asp-action="Create">New Jobtitle</a></li>
+                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Departments" asp-action="Create">New Department</a></li>
+                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Roles" asp-action="Create">New Role</a></li>
                         </ul>
                     </li>
                     </ul>

@@ -1,18 +1,19 @@
 ﻿<Properties StartupConfiguration="{B90D1067-FE4C-400E-BA78-5413E30AB9ED}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Web/ZENBEAR.Web/Views/Shared/_Layout.cshtml">
+    <Files>
+      <File FileName="Web/ZENBEAR.Web/Areas/Identity/Pages/Account/Register.cshtml" Line="1" Column="1" />
+      <File FileName="Web/ZENBEAR.Web/Areas/Identity/Pages/Account/Register.cshtml.cs" Line="131" Column="70" />
+      <File FileName="Services/ZENBEAR.Services.Data/DepartmentsService.cs" Line="55" Column="9" />
+      <File FileName="Services/ZENBEAR.Services.Data/JobtitleService.cs" Line="2" Column="2" />
+      <File FileName="Web/ZENBEAR.Web/Views/Jobtitles/Create.cshtml" Line="16" Column="52" />
+      <File FileName="Web/ZENBEAR.Web/Views/Shared/_Layout.cshtml" Line="33" Column="30" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ZENBEAR" expanded="True">
             <Node name="Data" expanded="True">
-              <Node name="ZENBEAR.Data" expanded="True">
-                <Node name="Configurations" expanded="True" />
-                <Node name="Migrations" expanded="True">
-                  <Node name="20220213165637_Initial.cs" selected="True" />
-                </Node>
-                <Node name="Repositories" expanded="True" />
-                <Node name="Seeding" expanded="True" />
-              </Node>
+              <Node name="ZENBEAR.Data" expanded="True" />
               <Node name="ZENBEAR.Data.Models" expanded="True" />
             </Node>
             <Node name="Services" expanded="True">
@@ -21,15 +22,30 @@
             <Node name="Web" expanded="True">
               <Node name="ZENBEAR.Web" expanded="True">
                 <Node name="Areas" expanded="True">
-                  <Node name="Administration" expanded="True">
-                    <Node name="Controllers" expanded="True" />
+                  <Node name="Administration" expanded="True" />
+                  <Node name="Identity" expanded="True">
+                    <Node name="Pages" expanded="True">
+                      <Node name="Account" expanded="True">
+                        <Node name="Register.cshtml" expanded="True" />
+                      </Node>
+                    </Node>
                   </Node>
-                  <Node name="Identity" expanded="True" />
                 </Node>
                 <Node name="Controllers" expanded="True" />
+                <Node name="Views" expanded="True">
+                  <Node name="Departments" expanded="True" />
+                  <Node name="Jobtitles" expanded="True" />
+                  <Node name="Roles" expanded="True" />
+                  <Node name="Shared" expanded="True">
+                    <Node name="_Layout.cshtml" selected="True" />
+                  </Node>
+                </Node>
               </Node>
               <Node name="ZENBEAR.Web.ViewModels" expanded="True">
                 <Node name="Departments" expanded="True" />
+                <Node name="Jobtitles" expanded="True" />
+                <Node name="Roles" expanded="True" />
+                <Node name="Settings" expanded="True" />
               </Node>
             </Node>
             <Node name="ZENBEAR.Common" expanded="True" />

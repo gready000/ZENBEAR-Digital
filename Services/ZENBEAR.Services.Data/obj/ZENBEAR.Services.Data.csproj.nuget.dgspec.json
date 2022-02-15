@@ -178,6 +178,9 @@
               },
               "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/ZENBEAR.Services.Mapping.csproj": {
                 "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/ZENBEAR.Services.Mapping.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/ZENBEAR.Web.ViewModels.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/ZENBEAR.Web.ViewModels.csproj"
               }
             }
           }
@@ -258,6 +261,80 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[10.1.1, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/ZENBEAR.Web.ViewModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/ZENBEAR.Web.ViewModels.csproj",
+        "projectName": "ZENBEAR.Web.ViewModels",
+        "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/ZENBEAR.Web.ViewModels.csproj",
+        "packagesPath": "/Users/emilanov/.nuget/packages/",
+        "outputPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/emilanov/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Models/ZENBEAR.Data.Models.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Models/ZENBEAR.Data.Models.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/ZENBEAR.Services.Mapping.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/ZENBEAR.Services.Mapping.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.ViewFeatures": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "StyleCop.Analyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers",

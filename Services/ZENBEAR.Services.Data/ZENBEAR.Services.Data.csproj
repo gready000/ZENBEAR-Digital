@@ -22,6 +22,7 @@
     <ProjectReference Include="..\..\Data\ZENBEAR.Data.Common\ZENBEAR.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\ZENBEAR.Data.Models\ZENBEAR.Data.Models.csproj" />
     <ProjectReference Include="..\ZENBEAR.Services.Mapping\ZENBEAR.Services.Mapping.csproj" />
+    <ProjectReference Include="..\..\Web\ZENBEAR.Web.ViewModels\ZENBEAR.Web.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

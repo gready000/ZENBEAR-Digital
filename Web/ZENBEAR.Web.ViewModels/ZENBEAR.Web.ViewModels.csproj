@@ -16,6 +16,7 @@
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.312" PrivateAssets="all">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,8 +26,13 @@
 
   <ItemGroup>
     <None Remove="Departments\" />
+    <None Remove="Jobtitles\" />
+    <None Remove="Microsoft.AspNetCore.Mvc.ViewFeatures" />
+    <None Remove="Roles\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Departments\" />
+    <Folder Include="Jobtitles\" />
+    <Folder Include="Roles\" />
   </ItemGroup>
 </Project>
