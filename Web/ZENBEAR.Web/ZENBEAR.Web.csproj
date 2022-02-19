@@ -51,10 +51,12 @@
     <None Remove="Views\Departments\" />
     <None Remove="Views\Jobtitles\" />
     <None Remove="Microsoft.AspNetCore.Mvc.ViewFeatures" />
+    <None Remove="Views\Users\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Roles\" />
     <Folder Include="Views\Departments\" />
     <Folder Include="Views\Jobtitles\" />
+    <Folder Include="Views\Users\" />
   </ItemGroup>
 </Project>

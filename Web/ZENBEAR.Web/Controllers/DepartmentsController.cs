@@ -1,5 +1,6 @@
 ﻿namespace ZENBEAR.Web.Controllers
 {
+    using System.Linq;
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Mvc;
@@ -8,26 +9,20 @@
 
     public class DepartmentsController : Controller
     {
-        private readonly IDepartmentsService depService;
+        private readonly IDepartmentsService departmentsService;
 
-        public DepartmentsController(IDepartmentsService depService)
+        public DepartmentsController(IDepartmentsService departmentsService)
         {
-            this.depService = depService;
+            this.departmentsService = departmentsService;
         }
 
-        //public IActionResult All()
-        //{
-        //    var allDepartments = this.depService
-        //        .DepartmentsAndJobs()
-        //        .Select(x => new AllDepartmentsViewModel()
-        //        {
-        //            DepartmentName = x.DepartmentName,
-        //            Jobtitles = x.Jobtitles,
-        //        })
-        //        .ToList();
+        public IActionResult All()
+        {
+            var allDepartments = this.departmentsService
+                .AllDepartmentsAndJobs();
 
-        //    return this.View(allDepartments);
-        //}
+            return this.View(allDepartments);
+        }
 
         [HttpGet]
         public IActionResult Create()
@@ -43,11 +38,53 @@
                 return this.View(input);
             }
 
-            await this.depService.CreateAsync(input);
+            await this.departmentsService.CreateAsync(input);
 
             this.TempData["Message"] = $"{input.Name} Department added successfully.";
 
             return this.RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var viewModel = this.departmentsService.DepartmentById(id);
+
+            if (viewModel.Name == null)
+            {
+                return this.BadRequest();
+            }
+
+            return this.View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, EditDepartmentViewModel input)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(input);
+            }
+
+            await this.departmentsService.UpdateAsync(id, input);
+
+            this.TempData["Message"] = $"Department Name changed to {input.Name}!";
+
+            return this.RedirectToAction("All", "Departments");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            var success = await this.departmentsService.DeleteByIdAsync(id);
+
+            if (success == false)
+            {
+                return this.RedirectToAction("Error", "Home");
+            }
+
+            return this.RedirectToAction("All", "Departments");
         }
     }
 }

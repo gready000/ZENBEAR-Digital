@@ -38,9 +38,51 @@
 
             await this.jobtitleService.CreateAsync(input);
 
-            this.TempData["Message"] = $"{input.Name} Jobtitle added successfully.";
+            this.TempData["Message"] = $"Jobtitle {input.Name} added successfully.";
 
             return this.RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var viewModel = this.jobtitleService.JobtitleById(id);
+
+            if (viewModel.Name == null)
+            {
+                return this.BadRequest();
+            }
+
+            return this.View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, EditJobtitleViewModel input)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(input);
+            }
+
+            await this.jobtitleService.UpdateAsync(id, input);
+
+            this.TempData["Message"] = $"Jobtitle Name changed to {input.Name}!";
+
+            return this.RedirectToAction("All", "Departments");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            var success = await this.jobtitleService.DeleteByIdAsync(id);
+
+            if (success == false)
+            {
+                return this.RedirectToAction("Error", "Home");
+            }
+
+            return this.RedirectToAction("All", "Departments");
         }
     }
 }

@@ -475,8 +475,12 @@
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/bin/Debug/net5.0/AngleSharp.dll
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/bin/Debug/net5.0/AngleSharp.Css.dll
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/bin/Debug/net5.0/HtmlSanitizer.dll
-/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Roles/Create.cshtml.g.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Departments/Create.cshtml.g.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Jobtitles/Create.cshtml.g.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/bin/Debug/net5.0/Microsoft.AspNetCore.JsonPatch.dll
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/bin/Debug/net5.0/Newtonsoft.Json.Bson.dll
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Roles/Create.cshtml.g.cs
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Users/Create.cshtml.g.cs
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Departments/All.cshtml.g.cs
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Departments/Edit.cshtml.g.cs
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Jobtitles/Edit.cshtml.g.cs

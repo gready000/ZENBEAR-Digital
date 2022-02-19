@@ -15,5 +15,13 @@
         IList<SelectListItem> GetAllDepNames();
 
         int GetIdByName(string name);
+
+        IList<AllDepartmentsViewModel> AllDepartmentsAndJobs();
+
+        EditDepartmentViewModel DepartmentById(int id);
+
+        Task UpdateAsync(int id, EditDepartmentViewModel input);
+
+        Task<bool> DeleteByIdAsync(int id);
     }
 }

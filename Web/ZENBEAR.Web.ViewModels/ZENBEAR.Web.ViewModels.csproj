@@ -29,10 +29,12 @@
     <None Remove="Jobtitles\" />
     <None Remove="Microsoft.AspNetCore.Mvc.ViewFeatures" />
     <None Remove="Roles\" />
+    <None Remove="Users\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Departments\" />
     <Folder Include="Jobtitles\" />
     <Folder Include="Roles\" />
+    <Folder Include="Users\" />
   </ItemGroup>
 </Project>

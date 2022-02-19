@@ -9,5 +9,11 @@
         Task CreateAsync(CreateJobtitleInputModel input);
 
         int GetIdByName(string name);
+
+        EditJobtitleViewModel JobtitleById(int id);
+
+        Task UpdateAsync(int id, EditJobtitleViewModel input);
+
+        Task<bool> DeleteByIdAsync(int id);
     }
 }

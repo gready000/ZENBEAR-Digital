@@ -1,5 +1,6 @@
 ﻿namespace ZENBEAR.Services.Data
 {
+    using System;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -35,6 +36,45 @@
                 .Where(x => x.Name == name)
                 .Select(x => x.Id)
                 .FirstOrDefault();
+        }
+
+        public EditJobtitleViewModel JobtitleById(int id)
+        {
+            var viewModel = this.jobtitleRepo
+                .All()
+                .Where(x => x.Id == id)
+                .Select(x => new EditJobtitleViewModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                })
+                .FirstOrDefault();
+
+            return viewModel;
+        }
+
+        public async Task UpdateAsync(int id, EditJobtitleViewModel input)
+        {
+            var jobtitle = this.jobtitleRepo.All().FirstOrDefault(x => x.Id == id);
+
+            jobtitle.Name = input.Name;
+            await this.jobtitleRepo.SaveChangesAsync();
+        }
+
+        public async Task<bool> DeleteByIdAsync(int id)
+        {
+            var department = this.jobtitleRepo.All().FirstOrDefault(x => x.Id == id);
+
+            if (department == null)
+            {
+                return false;
+            }
+
+            department.IsDeleted = true;
+            department.DeletedOn = DateTime.UtcNow;
+            await this.jobtitleRepo.SaveChangesAsync();
+
+            return true;
         }
     }
 }

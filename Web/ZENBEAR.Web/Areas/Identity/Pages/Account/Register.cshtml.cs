@@ -103,13 +103,11 @@ namespace ZENBEAR.Web.Areas.Identity.Pages.Account
             public string ConfirmPassword { get; set; }
         }
 
-        public async Task OnGetAsync(string returnUrl = null, string jobs = null)
+        public async Task OnGetAsync(string returnUrl = null)
         {
             var dj = this.departmentsService.GetDepartmentsAndJobs();
 
-            jobs = JsonConvert.SerializeObject(dj);
-
-            this.Jobs = jobs;
+            this.Jobs = JsonConvert.SerializeObject(dj);
 
             this.ReturnUrl = returnUrl;
             this.ExternalLogins = (await this.signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
