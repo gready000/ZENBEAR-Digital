@@ -1,15 +1,15 @@
 ﻿<Properties StartupConfiguration="{B90D1067-FE4C-400E-BA78-5413E30AB9ED}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Web/ZENBEAR.Web/Views/Departments/Edit.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Web/ZENBEAR.Web/Views/Departments/All.cshtml">
     <Files>
-      <File FileName="Services/ZENBEAR.Services.Data/DepartmentsService.cs" Line="89" Column="9" IsPinned="True" />
-      <File FileName="Web/ZENBEAR.Web/Views/Departments/All.cshtml" Line="66" Column="60" />
-      <File FileName="Web/ZENBEAR.Web/Controllers/DepartmentsController.cs" Line="48" Column="9" />
-      <File FileName="Services/ZENBEAR.Services.Data/IDepartmentsService.cs" Line="21" Column="9" />
-      <File FileName="Web/ZENBEAR.Web/Views/Departments/Edit.cshtml" Line="3" Column="1" />
-      <File FileName="Web/ZENBEAR.Web/Controllers/JobtitlesController.cs" Line="47" Column="42" />
-      <File FileName="Services/ZENBEAR.Services.Data/JobtitleService.cs" Line="60" Column="36" />
-      <File FileName="Services/ZENBEAR.Services.Data/IJobtitleService.cs" Line="13" Column="39" />
-      <File FileName="Web/ZENBEAR.Web/Views/Jobtitles/Edit.cshtml" Line="1" Column="1" />
+      <File FileName="Services/ZENBEAR.Services.Data/DepartmentsService.cs" Line="113" Column="9" IsPinned="True" />
+      <File FileName="Web/ZENBEAR.Web/Views/Departments/All.cshtml" Line="89" Column="146" />
+      <File FileName="Web/ZENBEAR.Web/Controllers/DepartmentsController.cs" />
+      <File FileName="Services/ZENBEAR.Services.Data/IDepartmentsService.cs" />
+      <File FileName="Web/ZENBEAR.Web/Views/Departments/Edit.cshtml" />
+      <File FileName="Web/ZENBEAR.Web/Controllers/JobtitlesController.cs" />
+      <File FileName="Services/ZENBEAR.Services.Data/JobtitleService.cs" />
+      <File FileName="Services/ZENBEAR.Services.Data/IJobtitleService.cs" />
+      <File FileName="Web/ZENBEAR.Web/Views/Jobtitles/Edit.cshtml" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -35,7 +35,7 @@
                 <Node name="Controllers" expanded="True" />
                 <Node name="Views" expanded="True">
                   <Node name="Departments" expanded="True">
-                    <Node name="Edit.cshtml" selected="True" />
+                    <Node name="All.cshtml" selected="True" />
                   </Node>
                   <Node name="Home" expanded="True" />
                   <Node name="Jobtitles" expanded="True" />
