@@ -1,0 +1,29 @@
+﻿@model List<ZENBEAR.Data.Models.ApplicationRole>
+
+<link rel="stylesheet" href="~/css/Roletable.css" asp-append-version="true" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+<div class="p-4 mb-4 bg-white text-dark col-md-6 offset-md-3">
+    <h1>All Roles</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Role Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th scope="row">@item.Name</th>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+          </div>
+       </div>

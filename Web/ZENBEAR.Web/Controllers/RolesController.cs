@@ -14,9 +14,10 @@
         private readonly RoleManager<ApplicationRole> roleManager;
         private readonly IRoleService roleService;
 
-        public RolesController(IRoleService roleService)
+        public RolesController(IRoleService roleService, RoleManager<ApplicationRole> roleManager)
         {
             this.roleService = roleService;
+            this.roleManager = roleManager;
         }
 
         public IActionResult All()

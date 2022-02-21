@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ZENBEAR.Web.ViewModels.Users.AllListUsersViewModel>
+<link rel="stylesheet" href="~/css/allUsersTable.css" asp-append-version="true" />
+
+
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+        table tr td, th {
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+
+        table tr:hover {
+            background: #f1f1f1;
+        }
+</style>
+
+<div class="p-4 mb-4 bg-white text-dark col-md-14">
+    <a class="btn btn-success" style="float: right;" asp-controller="Roles" asp-action="All">ROLES!</a>
+    <h2>Manage Employees</h2>
+    <table class="sortable">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Department</th>
+                <th scope="col">Possition</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr onclick="location.href = '@(Url.Action("All", "Roles", new { Id = item.Id }))'">
+                    <td data-label="Account">@item.FirstName @item.LastName</td>
+                    <td data-label="Due Date">@item.Email</td>
+                    <td data-label="Amount">@item.Department</td>
+                    <td data-label="Period">@item.Jobtitle</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -54,5 +54,13 @@
 
             return this.RedirectToAction("Index", "Home");
         }
+
+        [HttpGet]
+        public IActionResult All()
+        {
+            var viewModel = this.usersService.AllListUsers();
+
+            return this.View(viewModel);
+        }
     }
 }

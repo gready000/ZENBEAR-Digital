@@ -25,7 +25,7 @@
             appUser
                 .HasMany(e => e.Roles)
                 .WithOne()
-                .HasForeignKey(e => e.UserId)
+                .HasForeignKey(e => e.Id)
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Restrict);
         }

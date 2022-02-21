@@ -43,7 +43,7 @@
             await this.departmentsRepo.SaveChangesAsync();
         }
 
-        public IList<SelectListItem> GetAllDepNames()
+        public IEnumerable<SelectListItem> GetAllDepNames()
         {
             return this.departmentsRepo
                 .All()
@@ -63,7 +63,7 @@
                 .FirstOrDefault();
         }
 
-        public IList<AllDepartmentsViewModel> AllDepartmentsAndJobs()
+        public IEnumerable<AllDepartmentsViewModel> AllDepartmentsAndJobs()
         {
             var dj = this.departmentsRepo
                 .All()

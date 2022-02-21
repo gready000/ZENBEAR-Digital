@@ -484,3 +484,5 @@
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Departments/All.cshtml.g.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Departments/Edit.cshtml.g.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Jobtitles/Edit.cshtml.g.cs
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Users/All.cshtml.g.cs
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Roles/All.cshtml.g.cs

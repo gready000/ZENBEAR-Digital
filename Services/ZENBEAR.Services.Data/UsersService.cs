@@ -1,5 +1,6 @@
 ﻿namespace ZENBEAR.Services.Data
 {
+    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -13,14 +14,33 @@
         private readonly IDepartmentsService departmentsService;
         private readonly IJobtitleService jobtitleService;
         private readonly UserManager<ApplicationUser> userManager;
-        private readonly IDeletableEntityRepository<ApplicationUser> userRepo;
+        private readonly IDeletableEntityRepository<ApplicationUser> usersRepo;
 
-        public UsersService(IDepartmentsService departmentsService, IJobtitleService jobtitleService, UserManager<ApplicationUser> userManager, IDeletableEntityRepository<ApplicationUser> userRepo)
+        public UsersService(IDepartmentsService departmentsService, IJobtitleService jobtitleService, UserManager<ApplicationUser> userManager, IDeletableEntityRepository<ApplicationUser> usersRepo)
         {
             this.departmentsService = departmentsService;
             this.jobtitleService = jobtitleService;
             this.userManager = userManager;
-            this.userRepo = userRepo;
+            this.usersRepo = usersRepo;
+        }
+
+        public IEnumerable<AllListUsersViewModel> AllListUsers()
+        {
+            var employees = this.usersRepo
+                .AllAsNoTracking()
+                .Select(x => new AllListUsersViewModel
+                {
+                    Id = x.Id,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                    Email = x.Email,
+                    Department = x.Department.Name,
+                    Jobtitle = x.JobTitle.Name,
+                    Roles = x.Roles,
+                })
+                .ToList();
+
+            return employees;
         }
 
         public async Task CreateAsync(CreateUserInputModel input)
@@ -51,7 +71,7 @@
 
         public bool Exist(string email)
         {
-           return this.userRepo.AllAsNoTracking().Any(x => x.Email == email);
+           return this.usersRepo.AllAsNoTracking().Any(x => x.Email == email);
         }
     }
 }

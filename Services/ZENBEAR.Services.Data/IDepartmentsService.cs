@@ -12,11 +12,11 @@
 
         IDictionary<string, List<string>> GetDepartmentsAndJobs();
 
-        IList<SelectListItem> GetAllDepNames();
+        IEnumerable<SelectListItem> GetAllDepNames();
 
         int GetIdByName(string name);
 
-        IList<AllDepartmentsViewModel> AllDepartmentsAndJobs();
+        IEnumerable<AllDepartmentsViewModel> AllDepartmentsAndJobs();
 
         EditDepartmentViewModel DepartmentById(int id);
 

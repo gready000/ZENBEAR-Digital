@@ -2,20 +2,21 @@
 <link rel="stylesheet" href="~/css/editForm.css" asp-append-version="true" />
 
 
-
-<div class="container" style="background-color:white;">
-    <form method="post" id="editForm">
-        <div class="form-group">
-            <label asp-for="Name">Jobtitle Name</label>
-            <input asp-for="Name" class="form-control" />
-            <span asp-validation-for="Name" class="text-danger"></span>
-        </div>
-        <hr />
-        <input type="hidden" asp-for="Id" />
-    </form>
-
-    <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#modalEdit">Save changes</button>
+<div class="p-4 mb-4 bg-white text-dark col-md-6 offset-md-3" >
+    <div class="container">
+        <form method="post" id="editForm" >
+            <div class="form-group">
+                <label asp-for="Name">Edit Jobtitle Name</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <hr />
+            <input type="hidden" asp-for="Id" />
+        </form>
+        <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#modalEdit">Save changes</button>
+    </div>
 </div>
+
 
 
 <!-- Modal -->
@@ -34,8 +35,8 @@
                 </p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary" onclick="editForm.submit()">Save changes</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

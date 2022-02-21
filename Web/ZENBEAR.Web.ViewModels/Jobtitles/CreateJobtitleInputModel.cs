@@ -19,6 +19,6 @@
         [Required]
         public int DepartmentId { get; set; }
 
-        public IList<SelectListItem> Departments { get; set; }
+        public IEnumerable<SelectListItem> Departments { get; set; }
     }
 }
