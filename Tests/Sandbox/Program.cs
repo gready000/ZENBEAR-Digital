@@ -3,9 +3,11 @@
     using System;
     using System.Diagnostics;
     using System.IO;
+    using System.Linq;
     using System.Threading.Tasks;
 
     using CommandLine;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -18,12 +20,12 @@
     using ZENBEAR.Data.Seeding;
     using ZENBEAR.Services.Data;
     using ZENBEAR.Services.Messaging;
+    using ZENBEAR.Web.ViewModels.Users;
 
     public static class Program
     {
         public static int Main(string[] args)
         {
-
             Console.WriteLine($"{typeof(Program).Namespace} ({string.Join(" ", args)}) starts working...");
             var serviceCollection = new ServiceCollection();
             ConfigureServices(serviceCollection);
@@ -52,6 +54,7 @@
             var sw = Stopwatch.StartNew();
 
             var settingsService = serviceProvider.GetService<ISettingsService>();
+
             Console.WriteLine($"Count of settings: {settingsService.GetCount()}");
 
             Console.WriteLine(sw.Elapsed);

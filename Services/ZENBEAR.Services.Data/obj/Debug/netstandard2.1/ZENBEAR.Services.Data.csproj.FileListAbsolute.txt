@@ -22,3 +22,4 @@
 /Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/obj/Debug/netstandard2.1/ZENBEAR.Services.Data.pdb
 /Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/bin/Debug/netstandard2.1/ZENBEAR.Web.ViewModels.dll
 /Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/bin/Debug/netstandard2.1/ZENBEAR.Web.ViewModels.pdb
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/bin/Debug/netstandard2.1/Users/EditUserInputModel.cs

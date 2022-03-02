@@ -1,0 +1,36 @@
+﻿.bg-gray7 {
+    background-color: #F1F1F1;
+}
+
+.margin-left-l {
+    margin-left: 15px;
+}
+
+.pad-top-xl {
+    padding-top: 30px;
+}
+
+.pad-bottom-xl {
+    padding-bottom: 30px;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.font-weight-heavy {
+    font-weight: 700;
+}
+
+.list-unstyled {
+    ul
+
+{
+    list-style: none;
+}
+
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}

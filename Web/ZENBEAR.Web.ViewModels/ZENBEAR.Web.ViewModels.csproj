@@ -37,4 +37,9 @@
     <Folder Include="Roles\" />
     <Folder Include="Users\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Users\EditUserInputModel.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
 </Project>

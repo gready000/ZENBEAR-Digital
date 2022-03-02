@@ -1586,6 +1586,15 @@
           }
         }
       },
+      "MvcCheckBoxList/1.4.5": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MvcCheckBoxList.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MvcCheckBoxList.dll": {}
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -3157,7 +3166,7 @@
           "lib/netcoreapp3.0/System.Security.Permissions.dll": {}
         }
       },
-      "System.Security.Principal.Windows/4.7.0": {
+      "System.Security.Principal.Windows/5.0.0": {
         "type": "package",
         "compile": {
           "ref/netcoreapp3.0/System.Security.Principal.Windows.dll": {}
@@ -6033,6 +6042,19 @@
         "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "MvcCheckBoxList/1.4.5": {
+      "sha512": "1aU+jVixu+vaBiQBIJ2vlI7HBhEZeoWIJgpWJjegUBpMBc0Bvvp/nkkEUyAZhqC5OWUAF9hD1m3H4hkXPXr50g==",
+      "type": "package",
+      "path": "mvccheckboxlist/1.4.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/MvcCheckBoxList.dll",
+        "lib/net45/MvcCheckBoxList.dll",
+        "mvccheckboxlist.1.4.5.nupkg.sha512",
+        "mvccheckboxlist.nuspec"
       ]
     },
     "NETStandard.Library/1.6.1": {
@@ -9926,13 +9948,14 @@
         "version.txt"
       ]
     },
-    "System.Security.Principal.Windows/4.7.0": {
-      "sha512": "ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ==",
+    "System.Security.Principal.Windows/5.0.0": {
+      "sha512": "t0MGLukB5WAVU9bO3MGzvlGnyJPgUlcwerXn1kzBRjwLKixT96XV0Uza41W49gVd8zEMFu9vQEFlv0IOrytICA==",
       "type": "package",
-      "path": "system.security.principal.windows/4.7.0",
+      "path": "system.security.principal.windows/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net46/System.Security.Principal.Windows.dll",
@@ -9974,7 +9997,7 @@
         "runtimes/win/lib/netcoreapp2.1/System.Security.Principal.Windows.xml",
         "runtimes/win/lib/netstandard1.3/System.Security.Principal.Windows.dll",
         "runtimes/win/lib/uap10.0.16299/_._",
-        "system.security.principal.windows.4.7.0.nupkg.sha512",
+        "system.security.principal.windows.5.0.0.nupkg.sha512",
         "system.security.principal.windows.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -10868,7 +10891,9 @@
       "Microsoft.EntityFrameworkCore.Design >= 5.0.12",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
       "Microsoft.Web.LibraryManager.Build >= 2.1.113",
+      "MvcCheckBoxList >= 1.4.5",
       "StyleCop.Analyzers >= 1.2.0-beta.312",
+      "System.Security.Principal.Windows >= 5.0.0",
       "ZENBEAR.Common >= 1.0.0",
       "ZENBEAR.Data >= 1.0.0",
       "ZENBEAR.Data.Models >= 1.0.0",
@@ -10991,11 +11016,19 @@
             "target": "Package",
             "version": "[2.1.113, )"
           },
+          "MvcCheckBoxList": {
+            "target": "Package",
+            "version": "[1.4.5, )"
+          },
           "StyleCop.Analyzers": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers",
             "suppressParent": "All",
             "target": "Package",
             "version": "[1.2.0-beta.312, )"
+          },
+          "System.Security.Principal.Windows": {
+            "target": "Package",
+            "version": "[5.0.0, )"
           }
         },
         "imports": [
@@ -11019,5 +11052,17 @@
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.405/RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MvcCheckBoxList 1.4.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "MvcCheckBoxList",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

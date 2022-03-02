@@ -50,6 +50,6 @@
 
         public string ListItems { get; set; }
 
-        public IList<SelectListItem> Roles { get; set; }
+        public IEnumerable<SelectListItem> Roles { get; set; }
     }
 }

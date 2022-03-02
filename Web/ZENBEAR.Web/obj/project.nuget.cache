@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "au5g7DHIoSVuqbiPAaCw+pi4cI68WdsFhKiLUhg06YB3huVme1Gffp3Dp7Z8XZNa2wWJQZIESO9T6xpC4VuYmQ==",
+  "dgSpecHash": "vba0ym2aiOMcWt1B2c/H1k/v/Kw+OiTGCR4avBTXZR0Bjs2WOc6s4X9yMnISYQOjJo8u7Q46f0YkDa84mPFFNA==",
   "success": true,
   "projectFilePath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/ZENBEAR.Web.csproj",
   "expectedPackageFiles": [
@@ -107,6 +107,7 @@
     "/Users/emilanov/.nuget/packages/microsoft.win32.primitives/4.3.0/microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/microsoft.win32.registry/4.7.0/microsoft.win32.registry.4.7.0.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "/Users/emilanov/.nuget/packages/mvccheckboxlist/1.4.5/mvccheckboxlist.1.4.5.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/newtonsoft.json/11.0.2/newtonsoft.json.11.0.2.nupkg.sha512",
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder/newtonsoft.json.bson/1.0.1/newtonsoft.json.bson.1.0.1.nupkg.sha512",
@@ -206,7 +207,7 @@
     "/Users/emilanov/.nuget/packages/system.security.cryptography.x509certificates/4.3.0/system.security.cryptography.x509certificates.4.3.0.nupkg.sha512",
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder/system.security.cryptography.xml/4.5.0/system.security.cryptography.xml.4.5.0.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/system.security.permissions/4.7.0/system.security.permissions.4.7.0.nupkg.sha512",
-    "/Users/emilanov/.nuget/packages/system.security.principal.windows/4.7.0/system.security.principal.windows.4.7.0.nupkg.sha512",
+    "/Users/emilanov/.nuget/packages/system.security.principal.windows/5.0.0/system.security.principal.windows.5.0.0.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/system.security.securestring/4.3.0/system.security.securestring.4.3.0.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/system.text.encoding.codepages/5.0.0/system.text.encoding.codepages.5.0.0.nupkg.sha512",
@@ -223,5 +224,16 @@
     "/Users/emilanov/.nuget/packages/system.xml.xmldocument/4.3.0/system.xml.xmldocument.4.3.0.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/system.xml.xmlserializer/4.3.0/system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MvcCheckBoxList 1.4.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "MvcCheckBoxList",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

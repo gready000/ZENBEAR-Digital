@@ -2049,6 +2049,15 @@
           }
         }
       },
+      "MvcCheckBoxList/1.4.5": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MvcCheckBoxList.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MvcCheckBoxList.dll": {}
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -4143,6 +4152,8 @@
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
           "Microsoft.Web.LibraryManager.Build": "2.1.113",
+          "MvcCheckBoxList": "1.4.5",
+          "System.Security.Principal.Windows": "5.0.0",
           "ZENBEAR.Common": "1.0.0",
           "ZENBEAR.Data": "1.0.0",
           "ZENBEAR.Data.Models": "1.0.0",
@@ -7398,6 +7409,19 @@
         "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "MvcCheckBoxList/1.4.5": {
+      "sha512": "1aU+jVixu+vaBiQBIJ2vlI7HBhEZeoWIJgpWJjegUBpMBc0Bvvp/nkkEUyAZhqC5OWUAF9hD1m3H4hkXPXr50g==",
+      "type": "package",
+      "path": "mvccheckboxlist/1.4.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/MvcCheckBoxList.dll",
+        "lib/net45/MvcCheckBoxList.dll",
+        "mvccheckboxlist.1.4.5.nupkg.sha512",
+        "mvccheckboxlist.nuspec"
       ]
     },
     "NETStandard.Library/1.6.1": {
@@ -12581,5 +12605,17 @@
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.405/RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MvcCheckBoxList 1.4.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "MvcCheckBoxList",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

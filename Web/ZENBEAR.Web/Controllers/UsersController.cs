@@ -23,9 +23,8 @@
         [HttpGet]
         public IActionResult Create()
         {
-            var dj = this.departmentsService.GetDepartmentsAndJobs();
             var viewModel = new CreateUserInputModel();
-            viewModel.ListItems = JsonConvert.SerializeObject(dj);
+            viewModel.ListItems = this.ReloadUserForm();
             viewModel.Roles = this.roleService.GetAllRoles();
 
             return this.View(viewModel);
@@ -34,18 +33,12 @@
         [HttpPost]
         public async Task<IActionResult> CreateAsync(CreateUserInputModel input)
         {
-            var userExist = this.usersService.Exist(input.Email);
-
-            if (!this.ModelState.IsValid || userExist)
+            if (!this.ModelState.IsValid || this.EmailExist(input.Email))
             {
-                this.ModelState.TryAddModelError("Email", $"This {input.Email} already exists");
+                input.ListItems = this.ReloadUserForm();
+                input.Roles = this.roleService.GetAllRoles();
 
-                var dj = this.departmentsService.GetDepartmentsAndJobs();
-                var viewModel = new CreateUserInputModel();
-                viewModel.ListItems = JsonConvert.SerializeObject(dj);
-                viewModel.Roles = this.roleService.GetAllRoles();
-
-                return this.View(viewModel);
+                return this.View(input);
             }
 
             await this.usersService.CreateAsync(input);
@@ -55,12 +48,64 @@
             return this.RedirectToAction("Index", "Home");
         }
 
-        [HttpGet]
         public IActionResult All()
         {
             var viewModel = this.usersService.AllListUsers();
 
             return this.View(viewModel);
+        }
+
+        [HttpGet]
+        public IActionResult Edit(string id)
+        {
+            var viewModel = this.usersService.GetUserById(id);
+
+            if (viewModel == null)
+            {
+                return this.BadRequest();
+            }
+
+            viewModel.ListItems = this.ReloadUserForm();
+            viewModel.Roles = this.roleService.GetAllRolesByUser(viewModel.UserRoles);
+
+            return this.View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditAsync(string id, EditUserInputModel input)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                input.ListItems = this.ReloadUserForm();
+                input.Roles = this.roleService.GetAllRolesByUser(input.UserRoles);
+
+                return this.View(input);
+            }
+
+            await this.usersService.EditAsync(id, input);
+
+            return this.RedirectToAction("All", "Users");
+        }
+
+        public string ReloadUserForm()
+        {
+            var dj = this.departmentsService.GetDepartmentsAndJobs();
+            var reload = JsonConvert.SerializeObject(dj);
+
+            return reload;
+        }
+
+        public bool EmailExist(string email)
+        {
+            var isExist = this.usersService.Exist(email);
+
+            if (isExist)
+            {
+                this.ModelState.TryAddModelError("Email", $"This {email} already exists");
+                return true;
+            }
+
+            return false;
         }
     }
 }

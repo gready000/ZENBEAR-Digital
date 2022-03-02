@@ -12,5 +12,11 @@
         bool Exist(string email);
 
         IEnumerable<AllListUsersViewModel> AllListUsers();
+
+        EditUserInputModel GetUserById(string id);
+
+        //IEnumerable<string> GetRolesByUser(string id);
+
+        Task EditAsync(string id, EditUserInputModel input);
     }
 }

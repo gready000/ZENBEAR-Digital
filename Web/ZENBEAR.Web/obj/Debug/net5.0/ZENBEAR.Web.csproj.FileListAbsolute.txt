@@ -486,3 +486,6 @@
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Jobtitles/Edit.cshtml.g.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Users/All.cshtml.g.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Roles/All.cshtml.g.cs
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Users/Edit.cshtml.g.cs
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/bin/Debug/net5.0/Users/EditUserInputModel.cs
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/bin/Debug/net5.0/MvcCheckBoxList.dll

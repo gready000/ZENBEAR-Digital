@@ -26,17 +26,19 @@
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Department</th>
-                <th scope="col">Possition</th>
+                <th scope="col">Position</th>
+                <th scope="col">Status</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr onclick="location.href = '@(Url.Action("All", "Roles", new { Id = item.Id }))'">
-                    <td data-label="Account">@item.FirstName @item.LastName</td>
-                    <td data-label="Due Date">@item.Email</td>
-                    <td data-label="Amount">@item.Department</td>
-                    <td data-label="Period">@item.Jobtitle</td>
+                <tr onclick="location.href = '@(Url.Action("Edit", "Users", new { Id = item.Id }))'">
+                    <td data-label="Name">@item.FirstName @item.LastName</td>
+                    <td data-label="Email">@item.Email</td>
+                    <td data-label="Department">@item.Department</td>
+                    <td data-label="Jobtitle">@item.Jobtitle</td>
+                    <td style="color:@(item.IsActive ? "red" : "green");" data-label="IsActive">@(item.IsActive ? "Block" : "Active")</td>
                 </tr>
             }
         </tbody>

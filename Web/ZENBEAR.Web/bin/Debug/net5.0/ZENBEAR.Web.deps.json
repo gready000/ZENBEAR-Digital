@@ -43,7 +43,9 @@
           "Microsoft.EntityFrameworkCore.Design": "5.0.12",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
           "Microsoft.Web.LibraryManager.Build": "2.1.113",
+          "MvcCheckBoxList": "1.4.5",
           "StyleCop.Analyzers": "1.2.0-beta.312",
+          "System.Security.Principal.Windows": "5.0.0",
           "ZENBEAR.Common": "1.0.0",
           "ZENBEAR.Data": "1.0.0",
           "ZENBEAR.Data.Models": "1.0.0",
@@ -475,7 +477,7 @@
           "Microsoft.Extensions.Options": "5.0.0",
           "Microsoft.Win32.Registry": "4.7.0",
           "System.Security.Cryptography.Xml": "4.5.0",
-          "System.Security.Principal.Windows": "4.7.0"
+          "System.Security.Principal.Windows": "5.0.0"
         }
       },
       "Microsoft.AspNetCore.DataProtection.Abstractions/2.2.0": {},
@@ -988,7 +990,7 @@
           "System.Configuration.ConfigurationManager": "4.7.0",
           "System.Diagnostics.DiagnosticSource": "5.0.1",
           "System.Runtime.Caching": "4.7.0",
-          "System.Security.Principal.Windows": "4.7.0",
+          "System.Security.Principal.Windows": "5.0.0",
           "System.Text.Encoding.CodePages": "5.0.0"
         },
         "runtime": {
@@ -1560,12 +1562,23 @@
       "Microsoft.Win32.Registry/4.7.0": {
         "dependencies": {
           "System.Security.AccessControl": "4.7.0",
-          "System.Security.Principal.Windows": "4.7.0"
+          "System.Security.Principal.Windows": "5.0.0"
         }
       },
       "Microsoft.Win32.SystemEvents/4.7.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "5.0.0"
+        }
+      },
+      "MvcCheckBoxList/1.4.5": {
+        "runtime": {
+          "lib/net45/MvcCheckBoxList.dll": {
+            "assemblyVersion": "1.4.5.0",
+            "fileVersion": "1.4.5.0"
+          }
+        },
+        "compile": {
+          "lib/net45/MvcCheckBoxList.dll": {}
         }
       },
       "NETStandard.Library/1.6.1": {
@@ -2157,7 +2170,7 @@
           "System.Runtime.Extensions": "4.3.0",
           "System.Runtime.Handles": "4.3.0",
           "System.Runtime.InteropServices": "4.3.0",
-          "System.Security.Principal.Windows": "4.7.0",
+          "System.Security.Principal.Windows": "5.0.0",
           "System.Threading": "4.3.0",
           "System.Threading.Tasks": "4.3.0",
           "runtime.native.System": "4.3.0"
@@ -2382,7 +2395,7 @@
       "System.Security.AccessControl/4.7.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "5.0.0",
-          "System.Security.Principal.Windows": "4.7.0"
+          "System.Security.Principal.Windows": "5.0.0"
         }
       },
       "System.Security.Cryptography.Algorithms/4.3.0": {
@@ -2527,7 +2540,7 @@
           "System.Windows.Extensions": "4.7.0"
         }
       },
-      "System.Security.Principal.Windows/4.7.0": {},
+      "System.Security.Principal.Windows/5.0.0": {},
       "System.Security.SecureString/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "5.0.0",
@@ -5160,6 +5173,13 @@
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
     },
+    "MvcCheckBoxList/1.4.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1aU+jVixu+vaBiQBIJ2vlI7HBhEZeoWIJgpWJjegUBpMBc0Bvvp/nkkEUyAZhqC5OWUAF9hD1m3H4hkXPXr50g==",
+      "path": "mvccheckboxlist/1.4.5",
+      "hashPath": "mvccheckboxlist.1.4.5.nupkg.sha512"
+    },
     "NETStandard.Library/1.6.1": {
       "type": "package",
       "serviceable": true,
@@ -5853,12 +5873,12 @@
       "path": "system.security.permissions/4.7.0",
       "hashPath": "system.security.permissions.4.7.0.nupkg.sha512"
     },
-    "System.Security.Principal.Windows/4.7.0": {
+    "System.Security.Principal.Windows/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ==",
-      "path": "system.security.principal.windows/4.7.0",
-      "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
+      "sha512": "sha512-t0MGLukB5WAVU9bO3MGzvlGnyJPgUlcwerXn1kzBRjwLKixT96XV0Uza41W49gVd8zEMFu9vQEFlv0IOrytICA==",
+      "path": "system.security.principal.windows/5.0.0",
+      "hashPath": "system.security.principal.windows.5.0.0.nupkg.sha512"
     },
     "System.Security.SecureString/4.3.0": {
       "type": "package",

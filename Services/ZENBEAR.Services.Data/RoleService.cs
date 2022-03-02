@@ -9,6 +9,7 @@
     using Microsoft.AspNetCore.Mvc.Rendering;
     using ZENBEAR.Data.Models;
     using ZENBEAR.Web.ViewModels.Roles;
+    using ZENBEAR.Web.ViewModels.Users;
 
     public class RoleService : IRoleService
     {
@@ -36,6 +37,31 @@
                        Text = x.Name,
                     })
                 .ToList();
+        }
+
+        public IList<SelectListItem> GetAllRolesByUser(IEnumerable<IdentityUserRole<string>> input)
+        {
+            var roles = this.roleManager
+                .Roles
+                .Select(x => new SelectListItem
+                {
+                    Value = x.Id,
+                    Text = x.Name,
+                })
+                .ToList();
+
+            foreach (var role in roles)
+            {
+                foreach (var userRole in input)
+                {
+                    if (role.Value == userRole.RoleId)
+                    {
+                        role.Selected = true;
+                    }
+                }
+            }
+
+            return roles;
         }
     }
 }

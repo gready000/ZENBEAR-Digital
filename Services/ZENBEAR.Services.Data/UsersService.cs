@@ -27,7 +27,7 @@
         public IEnumerable<AllListUsersViewModel> AllListUsers()
         {
             var employees = this.usersRepo
-                .AllAsNoTracking()
+                .AllAsNoTrackingWithDeleted()
                 .Select(x => new AllListUsersViewModel
                 {
                     Id = x.Id,
@@ -36,7 +36,7 @@
                     Email = x.Email,
                     Department = x.Department.Name,
                     Jobtitle = x.JobTitle.Name,
-                    Roles = x.Roles,
+                    IsActive = x.IsDeleted,
                 })
                 .ToList();
 
@@ -71,7 +71,65 @@
 
         public bool Exist(string email)
         {
-           return this.usersRepo.AllAsNoTracking().Any(x => x.Email == email);
+           return this.usersRepo.AllAsNoTrackingWithDeleted().Any(x => x.Email == email);
+        }
+
+        public EditUserInputModel GetUserById(string id)
+        {
+            var user = this.usersRepo
+                .AllWithDeleted()
+                .Where(x => x.Id == id)
+                .Select(x => new EditUserInputModel
+                {
+                    Id = x.Id,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                    Email = x.Email,
+                    Department = x.Department.Name,
+                    Jobtitle = x.JobTitle.Name,
+                    Location = x.Location,
+                    IsActive = !x.IsDeleted,
+                    UserRoles = x.Roles,
+                })
+                .FirstOrDefault();
+
+            return user;
+        }
+
+        public async Task EditAsync(string id, EditUserInputModel input)
+        {
+            int index = int.Parse(input.Jobtitle);
+
+            var dj = this.departmentsService.GetDepartmentsAndJobs();
+
+            var jobName = dj[input.Department].ElementAt(index);
+
+            var departmentId = this.departmentsService.GetIdByName(input.Department);
+            var jobTitleId = this.jobtitleService.GetIdByName(jobName);
+
+            var user = this.usersRepo.AllWithDeleted().FirstOrDefault(x => x.Id == id);
+
+            user.FirstName = input.FirstName;
+            user.LastName = input.LastName;
+            user.Email = input.Email;
+            user.DepartmentId = departmentId;
+            user.JobTitleId = jobTitleId;
+            user.Location = input.Location;
+            user.IsDeleted = !input.IsActive;
+
+            foreach (var role in input.Roles)
+            {
+                if (role.Selected)
+                {
+                    await this.userManager.AddToRoleAsync(user, role.Text);
+                }
+                else
+                {
+                    await this.userManager.RemoveFromRoleAsync(user, role.Text);
+                }
+            }
+
+            await this.usersRepo.SaveChangesAsync();
         }
     }
 }

@@ -14,7 +14,7 @@ namespace ZENBEAR.Data.Models
         public ApplicationUser()
         {
             this.Id = Guid.NewGuid().ToString();
-            this.Roles = new HashSet<ApplicationRole>();
+            this.Roles = new HashSet<IdentityUserRole<string>>();
             this.Claims = new HashSet<IdentityUserClaim<string>>();
             this.Logins = new HashSet<IdentityUserLogin<string>>();
         }
@@ -50,7 +50,7 @@ namespace ZENBEAR.Data.Models
 
         public DateTime? DeletedOn { get; set; }
 
-        public virtual ICollection<ApplicationRole> Roles { get; set; }
+        public virtual ICollection<IdentityUserRole<string>> Roles { get; set; }
 
         public virtual ICollection<IdentityUserClaim<string>> Claims { get; set; }
 
