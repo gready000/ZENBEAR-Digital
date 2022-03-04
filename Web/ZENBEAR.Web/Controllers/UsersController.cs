@@ -48,9 +48,30 @@
             return this.RedirectToAction("Index", "Home");
         }
 
-        public IActionResult All()
+        public IActionResult All(AllInListViewModel input, int id = 1)
         {
-            var viewModel = this.usersService.AllListUsers();
+            if (id <= 0)
+            {
+                return this.NotFound();
+            }
+
+            const int ItemsPerPage = 12;
+
+            if (input.Search != null)
+            {
+                var searchedViewModel = this.usersService.SearchedUsers(input.Search);
+
+                return this.View(searchedViewModel);
+            }
+
+            var viewModel = new AllInListViewModel
+            {
+                ItemsPerPage = ItemsPerPage,
+                PageNumber = id,
+                ItemsCount = this.usersService.GetCount(),
+                Departments = this.departmentsService.GetAllDepNames(),
+                AllUsers = this.usersService.AllListUsers(id, ItemsPerPage),
+            };
 
             return this.View(viewModel);
         }
@@ -106,6 +127,22 @@
             }
 
             return false;
+        }
+
+        [HttpGet]
+        public IActionResult SearchUser(SearchUserViewModel input)
+        {
+            //var viewModel = this.usersService.GetUserById(id);
+
+            //if (viewModel == null)
+            //{
+            //    return this.BadRequest();
+            //}
+
+            //viewModel.ListItems = this.ReloadUserForm();
+            //viewModel.Roles = this.roleService.GetAllRolesByUser(viewModel.UserRoles);
+
+            return this.View("All", "Users");
         }
     }
 }

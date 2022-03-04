@@ -11,11 +11,13 @@
 
         bool Exist(string email);
 
-        IEnumerable<AllListUsersViewModel> AllListUsers();
+        IEnumerable<AllListUsersViewModel> AllListUsers(int id, int itemsPerPage);
+
+        AllInListViewModel SearchedUsers(SearchUserViewModel input);
 
         EditUserInputModel GetUserById(string id);
 
-        //IEnumerable<string> GetRolesByUser(string id);
+        int GetCount();
 
         Task EditAsync(string id, EditUserInputModel input);
     }

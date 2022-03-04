@@ -1,19 +1,19 @@
 ﻿<Properties StartupConfiguration="{B90D1067-FE4C-400E-BA78-5413E30AB9ED}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Services/ZENBEAR.Services.Data/RoleService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Web/ZENBEAR.Web/Views/Users/All.cshtml">
     <Files>
-      <File FileName="Web/ZENBEAR.Web/Views/Users/All.cshtml" Line="41" Column="75" IsPinned="True" />
-      <File FileName="Services/ZENBEAR.Services.Data/DepartmentsService.cs" IsPinned="True" />
-      <File FileName="Web/ZENBEAR.Web/Views/Departments/Edit.cshtml" IsPinned="True" />
-      <File FileName="Services/ZENBEAR.Services.Data/UsersService.cs" Line="92" Column="41" IsPinned="True" />
-      <File FileName="Services/ZENBEAR.Services.Data/RoleService.cs" Line="31" Column="50" IsPinned="True" />
-      <File FileName="Web/ZENBEAR.Web.ViewModels/Users/EditUserInputModel.cs" Line="3" Column="38" IsPinned="True" />
-      <File FileName="Services/ZENBEAR.Services.Data/IDepartmentsService.cs" />
-      <File FileName="Web/ZENBEAR.Web/Views/Departments/All.cshtml" Line="1" Column="1" />
+      <File FileName="Web/ZENBEAR.Web/Views/Users/All.cshtml" Line="5" Column="1" IsPinned="True" />
+      <File FileName="Services/ZENBEAR.Services.Data/DepartmentsService.cs" Line="46" Column="58" IsPinned="True" />
+      <File FileName="Services/ZENBEAR.Services.Data/UsersService.cs" Line="72" Column="1" IsPinned="True" />
+      <File FileName="Services/ZENBEAR.Services.Data/IDepartmentsService.cs" Line="15" Column="46" />
       <File FileName="Web/ZENBEAR.Web/Controllers/DepartmentsController.cs" Line="1" Column="1" />
-      <File FileName="Web/ZENBEAR.Web/Controllers/UsersController.cs" Line="69" Column="79" />
-      <File FileName="Services/ZENBEAR.Services.Data/IUsersService.cs" />
-      <File FileName="Web/ZENBEAR.Web/Views/Users/Edit.cshtml" Line="63" Column="75" />
-      <File FileName="Services/ZENBEAR.Services.Data/IRoleService.cs" Line="1" Column="1" />
+      <File FileName="Web/ZENBEAR.Web/Controllers/UsersController.cs" Line="57" Column="53" />
+      <File FileName="Services/ZENBEAR.Services.Data/IUsersService.cs" Line="16" Column="67" />
+      <File FileName="Web/ZENBEAR.Web.ViewModels/Users/SearchUserViewModel.cs" Line="5" Column="22" />
+      <File FileName="Web/ZENBEAR.Web.ViewModels/Users/AllListUsersViewModel.cs" Line="7" Column="39" />
+      <File FileName="Web/ZENBEAR.Web.ViewModels/Users/AllInListViewModel.cs" Line="9" Column="49" />
+      <File FileName="Web/ZENBEAR.Web/Controllers/JobtitlesController.cs" Line="24" Column="62" />
+      <File FileName="Web/ZENBEAR.Web/Views/Shared/_PagingPartial.cshtml" Line="2" Column="1" />
+      <File FileName="Web/ZENBEAR.Web.ViewModels/Paging/PagingViewModel.cs" Line="21" Column="46" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -27,9 +27,7 @@
               <Node name="ZENBEAR.Data.Models" expanded="True" />
             </Node>
             <Node name="Services" expanded="True">
-              <Node name="ZENBEAR.Services.Data" expanded="True">
-                <Node name="RoleService.cs" selected="True" />
-              </Node>
+              <Node name="ZENBEAR.Services.Data" expanded="True" />
             </Node>
             <Node name="Tests" expanded="True">
               <Node name="Sandbox" expanded="True" />
@@ -55,7 +53,9 @@
                   <Node name="Jobtitles" expanded="True" />
                   <Node name="Roles" expanded="True" />
                   <Node name="Shared" expanded="True" />
-                  <Node name="Users" expanded="True" />
+                  <Node name="Users" expanded="True">
+                    <Node name="All.cshtml" selected="True" />
+                  </Node>
                 </Node>
                 <Node name="wwwroot" expanded="True">
                   <Node name="css" expanded="True" />
@@ -64,6 +64,7 @@
               <Node name="ZENBEAR.Web.ViewModels" expanded="True">
                 <Node name="Departments" expanded="True" />
                 <Node name="Jobtitles" expanded="True" />
+                <Node name="Paging" expanded="True" />
                 <Node name="Roles" expanded="True" />
                 <Node name="Users" expanded="True" />
               </Node>
@@ -78,10 +79,7 @@
   <MonoDevelop.Ide.ItemProperties.Tests.Sandbox PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.ItemProperties.Web.ZENBEAR.Web PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/Controllers/UsersController.cs" relfile="Web/ZENBEAR.Web/Controllers/UsersController.cs" line="85" column="13" />
-      <Breakpoint file="/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/UsersService.cs" relfile="Services/ZENBEAR.Services.Data/UsersService.cs" line="96" column="13" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

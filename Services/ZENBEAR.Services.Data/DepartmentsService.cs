@@ -51,6 +51,7 @@
                 {
                    Text = x.Name,
                 })
+                .OrderBy(x => x.Text)
                 .ToList();
         }
 

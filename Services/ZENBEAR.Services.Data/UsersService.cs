@@ -24,10 +24,60 @@
             this.usersRepo = usersRepo;
         }
 
-        public IEnumerable<AllListUsersViewModel> AllListUsers()
+        public int GetCount()
         {
-            var employees = this.usersRepo
+            return this.usersRepo.AllAsNoTrackingWithDeleted().Count();
+        }
+
+        public IEnumerable<AllListUsersViewModel> AllListUsers(int page, int itemsPerPage = 12)
+        {
+            return this.usersRepo
                 .AllAsNoTrackingWithDeleted()
+                .OrderByDescending(x => x.Id)
+                .Skip((page - 1) * itemsPerPage).Take(itemsPerPage)
+                .Select(x => new AllListUsersViewModel
+            {
+                Id = x.Id,
+                FirstName = x.FirstName,
+                LastName = x.LastName,
+                Email = x.Email,
+                Department = x.Department.Name,
+                Jobtitle = x.JobTitle.Name,
+                IsActive = x.IsDeleted,
+                Location = x.Location,
+            })
+            .ToList();
+        }
+
+        public AllInListViewModel SearchedUsers(SearchUserViewModel input)
+        {
+            var query = this.usersRepo.AllAsNoTrackingWithDeleted().OrderBy(x => x.FirstName).AsQueryable();
+
+            foreach (var user in query)
+            {
+                if (input.Name != null)
+                {
+                    query = query.Where(x => x.FirstName.ToLower().Contains(input.Name.ToLower())
+                                        || x.LastName.ToLower().Contains(input.Name.ToLower()));
+                }
+
+                if (input.Status != null)
+                {
+                    var status = input.Status == "active" ? false : true;
+                    query = query.Where(x => x.IsDeleted == status);
+                }
+
+                if (input.Department != null)
+                {
+                    query = query.Where(x => x.Department.Name == input.Department);
+                }
+            }
+
+            var employees = new AllInListViewModel();
+
+            employees.Departments = this.departmentsService.GetAllDepNames();
+
+            employees.AllUsers = query
                 .Select(x => new AllListUsersViewModel
                 {
                     Id = x.Id,
@@ -37,7 +87,8 @@
                     Department = x.Department.Name,
                     Jobtitle = x.JobTitle.Name,
                     IsActive = x.IsDeleted,
-                })
+                    Location = x.Location,
+                }).ToList()
                 .ToList();
 
             return employees;
@@ -52,6 +103,7 @@
             var jobName = dj[input.Department].ElementAt(index);
 
             var departmentId = this.departmentsService.GetIdByName(input.Department);
+
             var jobTitleId = this.jobtitleService.GetIdByName(jobName);
 
             var user = new ApplicationUser()

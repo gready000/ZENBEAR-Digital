@@ -1,6 +1,10 @@
-﻿@model IEnumerable<ZENBEAR.Web.ViewModels.Users.AllListUsersViewModel>
+﻿@model ZENBEAR.Web.ViewModels.Users.AllInListViewModel
 <link rel="stylesheet" href="~/css/allUsersTable.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/searchUser.css" asp-append-version="true" />
 
+@{
+    this.ViewData["Title"] = "Manage Employees";
+}
 
 <style>
     table {
@@ -18,8 +22,30 @@
 </style>
 
 <div class="p-4 mb-4 bg-white text-dark col-md-14">
-    <a class="btn btn-success" style="float: right;" asp-controller="Roles" asp-action="All">ROLES!</a>
-    <h2>Manage Employees</h2>
+    <h2>@this.ViewData["Title"]</h2>
+    <div class="container">
+        <form method="get">
+            <div>
+                <p>Search Users:</p>
+                <div class="search-container">
+                    <input asp-for="@Model.Search.Name" type="text" class="search" placeholder="By Name">
+
+                    <select asp-for="@Model.Search.Department" class="date-from" asp-items="@Model.Departments">
+                        <option value="" selected="selected">Select Department</option>
+                    </select>
+
+                    <select asp-for="@Model.Search.Status" class="date-from">
+                        <option value="">Select Status</option>
+                        <option value="block">Block</option>
+                        <option value="active">Active</option>
+                    </select>
+
+                    <button type="submit" class="btn btn-primary p-1" asp-controller="Users" asp-action="All">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <hr />
     <table class="sortable">
         <thead>
             <tr>
@@ -27,20 +53,24 @@
                 <th scope="col">Email</th>
                 <th scope="col">Department</th>
                 <th scope="col">Position</th>
+                <th scope="col">Location</th>
                 <th scope="col">Status</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @foreach (var item in Model.AllUsers)
             {
                 <tr onclick="location.href = '@(Url.Action("Edit", "Users", new { Id = item.Id }))'">
                     <td data-label="Name">@item.FirstName @item.LastName</td>
                     <td data-label="Email">@item.Email</td>
                     <td data-label="Department">@item.Department</td>
                     <td data-label="Jobtitle">@item.Jobtitle</td>
+                    <td data-label="Jobtitle">@item.Location</td>
                     <td style="color:@(item.IsActive ? "red" : "green");" data-label="IsActive">@(item.IsActive ? "Block" : "Active")</td>
                 </tr>
             }
         </tbody>
     </table>
+    <hr/>
+<partial name="_PagingPartial" model="@Model"/>
 </div>
