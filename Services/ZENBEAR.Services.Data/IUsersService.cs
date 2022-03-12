@@ -11,14 +11,14 @@
 
         bool Exist(string email);
 
-        IEnumerable<AllListUsersViewModel> AllListUsers(int id, int itemsPerPage);
-
-        AllInListViewModel SearchedUsers(SearchUserViewModel input);
+        ICollection<AllListUsersViewModel> AllListUsers(SearchUserViewModel input, int id, int itemsPerPage);
 
         EditUserInputModel GetUserById(string id);
 
         int GetCount();
 
         Task EditAsync(string id, EditUserInputModel input);
+
+        int GetCountBySearched(SearchUserViewModel input);
     }
 }

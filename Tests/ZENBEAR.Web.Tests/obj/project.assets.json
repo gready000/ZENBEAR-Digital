@@ -2049,6 +2049,15 @@
           }
         }
       },
+      "Mono.HttpUtility/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Mono.HttpUtility.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Mono.HttpUtility.dll": {}
+        }
+      },
       "MvcCheckBoxList/1.4.5": {
         "type": "package",
         "compile": {
@@ -4152,6 +4161,7 @@
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
           "Microsoft.Web.LibraryManager.Build": "2.1.113",
+          "Mono.HttpUtility": "1.0.0",
           "MvcCheckBoxList": "1.4.5",
           "System.Security.Principal.Windows": "5.0.0",
           "ZENBEAR.Common": "1.0.0",
@@ -7409,6 +7419,18 @@
         "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Mono.HttpUtility/1.0.0": {
+      "sha512": "4YfFY6oC/ZA2mVGE9gUwR8wgRWCIJenS8ADe83epHVuBPIk7Xb/M9ryanAb4z9rO231zoylfx+/7qZh+20jDwQ==",
+      "type": "package",
+      "path": "mono.httputility/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Mono.HttpUtility.dll",
+        "mono.httputility.1.0.0.nupkg.sha512",
+        "mono.httputility.nuspec"
       ]
     },
     "MvcCheckBoxList/1.4.5": {
@@ -12602,11 +12624,21 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.405/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.406/RuntimeIdentifierGraph.json"
       }
     }
   },
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Mono.HttpUtility 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Mono.HttpUtility",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

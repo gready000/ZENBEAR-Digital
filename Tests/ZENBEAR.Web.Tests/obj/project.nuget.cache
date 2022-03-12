@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jLeb9BHkG7CulhYruVa5BcfKIPEFFojPluRTBgYOD974Z7bmOslB01ONdinBX1CvYvdsnHNiao6Aai0q6YxPRA==",
+  "dgSpecHash": "DF2jE0IqeTu9VX2jFDxf2ieDLtr87N99UeDkIUXg57/ECtNM0qLuJYgorG2Dc9lSgV67y34QvoACoxFVFkjGHw==",
   "success": true,
   "projectFilePath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/ZENBEAR.Web.Tests/ZENBEAR.Web.Tests.csproj",
   "expectedPackageFiles": [
@@ -122,6 +122,7 @@
     "/Users/emilanov/.nuget/packages/microsoft.win32.primitives/4.3.0/microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/microsoft.win32.registry/5.0.0/microsoft.win32.registry.5.0.0.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "/Users/emilanov/.nuget/packages/mono.httputility/1.0.0/mono.httputility.1.0.0.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/mvccheckboxlist/1.4.5/mvccheckboxlist.1.4.5.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/newtonsoft.json/12.0.2/newtonsoft.json.12.0.2.nupkg.sha512",
@@ -253,6 +254,16 @@
     "/Users/emilanov/.nuget/packages/xunit.runner.visualstudio/2.4.3/xunit.runner.visualstudio.2.4.3.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Mono.HttpUtility 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Mono.HttpUtility",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

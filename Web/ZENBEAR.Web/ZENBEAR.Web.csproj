@@ -32,6 +32,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
     <PackageReference Include="MvcCheckBoxList" Version="1.4.5" />
     <PackageReference Include="System.Security.Principal.Windows" Version="5.0.0" />
+    <PackageReference Include="Mono.HttpUtility" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -56,6 +57,7 @@
     <None Remove="Views\Users\" />
     <None Remove="MvcCheckBoxList" />
     <None Remove="System.Security.Principal.Windows" />
+    <None Remove="Mono.HttpUtility" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Roles\" />

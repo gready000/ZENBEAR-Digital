@@ -105,7 +105,7 @@ namespace ZENBEAR.Web.Areas.Identity.Pages.Account
 
         public async Task OnGetAsync(string returnUrl = null)
         {
-            var dj = this.departmentsService.GetDepartmentsAndJobs();
+            var dj = this.departmentsService.GetJobs();
 
             this.Jobs = JsonConvert.SerializeObject(dj);
 
@@ -121,7 +121,7 @@ namespace ZENBEAR.Web.Areas.Identity.Pages.Account
 
             int index = int.Parse(this.Input.JobTitle);
 
-            var dj = this.departmentsService.GetDepartmentsAndJobs();
+            var dj = this.departmentsService.GetJobs();
 
             var jobName = dj[this.Input.Department].ElementAt(index);
 
@@ -181,6 +181,10 @@ namespace ZENBEAR.Web.Areas.Identity.Pages.Account
                 {
                     this.ModelState.AddModelError(string.Empty, error.Description);
                 }
+
+                dj = this.departmentsService.GetJobs();
+
+                this.Jobs = JsonConvert.SerializeObject(dj);
             }
 
             // If we got this far, something failed, redisplay form

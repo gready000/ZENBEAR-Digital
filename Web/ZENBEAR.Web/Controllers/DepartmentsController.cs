@@ -42,7 +42,7 @@
 
             this.TempData["Message"] = $"{input.Name} Department added successfully.";
 
-            return this.RedirectToAction("Index", "Home");
+            return this.RedirectToAction("All");
         }
 
         [HttpGet]
@@ -73,9 +73,7 @@
             return this.RedirectToAction("All", "Departments");
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteAsync(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var success = await this.departmentsService.DeleteByIdAsync(id);
 

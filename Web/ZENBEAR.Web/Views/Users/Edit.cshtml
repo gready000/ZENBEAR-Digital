@@ -37,7 +37,7 @@
                         <div class="form-group">
                             <label asp-for="Department">Department</label>
                             <select id="Department" asp-for="Department" class="form-control">
-                                <option value="Department" selected="selected">Select Department</option>
+                                <option value="@Model.Department" >@Model.Department</option>
                             </select>
                             <span asp-validation-for="Department" class="text-danger"></span>
                         </div>
@@ -46,7 +46,7 @@
                         <div class="form-group">
                             <label asp-for="Jobtitle">Jobtitle</label>
                             <select id="Jobtitle" asp-for="Jobtitle" class="form-control">
-                                <option value="" selected="selected">Select Jobtitle</option>
+                                <option value="@Model.Jobtitle" selected="selected">@Model.Jobtitle</option>
                             </select>
                             <span asp-validation-for="Jobtitle" class="text-danger"></span>
                         </div>

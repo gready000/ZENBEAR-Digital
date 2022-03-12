@@ -1,5 +1,7 @@
 ﻿namespace ZENBEAR.Web.Controllers
 {
+    using System;
+    using System.Linq;
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Mvc;
@@ -48,8 +50,10 @@
             return this.RedirectToAction("Index", "Home");
         }
 
-        public IActionResult All(AllInListViewModel input, int id = 1)
+        public IActionResult All(AllInListViewModel input, int id)
         {
+            id = Math.Max(1, id);
+
             if (id <= 0)
             {
                 return this.NotFound();
@@ -57,20 +61,15 @@
 
             const int ItemsPerPage = 12;
 
-            if (input.Search != null)
-            {
-                var searchedViewModel = this.usersService.SearchedUsers(input.Search);
-
-                return this.View(searchedViewModel);
-            }
+            var users = this.usersService.AllListUsers(input.Search, id, ItemsPerPage);
 
             var viewModel = new AllInListViewModel
             {
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
-                ItemsCount = this.usersService.GetCount(),
                 Departments = this.departmentsService.GetAllDepNames(),
-                AllUsers = this.usersService.AllListUsers(id, ItemsPerPage),
+                AllUsers = users,
+                ItemsCount = this.usersService.GetCountBySearched(input.Search),
             };
 
             return this.View(viewModel);
@@ -110,7 +109,7 @@
 
         public string ReloadUserForm()
         {
-            var dj = this.departmentsService.GetDepartmentsAndJobs();
+            var dj = this.departmentsService.GetJobs();
             var reload = JsonConvert.SerializeObject(dj);
 
             return reload;
@@ -127,22 +126,6 @@
             }
 
             return false;
-        }
-
-        [HttpGet]
-        public IActionResult SearchUser(SearchUserViewModel input)
-        {
-            //var viewModel = this.usersService.GetUserById(id);
-
-            //if (viewModel == null)
-            //{
-            //    return this.BadRequest();
-            //}
-
-            //viewModel.ListItems = this.ReloadUserForm();
-            //viewModel.Roles = this.roleService.GetAllRolesByUser(viewModel.UserRoles);
-
-            return this.View("All", "Users");
         }
     }
 }

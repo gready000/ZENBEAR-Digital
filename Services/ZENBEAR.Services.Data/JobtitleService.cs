@@ -19,13 +19,25 @@
 
         public async Task CreateAsync(CreateJobtitleInputModel input)
         {
-            var jobtitle = new JobTitle()
-            {
-                Name = input.Name,
-                DepartmentId = input.DepartmentId,
-            };
+            var existJobtitle = this.jobtitleRepo
+                .AllWithDeleted()
+                .FirstOrDefault(x => x.Name == input.Name && x.Department.Id == input.DepartmentId);
 
-            await this.jobtitleRepo.AddAsync(jobtitle);
+            if (existJobtitle != null)
+            {
+                existJobtitle.IsDeleted = false;
+            }
+            else
+            {
+                var jobtitle = new JobTitle()
+                {
+                    Name = input.Name,
+                    DepartmentId = input.DepartmentId,
+                };
+
+                await this.jobtitleRepo.AddAsync(jobtitle);
+            }
+
             await this.jobtitleRepo.SaveChangesAsync();
         }
 
@@ -63,15 +75,14 @@
 
         public async Task<bool> DeleteByIdAsync(int id)
         {
-            var department = this.jobtitleRepo.All().FirstOrDefault(x => x.Id == id);
+            var jobtitle = this.jobtitleRepo.All().FirstOrDefault(x => x.Id == id);
 
-            if (department == null)
+            if (jobtitle == null)
             {
                 return false;
             }
 
-            department.IsDeleted = true;
-            department.DeletedOn = DateTime.UtcNow;
+            this.jobtitleRepo.Delete(jobtitle);
             await this.jobtitleRepo.SaveChangesAsync();
 
             return true;

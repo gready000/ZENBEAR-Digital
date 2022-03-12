@@ -9,7 +9,6 @@
     using Microsoft.AspNetCore.Mvc.Rendering;
     using ZENBEAR.Data.Models;
     using ZENBEAR.Web.ViewModels.Roles;
-    using ZENBEAR.Web.ViewModels.Users;
 
     public class RoleService : IRoleService
     {

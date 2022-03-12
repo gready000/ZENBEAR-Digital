@@ -10,7 +10,7 @@
     {
         Task CreateAsync(CreateDepartmentInputModel input);
 
-        IDictionary<string, List<string>> GetDepartmentsAndJobs();
+        IDictionary<string, List<string>> GetJobs();
 
         IEnumerable<SelectListItem> GetAllDepNames();
 

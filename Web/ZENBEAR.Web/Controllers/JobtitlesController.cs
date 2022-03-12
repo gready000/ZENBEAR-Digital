@@ -71,9 +71,7 @@
             return this.RedirectToAction("All", "Departments");
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteAsync(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var success = await this.jobtitleService.DeleteByIdAsync(id);
 

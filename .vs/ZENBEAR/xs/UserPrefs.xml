@@ -1,19 +1,17 @@
 ﻿<Properties StartupConfiguration="{B90D1067-FE4C-400E-BA78-5413E30AB9ED}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Web/ZENBEAR.Web/Views/Users/All.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Services/ZENBEAR.Services.Data/UsersService.cs">
     <Files>
-      <File FileName="Web/ZENBEAR.Web/Views/Users/All.cshtml" Line="5" Column="1" IsPinned="True" />
-      <File FileName="Services/ZENBEAR.Services.Data/DepartmentsService.cs" Line="46" Column="58" IsPinned="True" />
-      <File FileName="Services/ZENBEAR.Services.Data/UsersService.cs" Line="72" Column="1" IsPinned="True" />
-      <File FileName="Services/ZENBEAR.Services.Data/IDepartmentsService.cs" Line="15" Column="46" />
-      <File FileName="Web/ZENBEAR.Web/Controllers/DepartmentsController.cs" Line="1" Column="1" />
-      <File FileName="Web/ZENBEAR.Web/Controllers/UsersController.cs" Line="57" Column="53" />
-      <File FileName="Services/ZENBEAR.Services.Data/IUsersService.cs" Line="16" Column="67" />
-      <File FileName="Web/ZENBEAR.Web.ViewModels/Users/SearchUserViewModel.cs" Line="5" Column="22" />
-      <File FileName="Web/ZENBEAR.Web.ViewModels/Users/AllListUsersViewModel.cs" Line="7" Column="39" />
-      <File FileName="Web/ZENBEAR.Web.ViewModels/Users/AllInListViewModel.cs" Line="9" Column="49" />
-      <File FileName="Web/ZENBEAR.Web/Controllers/JobtitlesController.cs" Line="24" Column="62" />
-      <File FileName="Web/ZENBEAR.Web/Views/Shared/_PagingPartial.cshtml" Line="2" Column="1" />
-      <File FileName="Web/ZENBEAR.Web.ViewModels/Paging/PagingViewModel.cs" Line="21" Column="46" />
+      <File FileName="Services/ZENBEAR.Services.Data/UsersService.cs" Line="66" Column="48" />
+      <File FileName="Web/ZENBEAR.Web/Views/Users/All.cshtml" />
+      <File FileName="Web/ZENBEAR.Web.ViewModels/Users/EditUserInputModel.cs" />
+      <File FileName="Web/ZENBEAR.Web/Controllers/JobtitlesController.cs" />
+      <File FileName="Web/ZENBEAR.Web/Views/Jobtitles/Edit.cshtml" />
+      <File FileName="Web/ZENBEAR.Web/Views/Shared/_PagingPartial.cshtml" />
+      <File FileName="Web/ZENBEAR.Web.ViewModels/Paging/PagingViewModel.cs" />
+      <File FileName="Web/ZENBEAR.Web/Controllers/UsersController.cs" />
+      <File FileName="Web/ZENBEAR.Web.ViewModels/Users/AllInListViewModel.cs" />
+      <File FileName="Services/ZENBEAR.Services.Data/IUsersService.cs" />
+      <File FileName="Web/ZENBEAR.Web.ViewModels/Users/SearchUserViewModel.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -27,7 +25,9 @@
               <Node name="ZENBEAR.Data.Models" expanded="True" />
             </Node>
             <Node name="Services" expanded="True">
-              <Node name="ZENBEAR.Services.Data" expanded="True" />
+              <Node name="ZENBEAR.Services.Data" expanded="True">
+                <Node name="UsersService.cs" selected="True" />
+              </Node>
             </Node>
             <Node name="Tests" expanded="True">
               <Node name="Sandbox" expanded="True" />
@@ -53,12 +53,11 @@
                   <Node name="Jobtitles" expanded="True" />
                   <Node name="Roles" expanded="True" />
                   <Node name="Shared" expanded="True" />
-                  <Node name="Users" expanded="True">
-                    <Node name="All.cshtml" selected="True" />
-                  </Node>
+                  <Node name="Users" expanded="True" />
                 </Node>
                 <Node name="wwwroot" expanded="True">
                   <Node name="css" expanded="True" />
+                  <Node name="js" expanded="True" />
                 </Node>
               </Node>
               <Node name="ZENBEAR.Web.ViewModels" expanded="True">
@@ -79,7 +78,9 @@
   <MonoDevelop.Ide.ItemProperties.Tests.Sandbox PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.ItemProperties.Web.ZENBEAR.Web PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/Controllers/JobtitlesController.cs" relfile="Web/ZENBEAR.Web/Controllers/JobtitlesController.cs" line="75" column="9" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

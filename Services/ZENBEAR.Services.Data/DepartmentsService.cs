@@ -20,7 +20,7 @@
             this.departmentsRepo = departmentsRepo;
         }
 
-        public IDictionary<string, List<string>> GetDepartmentsAndJobs()
+        public IDictionary<string, List<string>> GetJobs()
         {
             var dj = this.departmentsRepo.All().Select(x => new
             {
@@ -34,12 +34,24 @@
 
         public async Task CreateAsync(CreateDepartmentInputModel input)
         {
-            var department = new Department
-            {
-                Name = input.Name,
-            };
+            var existDepartment = this.departmentsRepo
+                .AllWithDeleted()
+                .FirstOrDefault(x => x.Name == input.Name);
 
-            await this.departmentsRepo.AddAsync(department);
+            if (existDepartment != null)
+            {
+                existDepartment.IsDeleted = false;
+            }
+            else
+            {
+                var department = new Department
+                {
+                    Name = input.Name,
+                };
+
+                await this.departmentsRepo.AddAsync(department);
+            }
+
             await this.departmentsRepo.SaveChangesAsync();
         }
 
@@ -67,7 +79,7 @@
         public IEnumerable<AllDepartmentsViewModel> AllDepartmentsAndJobs()
         {
             var dj = this.departmentsRepo
-                .All()
+                .AllAsNoTracking()
                 .Select(x => new AllDepartmentsViewModel
                 {
                     DepartmentId = x.Id,
@@ -120,8 +132,8 @@
                 return false;
             }
 
-            department.IsDeleted = true;
-            department.DeletedOn = DateTime.UtcNow;
+            this.departmentsRepo.Delete(department);
+
             await this.departmentsRepo.SaveChangesAsync();
 
             return true;
