@@ -4,6 +4,7 @@ namespace ZENBEAR.Data.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     using Microsoft.AspNetCore.Identity;
     using ZENBEAR.Common;
@@ -17,6 +18,8 @@ namespace ZENBEAR.Data.Models
             this.Roles = new HashSet<IdentityUserRole<string>>();
             this.Claims = new HashSet<IdentityUserClaim<string>>();
             this.Logins = new HashSet<IdentityUserLogin<string>>();
+            this.ReportTickets = new HashSet<Ticket>();
+            this.AssigneeTickets = new HashSet<Ticket>();
         }
 
         [Required]
@@ -55,5 +58,11 @@ namespace ZENBEAR.Data.Models
         public virtual ICollection<IdentityUserClaim<string>> Claims { get; set; }
 
         public virtual ICollection<IdentityUserLogin<string>> Logins { get; set; }
+
+        [InverseProperty("Reporter")]
+        public virtual ICollection<Ticket> ReportTickets { get; set; }
+
+        [InverseProperty("Assignee")]
+        public virtual ICollection<Ticket> AssigneeTickets { get; set; }
     }
 }

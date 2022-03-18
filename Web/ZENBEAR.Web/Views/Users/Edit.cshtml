@@ -1,127 +1,115 @@
 ﻿@model ZENBEAR.Web.ViewModels.Users.EditUserInputModel
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <div class="container">
-        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12 p-4 mb-4 bg-white text-dark col-md-6 offset-md-2 edit_information">
-            <form method="post" id="editForm">
-                <h3 class="text-center">Edit Employee Profile</h3>
-                <hr />
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="form-group">
-                            <label asp-for="FirstName">First Name</label>
-                            <input asp-for="FirstName" type="text" class="form-control" placeholder="First Name..." />
-                            <span asp-validation-for="FirstName" class="text-danger"></span>
-                        </div>
+@{
+    this.ViewData["Title"] = "Edit Employee Profile";
+}
+
+<div class="container">
+    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12 p-4 mb-4 bg-white text-dark col-md-6 offset-md-2 edit_information">
+        <form method="post" id="editForm">
+            <h3 class="text-center">@this.ViewData["Title"]</h3>
+            <hr />
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label asp-for="FirstName">First Name</label>
+                        <input asp-for="FirstName" type="text" class="form-control" placeholder="First Name..." />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="form-group">
-                            <label asp-for="LastName"> Last Name</label>
-                            <input asp-for="LastName" type="text" class="form-control" placeholder="Last Name..." />
-                            <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label asp-for="LastName"> Last Name</label>
+                        <input asp-for="LastName" type="text" class="form-control" placeholder="Last Name..." />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label asp-for="Email">Email Address</label>
+                        <input asp-for="Email" type="text" class="form-control" placeholder="Email Address..." />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label asp-for="Department">Department</label>
+                        <select id="Department" asp-for="Department" class="form-control">
+                            <option value="@Model.Department">@Model.Department</option>
+                        </select>
+                        <span asp-validation-for="Department" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label asp-for="Jobtitle">Jobtitle</label>
+                        <select id="Jobtitle" asp-for="Jobtitle" class="form-control">
+                            <option value="@Model.Jobtitle" selected="selected">@Model.Jobtitle</option>
+                        </select>
+                        <span asp-validation-for="Jobtitle" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label asp-for="Roles">Select Roles: </label>
+                        @for (var i = 0; i < Model.Roles.Count; ++i)
+                        {
+                            <label class="checkbox-inline">
+                                @Html.HiddenFor(m => m.Roles[i].Text)
+                                @Html.HiddenFor(m => m.Roles[i].Value)
+                                @Html.CheckBoxFor(m => m.Roles[i].Selected) @(Model.Roles[i].Text)<br />
+                            </label>
+                        }
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label asp-for="Location">Select Location</label>
+                        <div class="maxl">
+                            <label class="radio inline">
+                                <input type="radio" asp-for="Location" id="Office" value="Office" checked>
+                                <span> Office </span>
+                            </label>
+                            <label class="radio inline">
+                                <input type="radio" asp-for="Location" id="Headquater" value="Headquater">
+                                <span>Head Quater </span>
+                            </label>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="form-group">
-                            <label asp-for="Email">Email Address</label>
-                            <input asp-for="Email" type="text" class="form-control" placeholder="Email Address..." />
-                            <span asp-validation-for="Email" class="text-danger"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="form-group">
-                            <label asp-for="Department">Department</label>
-                            <select id="Department" asp-for="Department" class="form-control">
-                                <option value="@Model.Department" >@Model.Department</option>
-                            </select>
-                            <span asp-validation-for="Department" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="form-group">
-                            <label asp-for="Jobtitle">Jobtitle</label>
-                            <select id="Jobtitle" asp-for="Jobtitle" class="form-control">
-                                <option value="@Model.Jobtitle" selected="selected">@Model.Jobtitle</option>
-                            </select>
-                            <span asp-validation-for="Jobtitle" class="text-danger"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="form-group">
-                            <label asp-for="Roles">Select Roles: </label>
-                            @for (var i = 0; i < Model.Roles.Count; ++i)
-                            {
-                                <label class="checkbox-inline">
-                                    @Html.HiddenFor(m => m.Roles[i].Text)
-                                    @Html.HiddenFor(m => m.Roles[i].Value)
-                                    @Html.CheckBoxFor(m => m.Roles[i].Selected) @(Model.Roles[i].Text)<br />
-                                </label>
-                            }
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="form-group">
-                            <label asp-for="Location">Select Location</label>
-                            <div class="maxl">
-                                <label class="radio inline">
-                                    <input type="radio" asp-for="Location" id="Office" value="Office" checked>
-                                    <span> Office </span>
-                                </label>
-                                <label class="radio inline">
-                                    <input type="radio" asp-for="Location" id="Headquater" value="Headquater">
-                                    <span>Head Quater </span>
-                                </label>
+            </div>
+            <hr />
+            <input type="hidden" asp-for="Id" />
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 submit">
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success" value="Edit">
+                        <input type="button" class="btn btn-primary" value="Back" onclick="history.back()">
+                        <div style="float:right;">
+                            <label asp-for="IsActive">Employee:</label>
+                            <div class="d-inline-block me-1">Block</div>
+                            <div class="form-check form-switch d-inline-block">
+                                <input type="checkbox" asp-for="IsActive" class="form-check-input" id="site_state" style="cursor: pointer;">
+                                <label for="site_state" class="form-check-label ">Active</label>
                             </div>
                         </div>
                     </div>
                 </div>
-                <hr />
-                <input type="hidden" asp-for="Id" />
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 submit">
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-success" value="Edit">
-                            <input type="button" class="btn btn-primary" value="Back" onclick="history.back()">
-                            <div style="float:right;">
-                                <label asp-for="IsActive">Employee:</label>
-                                <div class="d-inline-block me-1">Block</div>
-                                <div class="form-check form-switch d-inline-block">
-                                    <input type="checkbox" asp-for="IsActive" class="form-check-input" id="site_state" style="cursor: pointer;">
-                                    <label for="site_state" class="form-check-label ">Active</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
+</div>
 
 
-    <script>
+<script type="text/javascript">
     var typeObject = @Html.Raw(Model.ListItems);
-
-    window.onload = function () {
-        var typeSel = document.getElementById("Department"),
-            fieldSel = document.getElementById("Jobtitle")
-        for (var type in typeObject) {
-            typeSel.options[typeSel.options.length] = new Option(type, type);
-        }
-        typeSel.onchange = function () {
-            fieldSel.length = 1; // remove all options bar first
-            if (this.selectedIndex < 1) return; // done
-            var ft = typeObject[this.value];
-            for (var field in typeObject[this.value]) {
-                fieldSel.options[fieldSel.options.length] = new Option(ft[field], field);
-            }
-        }
-        typeSel.onchange();
-    }
-    </script>
+</script>
+<script type="text/javascript" src="~/js/loadDropdowns.js" asp-append-version="true"></script>

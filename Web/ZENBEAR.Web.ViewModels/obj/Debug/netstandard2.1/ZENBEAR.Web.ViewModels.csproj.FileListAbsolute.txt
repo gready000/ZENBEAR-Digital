@@ -1,6 +1,7 @@
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/bin/Debug/netstandard2.1/GlobalConstants.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/bin/Debug/netstandard2.1/ApplicationRole.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/bin/Debug/netstandard2.1/ApplicationUser.cs
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/bin/Debug/netstandard2.1/Users/EditUserInputModel.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/bin/Debug/netstandard2.1/ZENBEAR.Web.ViewModels.deps.json
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/bin/Debug/netstandard2.1/ZENBEAR.Web.ViewModels.dll
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/bin/Debug/netstandard2.1/ZENBEAR.Web.ViewModels.pdb
@@ -20,4 +21,3 @@
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/obj/Debug/netstandard2.1/ZENBEAR.Web.ViewModels.csproj.CopyComplete
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/obj/Debug/netstandard2.1/ZENBEAR.Web.ViewModels.dll
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/obj/Debug/netstandard2.1/ZENBEAR.Web.ViewModels.pdb
-/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/bin/Debug/netstandard2.1/Users/EditUserInputModel.cs

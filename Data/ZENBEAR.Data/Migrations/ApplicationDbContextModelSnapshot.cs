@@ -265,6 +265,75 @@ namespace ZENBEAR.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("ZENBEAR.Data.Models.Attachment", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("AddedByUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Extension")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("TicketId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AddedByUserId");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.HasIndex("TicketId");
+
+                    b.ToTable("Attachments");
+                });
+
+            modelBuilder.Entity("ZENBEAR.Data.Models.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AddedByUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("TicketId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AddedByUserId");
+
+                    b.HasIndex("TicketId");
+
+                    b.ToTable("Comments");
+                });
+
             modelBuilder.Entity("ZENBEAR.Data.Models.Department", b =>
                 {
                     b.Property<int>("Id")
@@ -293,6 +362,41 @@ namespace ZENBEAR.Data.Migrations
                     b.HasIndex("IsDeleted");
 
                     b.ToTable("Departments");
+                });
+
+            modelBuilder.Entity("ZENBEAR.Data.Models.Issue", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("Issues");
                 });
 
             modelBuilder.Entity("ZENBEAR.Data.Models.JobTitle", b =>
@@ -330,6 +434,41 @@ namespace ZENBEAR.Data.Migrations
                     b.ToTable("JobTitles");
                 });
 
+            modelBuilder.Entity("ZENBEAR.Data.Models.Project", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DepartmentId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DepartmentId");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("Projects");
+                });
+
             modelBuilder.Entity("ZENBEAR.Data.Models.Setting", b =>
                 {
                     b.Property<int>("Id")
@@ -360,6 +499,77 @@ namespace ZENBEAR.Data.Migrations
                     b.HasIndex("IsDeleted");
 
                     b.ToTable("Settings");
+                });
+
+            modelBuilder.Entity("ZENBEAR.Data.Models.Ticket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AssigneeId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("AssigneeId1")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("IssueId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Preority")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ReporterId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ReporterId1")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Summary")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AssigneeId");
+
+                    b.HasIndex("AssigneeId1");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.HasIndex("IssueId");
+
+                    b.HasIndex("ProjectId");
+
+                    b.HasIndex("ReporterId");
+
+                    b.HasIndex("ReporterId1");
+
+                    b.ToTable("Tickets");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -432,6 +642,47 @@ namespace ZENBEAR.Data.Migrations
                     b.Navigation("JobTitle");
                 });
 
+            modelBuilder.Entity("ZENBEAR.Data.Models.Attachment", b =>
+                {
+                    b.HasOne("ZENBEAR.Data.Models.ApplicationUser", "AddedByUser")
+                        .WithMany()
+                        .HasForeignKey("AddedByUserId");
+
+                    b.HasOne("ZENBEAR.Data.Models.Ticket", "Ticket")
+                        .WithMany("Attachments")
+                        .HasForeignKey("TicketId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("AddedByUser");
+
+                    b.Navigation("Ticket");
+                });
+
+            modelBuilder.Entity("ZENBEAR.Data.Models.Comment", b =>
+                {
+                    b.HasOne("ZENBEAR.Data.Models.ApplicationUser", "AddedByUser")
+                        .WithMany()
+                        .HasForeignKey("AddedByUserId");
+
+                    b.HasOne("ZENBEAR.Data.Models.Ticket", "Ticket")
+                        .WithMany("Comments")
+                        .HasForeignKey("TicketId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("AddedByUser");
+
+                    b.Navigation("Ticket");
+                });
+
+            modelBuilder.Entity("ZENBEAR.Data.Models.Issue", b =>
+                {
+                    b.HasOne("ZENBEAR.Data.Models.Project", null)
+                        .WithMany("IssueTypes")
+                        .HasForeignKey("ProjectId");
+                });
+
             modelBuilder.Entity("ZENBEAR.Data.Models.JobTitle", b =>
                 {
                     b.HasOne("ZENBEAR.Data.Models.Department", "Department")
@@ -443,11 +694,69 @@ namespace ZENBEAR.Data.Migrations
                     b.Navigation("Department");
                 });
 
+            modelBuilder.Entity("ZENBEAR.Data.Models.Project", b =>
+                {
+                    b.HasOne("ZENBEAR.Data.Models.Department", "Department")
+                        .WithMany()
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Department");
+                });
+
+            modelBuilder.Entity("ZENBEAR.Data.Models.Ticket", b =>
+                {
+                    b.HasOne("ZENBEAR.Data.Models.ApplicationUser", null)
+                        .WithMany("AssigneeTickets")
+                        .HasForeignKey("AssigneeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ZENBEAR.Data.Models.ApplicationUser", "Assignee")
+                        .WithMany()
+                        .HasForeignKey("AssigneeId1");
+
+                    b.HasOne("ZENBEAR.Data.Models.Issue", "Issue")
+                        .WithMany("Tickets")
+                        .HasForeignKey("IssueId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ZENBEAR.Data.Models.Project", "Project")
+                        .WithMany()
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ZENBEAR.Data.Models.ApplicationUser", null)
+                        .WithMany("ReportTickets")
+                        .HasForeignKey("ReporterId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ZENBEAR.Data.Models.ApplicationUser", "Reporter")
+                        .WithMany()
+                        .HasForeignKey("ReporterId1");
+
+                    b.Navigation("Assignee");
+
+                    b.Navigation("Issue");
+
+                    b.Navigation("Project");
+
+                    b.Navigation("Reporter");
+                });
+
             modelBuilder.Entity("ZENBEAR.Data.Models.ApplicationUser", b =>
                 {
+                    b.Navigation("AssigneeTickets");
+
                     b.Navigation("Claims");
 
                     b.Navigation("Logins");
+
+                    b.Navigation("ReportTickets");
 
                     b.Navigation("Roles");
                 });
@@ -459,9 +768,26 @@ namespace ZENBEAR.Data.Migrations
                     b.Navigation("Jobtitles");
                 });
 
+            modelBuilder.Entity("ZENBEAR.Data.Models.Issue", b =>
+                {
+                    b.Navigation("Tickets");
+                });
+
             modelBuilder.Entity("ZENBEAR.Data.Models.JobTitle", b =>
                 {
                     b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("ZENBEAR.Data.Models.Project", b =>
+                {
+                    b.Navigation("IssueTypes");
+                });
+
+            modelBuilder.Entity("ZENBEAR.Data.Models.Ticket", b =>
+                {
+                    b.Navigation("Attachments");
+
+                    b.Navigation("Comments");
                 });
 #pragma warning restore 612, 618
         }

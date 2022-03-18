@@ -26,6 +26,13 @@
             this.usersRepo = usersRepo;
         }
 
+        public string GetEmployeeFullName(string id)
+        {
+            var employee = this.usersRepo.AllAsNoTracking().FirstOrDefault(x => x.Id == id);
+
+            return employee.FirstName + " " + employee.LastName;
+        }
+
         public int GetCount()
         {
             return this.usersRepo.AllAsNoTrackingWithDeleted().Count();

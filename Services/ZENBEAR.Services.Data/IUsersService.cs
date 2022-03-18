@@ -20,5 +20,7 @@
         Task EditAsync(string id, EditUserInputModel input);
 
         int GetCountBySearched(SearchUserViewModel input);
+
+        string GetEmployeeFullName(string id);
     }
 }

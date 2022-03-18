@@ -22,10 +22,15 @@
 
         public IDictionary<string, List<string>> GetJobs()
         {
-            var dj = this.departmentsRepo.All().Select(x => new
+            var dj = this.departmentsRepo.All()
+                .OrderBy(x => x.Name)
+                .Select(x => new
             {
                 x.Name,
-                Jobtitles = x.Jobtitles.Select(y => y.Name).ToList(),
+                Jobtitles = x.Jobtitles
+                .OrderBy(y => y.Name)
+                .Select(y => y.Name)
+                .ToList(),
             })
             .ToDictionary(x => x.Name, x => x.Jobtitles);
 

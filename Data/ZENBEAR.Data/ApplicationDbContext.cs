@@ -31,6 +31,16 @@
 
         public DbSet<JobTitle> JobTitles { get; set; }
 
+        public DbSet<Project> Projects { get; set; }
+
+        public DbSet<Issue> Issues { get; set; }
+
+        public DbSet<Attachment> Attachments { get; set; }
+
+        public DbSet<Comment> Comments { get; set; }
+
+        public DbSet<Ticket> Tickets { get; set; }
+
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
