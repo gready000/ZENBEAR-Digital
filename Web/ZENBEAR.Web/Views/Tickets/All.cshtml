@@ -1,11 +1,16 @@
 ﻿@model ZENBEAR.Web.ViewModels.Tickets.AllInOpenTicketsViewModel
 <link rel="stylesheet" href="~/css/allticketstable.css" asp-append-version="true" />
+
 @{
     this.ViewData["Title"] = "All Open Tickets";
 }
 <style>
     body {
         background-image: linear-gradient(135deg, tomato, rebeccapurple);
+    }
+
+    #li {
+        cursor: pointer;
     }
 </style>
 
@@ -33,18 +38,15 @@
                 <tbody>
                     @foreach (var ticket in Model.OpenTickets)
                     {
-                        <tr>
+                        <tr >
                             <td style="width: 9%">@ticket.IssueType</td>
                             <td style="width: 8%">TI-@ticket.Id</td>
-                            <td style="max-width: 150px; width: 30%">@ticket.Summary</td>
+                            <td style="max-width: 150px; width: 30%" id="li" onclick="location.href = '@(Url.Action("Details", "Tickets", new { Id = ticket.Id }))'">@ticket.Summary</td>
                             <td style="max-width: 50px;">@ticket.Reporter</td>
                             <td style="width: 18%">@ticket.CreateOn</td>
                             <td style="width: 12%">
-                                <select class="test" >
-                                    @foreach (var item in Model.AssigneeList)
-                                    {
-                                        <option value="@item" selected="selected">@item</option>
-                                    }
+                                <select class="test" asp-items="@Model.AssigneeList">
+                                    <option value="" selected="selected">Unassigned</option>
                                 </select>
                             </td>
                         </tr>

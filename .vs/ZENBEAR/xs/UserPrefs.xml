@@ -1,18 +1,18 @@
 ﻿<Properties StartupConfiguration="{B90D1067-FE4C-400E-BA78-5413E30AB9ED}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Web/ZENBEAR.Web/Views/Users/All.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Web/ZENBEAR.Web/Views/Tickets/Details.cshtml">
     <Files>
-      <File FileName="Web/ZENBEAR.Web/Controllers/TicketsController.cs" Line="36" Column="74" />
-      <File FileName="Web/ZENBEAR.Web/Controllers/UsersController.cs" Line="8" Column="27" />
-      <File FileName="Services/ZENBEAR.Services.Data/IProjectsService.cs" />
-      <File FileName="Services/ZENBEAR.Services.Data/TicketsService.cs" Line="64" Column="1" />
-      <File FileName="Data/ZENBEAR.Data.Models/Ticket.cs" Line="31" Column="33" />
-      <File FileName="Web/ZENBEAR.Web/wwwroot/css/allTicketsTable.css" Line="14" Column="5" />
-      <File FileName="Web/ZENBEAR.Web/Views/Tickets/All.cshtml" Line="51" Column="22" />
-      <File FileName="Web/ZENBEAR.Web.ViewModels/Tickets/AllOpenTicketsViewModel.cs" Line="2" Column="2" />
-      <File FileName="Web/ZENBEAR.Web.ViewModels/Users/AllInListViewModel.cs" Line="14" Column="9" />
-      <File FileName="Services/ZENBEAR.Services.Data/ITicketsService.cs" Line="13" Column="63" />
-      <File FileName="Web/ZENBEAR.Web.ViewModels/Tickets/AllInOpenTicketsViewModel.cs" Line="5" Column="23" />
-      <File FileName="Web/ZENBEAR.Web/Views/Users/All.cshtml" Line="1" Column="1" />
+      <File FileName="Web/ZENBEAR.Web/Controllers/TicketsController.cs" Line="54" Column="39" />
+      <File FileName="Services/ZENBEAR.Services.Data/TicketsService.cs" />
+      <File FileName="Data/ZENBEAR.Data.Models/Ticket.cs" />
+      <File FileName="Web/ZENBEAR.Web/wwwroot/css/allTicketsTable.css" />
+      <File FileName="Web/ZENBEAR.Web.ViewModels/Users/AllInListViewModel.cs" />
+      <File FileName="Services/ZENBEAR.Services.Data/ITicketsService.cs" />
+      <File FileName="Web/ZENBEAR.Web/wwwroot/css/finishButton.css" />
+      <File FileName="Web/ZENBEAR.Web/Views/Tickets/Details.cshtml" Line="174" Column="1" />
+      <File FileName="Web/ZENBEAR.Web.ViewModels/Tickets/AllTicketDetailsViewModel.cs" />
+      <File FileName="Web/ZENBEAR.Web/Views/Tickets/All.cshtml" />
+      <File FileName="Web/ZENBEAR.Web.ViewModels/Tickets/TicketsDetailsViewModel.cs" />
+      <File FileName="Web/ZENBEAR.Web/Startup.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -56,14 +56,15 @@
                   <Node name="Departments" expanded="True" />
                   <Node name="Home" expanded="True" />
                   <Node name="Shared" expanded="True" />
-                  <Node name="Tickets" expanded="True" />
-                  <Node name="Users" expanded="True">
-                    <Node name="All.cshtml" selected="True" />
+                  <Node name="Tickets" expanded="True">
+                    <Node name="Details.cshtml" selected="True" />
                   </Node>
+                  <Node name="Users" expanded="True" />
                 </Node>
                 <Node name="wwwroot" expanded="True">
-                  <Node name="css" expanded="True" />
-                  <Node name="js" expanded="True" />
+                  <Node name="attachments" expanded="True">
+                    <Node name="tickets" expanded="True" />
+                  </Node>
                 </Node>
               </Node>
               <Node name="ZENBEAR.Web.ViewModels" expanded="True">
@@ -84,6 +85,8 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/Controllers/JobtitlesController.cs" relfile="Web/ZENBEAR.Web/Controllers/JobtitlesController.cs" line="75" column="9" />
+      <Breakpoint file="/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/Views/Tickets/Details.cshtml" relfile="Web/ZENBEAR.Web/Views/Tickets/Details.cshtml" line="174" column="1" />
+      <Breakpoint file="/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/Views/Tickets/Details.cshtml" relfile="Web/ZENBEAR.Web/Views/Tickets/Details.cshtml" line="173" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

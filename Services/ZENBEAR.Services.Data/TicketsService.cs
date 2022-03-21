@@ -64,19 +64,44 @@
             return openTickets;
         }
 
-        public IEnumerable<string> GetAllProjectEmployees(string departmentName)
+        public TicketsDetailsViewModel GetTicketById(int id)
+        {
+            var ticket = this.ticketsRepo
+                .AllAsNoTracking()
+                .Where(x => x.Id == id)
+                .Select(x => new TicketsDetailsViewModel
+                {
+                    Id = x.Id,
+                    IssueType = x.Issue.Name,
+                    Summary = x.Summary,
+                    Description = x.Description,
+                    CreateOn = x.CreatedOn.ToShortDateString(),
+                    Assignee = x.Assignee.FirstName + " " + x.Assignee.LastName,
+                    ReporterId = x.ReporterId,
+                    Priority = x.Preority.ToString(),
+                    Comments = x.Comments,
+                    Attachments = x.Attachments,
+                })
+                .FirstOrDefault();
+
+            ticket.Reporter = this.usersService.GetReporterById(ticket.ReporterId);
+
+            return ticket;
+        }
+
+        public IEnumerable<SelectListItem> GetAllProjectEmployees(string departmentName)
         {
             var dbEmployees = this.userRepo.AllAsNoTracking()
                 .Where(x => x.Department.Name == departmentName).ToList();
 
-            var employees = new List<string>();
+            var employees = new List<SelectListItem>();
 
             foreach (var emp in dbEmployees)
             {
-                employees.Add(emp.FirstName + " " + emp.LastName);
+                var temp = new SelectListItem();
+                temp.Text = emp.FirstName + " " + emp.LastName;
+                employees.Add(temp);
             }
-
-            employees.Add("Unassignee");
 
             return employees;
         }

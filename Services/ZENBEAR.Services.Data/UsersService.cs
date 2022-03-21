@@ -148,6 +148,25 @@
            return this.usersRepo.AllAsNoTrackingWithDeleted().Any(x => x.Email == email);
         }
 
+        public ReporterViewModel GetReporterById(string id)
+        {
+            var reporter = this.usersRepo
+                .AllWithDeleted()
+                .Where(x => x.Id == id)
+                .Select(x => new ReporterViewModel
+                {
+                    Id = x.Id,
+                    FullName = x.FirstName + " " + x.LastName,
+                    Email = x.Email,
+                    Department = x.Department.Name,
+                    Jobtitle = x.JobTitle.Name,
+                    Location = x.Location,
+                })
+                .FirstOrDefault();
+
+            return reporter;
+        }
+
         public EditUserInputModel GetUserById(string id)
         {
             var user = this.usersRepo

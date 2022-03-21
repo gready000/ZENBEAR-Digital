@@ -22,5 +22,7 @@
         int GetCountBySearched(SearchUserViewModel input);
 
         string GetEmployeeFullName(string id);
+
+        ReporterViewModel GetReporterById(string id);
     }
 }

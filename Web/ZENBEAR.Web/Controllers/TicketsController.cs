@@ -40,6 +40,21 @@
         }
 
         [HttpGet]
+        public IActionResult Details(int id)
+        {
+            var viewModel = new AllTicketDetailsViewModel();
+            viewModel.Ticket = this.ticketsService.GetTicketById(id);
+            viewModel.ListItems = this.ticketsService.GetAllProjectEmployees("IT Department");
+
+            if (viewModel == null)
+            {
+                return this.BadRequest();
+            }
+
+            return this.View(viewModel);
+        }
+
+        [HttpGet]
         public IActionResult Create()
         {
             var viewModel = new CreateTicketinputModel();

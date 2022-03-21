@@ -1,0 +1,10 @@
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.Infrastructure/bin/Release/netstandard2.1/ZENBEAR.Web.Infrastructure.deps.json
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.Infrastructure/bin/Release/netstandard2.1/ZENBEAR.Web.Infrastructure.dll
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.Infrastructure/bin/Release/netstandard2.1/ZENBEAR.Web.Infrastructure.pdb
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.Infrastructure/obj/Release/netstandard2.1/ZENBEAR.Web.Infrastructure.csproj.AssemblyReference.cache
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.Infrastructure/obj/Release/netstandard2.1/ZENBEAR.Web.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.Infrastructure/obj/Release/netstandard2.1/ZENBEAR.Web.Infrastructure.AssemblyInfoInputs.cache
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.Infrastructure/obj/Release/netstandard2.1/ZENBEAR.Web.Infrastructure.AssemblyInfo.cs
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.Infrastructure/obj/Release/netstandard2.1/ZENBEAR.Web.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.Infrastructure/obj/Release/netstandard2.1/ZENBEAR.Web.Infrastructure.dll
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.Infrastructure/obj/Release/netstandard2.1/ZENBEAR.Web.Infrastructure.pdb

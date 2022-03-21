@@ -67,4 +67,9 @@
     <Folder Include="Views\Users\" />
     <Folder Include="Views\Tickets\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Update="wwwroot\attachments\tickets\9f724e7b-4920-4c05-8276-a618c0f58eec.srt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>

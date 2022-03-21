@@ -12,6 +12,8 @@
 
         IEnumerable<AllOpenTicketsViewModel> GetAllOpenTickets(string departmentName);
 
-        IEnumerable<string> GetAllProjectEmployees(string departmentName);
+        IEnumerable<SelectListItem> GetAllProjectEmployees(string departmentName);
+
+        TicketsDetailsViewModel GetTicketById(int id);
     }
 }
