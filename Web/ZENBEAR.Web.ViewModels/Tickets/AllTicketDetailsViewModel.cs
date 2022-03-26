@@ -9,5 +9,9 @@
         public TicketsDetailsViewModel Ticket { get; set; }
 
         public IEnumerable<SelectListItem> ListItems { get; set; }
+
+        public string Content { get; set; }
+
+        public string AssigneeId { get; set; }
     }
 }

@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
+    using ZENBEAR.Data.Models;
     using ZENBEAR.Web.ViewModels.Users;
 
     public interface IUsersService
@@ -13,7 +14,7 @@
 
         ICollection<AllListUsersViewModel> AllListUsers(SearchUserViewModel input, int id, int itemsPerPage);
 
-        EditUserInputModel GetUserById(string id);
+        EditUserInputModel GetEditUserById(string id);
 
         int GetCount();
 
@@ -24,5 +25,7 @@
         string GetEmployeeFullName(string id);
 
         ReporterViewModel GetReporterById(string id);
+
+        ApplicationUser GetUserById(string id);
     }
 }

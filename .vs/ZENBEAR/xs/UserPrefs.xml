@@ -1,18 +1,19 @@
 ﻿<Properties StartupConfiguration="{B90D1067-FE4C-400E-BA78-5413E30AB9ED}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Web/ZENBEAR.Web/Views/Tickets/Details.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Web/ZENBEAR.Web/Views/Tickets/Closed.cshtml">
     <Files>
-      <File FileName="Web/ZENBEAR.Web/Controllers/TicketsController.cs" Line="54" Column="39" />
-      <File FileName="Services/ZENBEAR.Services.Data/TicketsService.cs" />
-      <File FileName="Data/ZENBEAR.Data.Models/Ticket.cs" />
-      <File FileName="Web/ZENBEAR.Web/wwwroot/css/allTicketsTable.css" />
-      <File FileName="Web/ZENBEAR.Web.ViewModels/Users/AllInListViewModel.cs" />
-      <File FileName="Services/ZENBEAR.Services.Data/ITicketsService.cs" />
-      <File FileName="Web/ZENBEAR.Web/wwwroot/css/finishButton.css" />
-      <File FileName="Web/ZENBEAR.Web/Views/Tickets/Details.cshtml" Line="174" Column="1" />
-      <File FileName="Web/ZENBEAR.Web.ViewModels/Tickets/AllTicketDetailsViewModel.cs" />
-      <File FileName="Web/ZENBEAR.Web/Views/Tickets/All.cshtml" />
-      <File FileName="Web/ZENBEAR.Web.ViewModels/Tickets/TicketsDetailsViewModel.cs" />
-      <File FileName="Web/ZENBEAR.Web/Startup.cs" />
+      <File FileName="Web/ZENBEAR.Web/Controllers/TicketsController.cs" Line="47" Column="1" />
+      <File FileName="Services/ZENBEAR.Services.Data/TicketsService.cs" Line="210" Column="1" />
+      <File FileName="Web/ZENBEAR.Web/Views/Tickets/Details.cshtml" Line="267" Column="56" />
+      <File FileName="Services/ZENBEAR.Services.Data/CommentsService.cs" Line="32" Column="37" />
+      <File FileName="Services/ZENBEAR.Services.Data/ICommentsService.cs" />
+      <File FileName="Web/ZENBEAR.Web.ViewModels/Tickets/AllTicketDetailsViewModel.cs" Line="16" Column="6" />
+      <File FileName="Web/ZENBEAR.Web.ViewModels/CommentDetailsViewModel.cs" />
+      <File FileName="Services/ZENBEAR.Services.Data/ITicketsService.cs" Line="24" Column="42" />
+      <File FileName="Web/ZENBEAR.Web.ViewModels/Tickets/TicketsDetailsViewModel.cs" Line="24" Column="45" />
+      <File FileName="Web/ZENBEAR.Web/Views/Tickets/All.cshtml" Line="44" Column="29" />
+      <File FileName="Web/ZENBEAR.Web.ViewModels/Tickets/AllOpenTicketsViewModel.cs" Line="5" Column="9" />
+      <File FileName="Web/ZENBEAR.Web.ViewModels/Tickets/AllInOpenTicketsViewModel.cs" Line="11" Column="70" />
+      <File FileName="Web/ZENBEAR.Web/Views/Tickets/Closed.cshtml" Line="1" Column="61" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,7 +22,7 @@
             <Node name="Data" expanded="True">
               <Node name="ZENBEAR.Data" expanded="True">
                 <Node name="Configurations" expanded="True" />
-                <Node name="Seeding" expanded="True" />
+                <Node name="Repositories" expanded="True" />
               </Node>
               <Node name="ZENBEAR.Data.Common" expanded="True">
                 <Node name="Models" expanded="True" />
@@ -39,9 +40,6 @@
             <Node name="Web" expanded="True">
               <Node name="ZENBEAR.Web" expanded="True">
                 <Node name="Areas" expanded="True">
-                  <Node name="Administration" expanded="True">
-                    <Node name="Controllers" expanded="True" />
-                  </Node>
                   <Node name="Identity" expanded="True">
                     <Node name="Pages" expanded="True">
                       <Node name="Account" expanded="True">
@@ -54,10 +52,9 @@
                 <Node name="Controllers" expanded="True" />
                 <Node name="Views" expanded="True">
                   <Node name="Departments" expanded="True" />
-                  <Node name="Home" expanded="True" />
                   <Node name="Shared" expanded="True" />
                   <Node name="Tickets" expanded="True">
-                    <Node name="Details.cshtml" selected="True" />
+                    <Node name="Closed.cshtml" selected="True" />
                   </Node>
                   <Node name="Users" expanded="True" />
                 </Node>
@@ -65,6 +62,8 @@
                   <Node name="attachments" expanded="True">
                     <Node name="tickets" expanded="True" />
                   </Node>
+                  <Node name="css" expanded="True" />
+                  <Node name="js" expanded="True" />
                 </Node>
               </Node>
               <Node name="ZENBEAR.Web.ViewModels" expanded="True">
@@ -85,8 +84,6 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/Controllers/JobtitlesController.cs" relfile="Web/ZENBEAR.Web/Controllers/JobtitlesController.cs" line="75" column="9" />
-      <Breakpoint file="/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/Views/Tickets/Details.cshtml" relfile="Web/ZENBEAR.Web/Views/Tickets/Details.cshtml" line="174" column="1" />
-      <Breakpoint file="/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/Views/Tickets/Details.cshtml" relfile="Web/ZENBEAR.Web/Views/Tickets/Details.cshtml" line="173" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

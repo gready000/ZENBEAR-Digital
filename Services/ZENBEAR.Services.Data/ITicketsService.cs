@@ -4,6 +4,7 @@
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Mvc.Rendering;
+    using ZENBEAR.Data.Models;
     using ZENBEAR.Web.ViewModels.Tickets;
 
     public interface ITicketsService
@@ -12,8 +13,16 @@
 
         IEnumerable<AllOpenTicketsViewModel> GetAllOpenTickets(string departmentName);
 
+        IEnumerable<ClosedTicketsViewModel> GetClosedTickets(string departmentName);
+
         IEnumerable<SelectListItem> GetAllProjectEmployees(string departmentName);
 
-        TicketsDetailsViewModel GetTicketById(int id);
+        TicketsDetailsViewModel GetTicketDetailById(int id);
+
+        Ticket GetTicketById(int id);
+
+        Task AssigneeUserToTicketAsync(int ticketId, string userId);
+
+        Task ResolveTicket(int ticketId);
     }
 }

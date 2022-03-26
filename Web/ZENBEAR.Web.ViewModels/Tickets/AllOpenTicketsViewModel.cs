@@ -10,6 +10,8 @@
 
         public string Reporter { get; set; }
 
+        public string Assignee { get; set; }
+
         public string CreateOn { get; set; }
     }
 }

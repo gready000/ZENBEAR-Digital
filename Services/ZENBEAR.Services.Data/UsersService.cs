@@ -167,7 +167,12 @@
             return reporter;
         }
 
-        public EditUserInputModel GetUserById(string id)
+        public ApplicationUser GetUserById(string id)
+        {
+            return this.usersRepo.AllAsNoTrackingWithDeleted().FirstOrDefault(x => x.Id == id);
+        }
+
+        public EditUserInputModel GetEditUserById(string id)
         {
             var user = this.usersRepo
                 .AllWithDeleted()

@@ -78,7 +78,7 @@
         [HttpGet]
         public IActionResult Edit(string id)
         {
-            var viewModel = this.usersService.GetUserById(id);
+            var viewModel = this.usersService.GetEditUserById(id);
 
             if (viewModel == null)
             {

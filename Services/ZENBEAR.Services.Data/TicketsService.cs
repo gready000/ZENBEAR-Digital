@@ -1,6 +1,5 @@
 ﻿namespace ZENBEAR.Services.Data
 {
-    using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -10,6 +9,7 @@
     using ZENBEAR.Data.Common.Repositories;
     using ZENBEAR.Data.Models;
     using ZENBEAR.Data.Models.Enums;
+    using ZENBEAR.Web.ViewModels;
     using ZENBEAR.Web.ViewModels.Tickets;
 
     public class TicketsService : ITicketsService
@@ -52,19 +52,84 @@
                         IssueType = x.Issue.Name,
                         Summary = x.Summary,
                         Reporter = x.ReporterId,
-                        CreateOn = x.CreatedOn.ToShortDateString(),
+                        Assignee = x.AssigneeId,
+                        CreateOn = x.CreatedOn.ToString("dd/MM/yyyy"),
                     })
                     .ToList();
 
             foreach (var rep in openTickets)
             {
+                if (rep.Assignee != null)
+                {
+                    rep.Assignee = this.usersService.GetEmployeeFullName(rep.Assignee);
+                }
+                else
+                {
+                    rep.Assignee = "Unassigned";
+                }
+
                 rep.Reporter = this.usersService.GetEmployeeFullName(rep.Reporter);
             }
 
             return openTickets;
         }
 
-        public TicketsDetailsViewModel GetTicketById(int id)
+        public IEnumerable<ClosedTicketsViewModel> GetClosedTickets(string departmentName)
+        {
+            var closedTickets = this.ticketsRepo
+                .All()
+                    .Where(x => x.Status == Status.Closed)
+                    .OrderByDescending(x => x.CreatedOn)
+                    .Select(x => new ClosedTicketsViewModel
+                    {
+                        Id = x.Id,
+                        IssueType = x.Issue.Name,
+                        Summary = x.Summary,
+                        Reporter = x.ReporterId,
+                        Assignee = x.AssigneeId,
+                        CreateOn = x.CreatedOn.ToString("dd/MM/yyyy"),
+                    })
+                    .ToList();
+
+            foreach (var rep in closedTickets)
+            {
+                if (rep.Assignee != null)
+                {
+                    rep.Assignee = this.usersService.GetEmployeeFullName(rep.Assignee);
+                }
+                else
+                {
+                    rep.Assignee = "Unassigned";
+                }
+
+                rep.Reporter = this.usersService.GetEmployeeFullName(rep.Reporter);
+            }
+
+            return closedTickets;
+        }
+
+        public async Task AssigneeUserToTicketAsync(int ticketId, string userId)
+        {
+            var ticket = this.ticketsRepo.All().FirstOrDefault(x => x.Id == ticketId);
+
+            if (userId != "Unassigned")
+            {
+                ticket.AssigneeId = userId;
+            }
+            else
+            {
+                ticket.AssigneeId = null;
+            }
+
+            await this.ticketsRepo.SaveChangesAsync();
+        }
+
+        public Ticket GetTicketById(int id)
+        {
+            return this.ticketsRepo.AllAsNoTracking().FirstOrDefault(x => x.Id == id);
+        }
+
+        public TicketsDetailsViewModel GetTicketDetailById(int id)
         {
             var ticket = this.ticketsRepo
                 .AllAsNoTracking()
@@ -76,13 +141,24 @@
                     Summary = x.Summary,
                     Description = x.Description,
                     CreateOn = x.CreatedOn.ToShortDateString(),
-                    Assignee = x.Assignee.FirstName + " " + x.Assignee.LastName,
+                    Assignee = x.AssigneeId,
                     ReporterId = x.ReporterId,
                     Priority = x.Preority.ToString(),
-                    Comments = x.Comments,
+                    Comments = x.Comments.OrderByDescending(x => x.CreatedOn)
+                    .Select(x => new CommentDetailsViewModel
+                    {
+                        Content = x.Content,
+                        CreatedOn = x.CreatedOn,
+                        AddByUser = x.AddedByUser.FirstName + " " + x.AddedByUser.LastName,
+                    }).ToList(),
                     Attachments = x.Attachments,
                 })
                 .FirstOrDefault();
+
+            if (ticket.Assignee != null)
+            {
+                ticket.Assignee = this.usersService.GetEmployeeFullName(ticket.Assignee);
+            }
 
             ticket.Reporter = this.usersService.GetReporterById(ticket.ReporterId);
 
@@ -100,8 +176,13 @@
             {
                 var temp = new SelectListItem();
                 temp.Text = emp.FirstName + " " + emp.LastName;
+                temp.Value = emp.Id;
                 employees.Add(temp);
             }
+
+            var unAssignee = new SelectListItem();
+            unAssignee.Text = "Unassigned";
+            employees.Add(unAssignee);
 
             return employees;
         }
@@ -152,6 +233,14 @@
             }
 
             await this.ticketsRepo.AddAsync(ticket);
+            await this.ticketsRepo.SaveChangesAsync();
+        }
+
+        public async Task ResolveTicket(int ticketId)
+        {
+            var ticket = this.ticketsRepo.All().FirstOrDefault(x => x.Id == ticketId);
+            ticket.Status = Status.Closed;
+
             await this.ticketsRepo.SaveChangesAsync();
         }
     }

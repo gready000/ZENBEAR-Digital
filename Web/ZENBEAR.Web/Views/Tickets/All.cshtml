@@ -1,61 +1,64 @@
 ﻿@model ZENBEAR.Web.ViewModels.Tickets.AllInOpenTicketsViewModel
-<link rel="stylesheet" href="~/css/allticketstable.css" asp-append-version="true" />
 
-@{
-    this.ViewData["Title"] = "All Open Tickets";
-}
-<style>
-    body {
-        background-image: linear-gradient(135deg, tomato, rebeccapurple);
+    <script src="https://kit.fontawesome.com/a199d1b466.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/allticketstable.css" asp-append-version="true" />
+
+    @{
+        this.ViewData["Title"] = "Open Tickets";
     }
+    <style>
+        body {
+            background-image: linear-gradient(135deg, tomato, rebeccapurple);
+        }
 
-    #li {
-        cursor: pointer;
-    }
-</style>
+        #li {
+            cursor: pointer;
+        }
+    </style>
 
 
-<div class="row">
-    <div id="admin" class="col s12">
-        <div class="card material-table">
-            <div class="table-header">
-                <span class="table-title">@this.ViewData["Title"]</span>
-                <div class="actions">
-                    <input type="text"><input type="submit">
+    <div class="row">
+        <div id="admin" class="col s12">
+            <div class="card material-table">
+                <div class="table-header">
+                    <span class="table-title">@this.ViewData["Title"]</span>
+                    <button class="btn btn-link" type="button" asp-action="Closed">Closed Tickets</button>
+                    <div class="actions">
+                        <form class="example" action="">
+                            <input type="text" placeholder="Search.." name="search">
+                            <button type="submit"><i class="fa fa-search" style="font-size:18px;color:coral;"></i></button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <table id="datatable">
-                <thead>
-                    <tr>
-                        <th>Issue Type</th>
-                        <th onclick="sortTable(0)">Key</th>
-                        <th>Summary</th>
-                        <th>Reporter</th>
-                        <th onclick="sortTable(1)">Create On</th>
-                        <th>Assignee</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var ticket in Model.OpenTickets)
-                    {
-                        <tr >
-                            <td style="width: 9%">@ticket.IssueType</td>
-                            <td style="width: 8%">TI-@ticket.Id</td>
-                            <td style="max-width: 150px; width: 30%" id="li" onclick="location.href = '@(Url.Action("Details", "Tickets", new { Id = ticket.Id }))'">@ticket.Summary</td>
-                            <td style="max-width: 50px;">@ticket.Reporter</td>
-                            <td style="width: 18%">@ticket.CreateOn</td>
-                            <td style="width: 12%">
-                                <select class="test" asp-items="@Model.AssigneeList">
-                                    <option value="" selected="selected">Unassigned</option>
-                                </select>
-                            </td>
+                <table id="datatable">
+                    <thead>
+                        <tr>
+                            <th>Issue Type</th>
+                            <th onclick="sortTable(0)">Key</th>
+                            <th>Summary</th>
+                            <th>Reporter</th>
+                            <th onclick="sortTable(1)">Create On</th>
+                            <th>Assignee</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach (var ticket in Model.OpenTickets)
+                        {
+                            <tr id="li" onclick="location.href = '@(Url.Action("Details", "Tickets", new { Id = ticket.Id }))'">
+                                <td style="width: 9%">@ticket.IssueType</td>
+                                <td style="width: 8%">TI-@ticket.Id</td>
+                                <td style="max-width: 150px; width: 30%">@ticket.Summary</td>
+                                <td style="max-width: 50px;">@ticket.Reporter</td>
+                                <td style="width: 18%">@ticket.CreateOn</td>
+                                <td style="width: 12%">@ticket.Assignee</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
 
-<script src="~/js/allticketstable.js" asp-append-version="true"></script>
+    <script src="~/js/allticketstable.js" asp-append-version="true"></script>
 

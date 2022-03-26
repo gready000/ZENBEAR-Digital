@@ -29,6 +29,6 @@
 
         public IEnumerable<Attachment> Attachments { get; set; }
 
-        public IEnumerable<Comment> Comments { get; set; }
+        public IEnumerable<CommentDetailsViewModel> Comments { get; set; }
     }
 }
