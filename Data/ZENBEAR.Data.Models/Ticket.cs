@@ -27,6 +27,10 @@
         [MinLength(GlobalConstants.DescriptionMaxLength)]
         public string Description { get; set; }
 
+        public int RateId { get; set; }
+
+        public Rate Rate { get; set; }
+
         [Required]
         public Priority Preority { get; set; }
 

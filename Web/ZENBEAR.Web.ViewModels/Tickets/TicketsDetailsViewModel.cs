@@ -25,6 +25,8 @@
 
         public string Priority { get; set; }
 
+        public string Status { get; set; }
+
         public IEnumerable<string> Files { get; set; }
 
         public IEnumerable<Attachment> Attachments { get; set; }

@@ -40,12 +40,16 @@
             this.usersService = usersService;
         }
 
-        public IEnumerable<AllOpenTicketsViewModel> GetAllOpenTickets(string departmentName)
+        public IEnumerable<AllOpenTicketsViewModel> GetAllOpenTickets(string departmentName, int itemsPerPage, int page)
         {
+            var skip = (page - 1) * itemsPerPage;
+
             var openTickets = this.ticketsRepo
                 .All()
                     .Where(x => x.Status == Status.Open)
                     .OrderByDescending(x => x.CreatedOn)
+                    .Skip(skip)
+                    .Take(itemsPerPage)
                     .Select(x => new AllOpenTicketsViewModel
                     {
                         Id = x.Id,
@@ -74,12 +78,54 @@
             return openTickets;
         }
 
-        public IEnumerable<ClosedTicketsViewModel> GetClosedTickets(string departmentName)
+        public IEnumerable<MyTicketsViewModel> GetUserTickets(string userId, int itemsPerPage, int page)
         {
+            var skip = (page - 1) * itemsPerPage;
+
+            var userTickets = this.ticketsRepo.AllAsNoTracking()
+                .Where(x => x.ReporterId == userId)
+                .OrderBy(x => x.Status)
+                .ThenByDescending(x => x.CreatedOn)
+                .Skip(skip)
+                .Take(itemsPerPage)
+                .Select(x => new MyTicketsViewModel
+                {
+                    Id = x.Id,
+                    IssueType = x.Issue.Name,
+                    Summary = x.Summary,
+                    ReporterId = userId,
+                    Assignee = x.AssigneeId,
+                    CreateOn = x.CreatedOn.ToString("dd/MM/yyyy"),
+                    Status = x.Status.ToString(),
+                    Rate = x.Rate.Value,
+                })
+                .ToList();
+
+            foreach (var rep in userTickets)
+            {
+                if (rep.Assignee != null)
+                {
+                    rep.Assignee = this.usersService.GetEmployeeFullName(rep.Assignee);
+                }
+                else
+                {
+                    rep.Assignee = "Unassigned";
+                }
+            }
+
+            return userTickets;
+        }
+
+        public IEnumerable<ClosedTicketsViewModel> GetClosedTickets(string departmentName, int itemsPerPage, int page)
+        {
+            var skip = (page - 1) * itemsPerPage;
+
             var closedTickets = this.ticketsRepo
                 .All()
                     .Where(x => x.Status == Status.Closed)
                     .OrderByDescending(x => x.CreatedOn)
+                    .Skip(skip)
+                    .Take(itemsPerPage)
                     .Select(x => new ClosedTicketsViewModel
                     {
                         Id = x.Id,
@@ -144,6 +190,7 @@
                     Assignee = x.AssigneeId,
                     ReporterId = x.ReporterId,
                     Priority = x.Preority.ToString(),
+                    Status = x.Status.ToString(),
                     Comments = x.Comments.OrderByDescending(x => x.CreatedOn)
                     .Select(x => new CommentDetailsViewModel
                     {
@@ -187,9 +234,19 @@
             return employees;
         }
 
-        public int GetCount()
+        public int GetUserTicketsCount(string userId)
         {
-            return this.ticketsRepo.AllAsNoTrackingWithDeleted().Count();
+            return this.ticketsRepo.AllAsNoTrackingWithDeleted().Where(x => x.ReporterId == userId).Count();
+        }
+
+        public int GetOpenTicketsCount()
+        {
+            return this.ticketsRepo.AllAsNoTrackingWithDeleted().Where(x => x.Status == Status.Open).Count();
+        }
+
+        public int GetClosedTicketsCount()
+        {
+            return this.ticketsRepo.AllAsNoTrackingWithDeleted().Where(x => x.Status == Status.Closed).Count();
         }
 
         public async Task CreateAsync(CreateTicketinputModel input, string userId, string filesPath)
@@ -236,7 +293,7 @@
             await this.ticketsRepo.SaveChangesAsync();
         }
 
-        public async Task ResolveTicket(int ticketId)
+        public async Task ResolveTicketAsync(int ticketId)
         {
             var ticket = this.ticketsRepo.All().FirstOrDefault(x => x.Id == ticketId);
             ticket.Status = Status.Closed;

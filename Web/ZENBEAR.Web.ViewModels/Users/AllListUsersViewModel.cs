@@ -1,9 +1,5 @@
 ﻿namespace ZENBEAR.Web.ViewModels.Users
 {
-    using System.Collections.Generic;
-
-    using Microsoft.AspNetCore.Mvc.Rendering;
-
     public class AllListUsersViewModel
     {
         public string Id { get; set; }

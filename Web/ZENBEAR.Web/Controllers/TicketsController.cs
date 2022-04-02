@@ -6,6 +6,7 @@
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using ZENBEAR.Common;
     using ZENBEAR.Data.Models;
     using ZENBEAR.Services.Data;
     using ZENBEAR.Web.ViewModels.Tickets;
@@ -36,19 +37,61 @@
         }
 
         [HttpGet]
-        public IActionResult All()
+        public IActionResult All(int id = 1)
         {
-            var viewModel = new AllInOpenTicketsViewModel();
-            viewModel.OpenTickets = this.ticketsService.GetAllOpenTickets("IT Department");
-            viewModel.AssigneeList = this.ticketsService.GetAllProjectEmployees("IT Department");
+            if (id <= 0)
+            {
+                return this.NotFound();
+            }
+
+            var viewModel = new AllInOpenTicketsViewModel
+            {
+               OpenTickets = this.ticketsService.GetAllOpenTickets("IT Department", GlobalConstants.ItemsPerPage, id),
+               AssigneeList = this.ticketsService.GetAllProjectEmployees("IT Department"),
+               ItemsPerPage = GlobalConstants.ItemsPerPage,
+               PageNumber = id,
+               ItemsCount = this.ticketsService.GetOpenTicketsCount(),
+            };
 
             return this.View(viewModel);
         }
 
         [HttpGet]
-        public IActionResult Closed()
+        public async Task<IActionResult> MyTickets(int id = 1)
         {
-            var viewModel = this.ticketsService.GetClosedTickets("IT Department");
+            if (id <= 0)
+            {
+                return this.NotFound();
+            }
+
+            var user = await this.userManager.GetUserAsync(this.User);
+
+            var viewModel = new MyTickesAllViiewModel
+            {
+                ItemsPerPage = GlobalConstants.ItemsPerPage,
+                PageNumber = id,
+                MyTickets = this.ticketsService.GetUserTickets(user.Id, GlobalConstants.ItemsPerPage, id),
+                ItemsCount = this.ticketsService.GetUserTicketsCount(user.Id),
+            };
+
+            return this.View(viewModel);
+        }
+
+        [HttpGet]
+        public IActionResult Closed(int id = 1)
+        {
+            if (id <= 0)
+            {
+                return this.NotFound();
+            }
+
+            var viewModel = new ListClosedTicketsViewModel
+            {
+                ListClosedTickets = this.ticketsService.GetClosedTickets("IT Department", GlobalConstants.ItemsPerPage, id),
+                ItemsPerPage = GlobalConstants.ItemsPerPage,
+                PageNumber = id,
+                ItemsCount = this.ticketsService.GetClosedTicketsCount(),
+            };
 
             return this.View(viewModel);
         }
@@ -117,7 +160,7 @@
         [HttpPost]
         public async Task<IActionResult> Resolve(int ticketId)
         {
-            await this.ticketsService.ResolveTicket(ticketId);
+            await this.ticketsService.ResolveTicketAsync(ticketId);
 
             return this.Redirect("All");
         }

@@ -469,6 +469,38 @@ namespace ZENBEAR.Data.Migrations
                     b.ToTable("Projects");
                 });
 
+            modelBuilder.Entity("ZENBEAR.Data.Models.Rate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("TicketId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<byte>("Value")
+                        .HasColumnType("tinyint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TicketId")
+                        .IsUnique();
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Rates");
+                });
+
             modelBuilder.Entity("ZENBEAR.Data.Models.Setting", b =>
                 {
                     b.Property<int>("Id")
@@ -537,6 +569,9 @@ namespace ZENBEAR.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RateId")
                         .HasColumnType("int");
 
                     b.Property<string>("ReporterId")
@@ -705,6 +740,23 @@ namespace ZENBEAR.Data.Migrations
                     b.Navigation("Department");
                 });
 
+            modelBuilder.Entity("ZENBEAR.Data.Models.Rate", b =>
+                {
+                    b.HasOne("ZENBEAR.Data.Models.Ticket", "Ticket")
+                        .WithOne("Rate")
+                        .HasForeignKey("ZENBEAR.Data.Models.Rate", "TicketId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ZENBEAR.Data.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Ticket");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("ZENBEAR.Data.Models.Ticket", b =>
                 {
                     b.HasOne("ZENBEAR.Data.Models.ApplicationUser", null)
@@ -788,6 +840,8 @@ namespace ZENBEAR.Data.Migrations
                     b.Navigation("Attachments");
 
                     b.Navigation("Comments");
+
+                    b.Navigation("Rate");
                 });
 #pragma warning restore 612, 618
         }

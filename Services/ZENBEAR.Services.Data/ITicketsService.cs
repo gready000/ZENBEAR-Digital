@@ -11,9 +11,11 @@
     {
         Task CreateAsync(CreateTicketinputModel input, string userId, string imagePath);
 
-        IEnumerable<AllOpenTicketsViewModel> GetAllOpenTickets(string departmentName);
+        IEnumerable<AllOpenTicketsViewModel> GetAllOpenTickets(string departmentName, int itemsPerPage, int page);
 
-        IEnumerable<ClosedTicketsViewModel> GetClosedTickets(string departmentName);
+        IEnumerable<ClosedTicketsViewModel> GetClosedTickets(string departmentName, int itemsPerPage, int page);
+
+        IEnumerable<MyTicketsViewModel> GetUserTickets(string userId, int page, int itemsPerPage);
 
         IEnumerable<SelectListItem> GetAllProjectEmployees(string departmentName);
 
@@ -23,6 +25,12 @@
 
         Task AssigneeUserToTicketAsync(int ticketId, string userId);
 
-        Task ResolveTicket(int ticketId);
+        Task ResolveTicketAsync(int ticketId);
+
+        int GetUserTicketsCount(string userId);
+
+        int GetClosedTicketsCount();
+
+        int GetOpenTicketsCount();
     }
 }

@@ -32,6 +32,7 @@
     <None Remove="Users\" />
     <None Remove="Paging\" />
     <None Remove="Tickets\" />
+    <None Remove="Rates\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Departments\" />
@@ -40,6 +41,7 @@
     <Folder Include="Users\" />
     <Folder Include="Paging\" />
     <Folder Include="Tickets\" />
+    <Folder Include="Rates\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Users\EditUserInputModel.cs">

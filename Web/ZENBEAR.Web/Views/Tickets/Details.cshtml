@@ -191,9 +191,12 @@
             <button id="backBtn" class="buttonLeft" onclick="history.back(-1)">&#8592; Back</button>
             <p id="element">&#9889; @Model.Ticket.IssueType Issue</p>
             <p id="element">&#9806; TI-@Model.Ticket.Id</p>
-            <form id="resolve" method="post" asp-action="Resolve" asp-route-ticketId="@Model.Ticket.Id">
-                <button type="submit" class="btn btn-success">Resolve Issue</button>
-            </form>
+            @if (Model.Ticket.Status == "Open")
+            {
+                <form id="resolve" method="post" asp-action="Resolve" asp-route-ticketId="@Model.Ticket.Id">
+                    <button type="submit" class="btn btn-success">Resolve Issue</button>
+                </form>
+            }
         </div>
         <hr />
         <div id="sides">

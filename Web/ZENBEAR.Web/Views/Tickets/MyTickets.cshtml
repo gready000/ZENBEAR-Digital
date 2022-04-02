@@ -1,0 +1,178 @@
+﻿@model ZENBEAR.Web.ViewModels.Tickets.MyTickesAllViiewModel
+
+<script src="https://kit.fontawesome.com/a199d1b466.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="~/css/allticketstable.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/rate1.css" asp-append-version="true" />
+
+
+@{
+    this.ViewData["Title"] = "My Tickets";
+}
+<style>
+    body {
+        background-image: linear-gradient(135deg, tomato, rebeccapurple);
+    }
+
+    #li {
+        cursor: pointer;
+    }
+
+    .element5 {
+        display: inline-block;
+        margin-left: 40px;
+        margin-right: 10px;
+        margin-top: 15px
+    }
+
+    #element2 {
+        display: inline-block;
+        margin-top: 10px;
+    }
+</style>
+
+
+<div class="row">
+    <div id="admin" class="col s12">
+        <div class="card material-table">
+            <div class="table-header">
+                <span class="table-title">@this.ViewData["Title"]</span>
+            </div>
+            <table id="datatable">
+                <thead>
+                    <tr>
+                        <th>Issue Type</th>
+                        <th>Key</th>
+                        <th>Summary</th>
+                        <th>Create On</th>
+                        <th>Assignee</th>
+                        <th style="padding-left: 11px;">Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var ticket in Model.MyTickets)
+                    {
+                        <tr id="li">
+                            <td style="width: 5%; ">@ticket.IssueType</td>
+                            <td style="width: 5%; ">TI-@ticket.Id</td>
+                            <td style="max-width: 150px; width: 30%" onclick="location.href = '@(Url.Action("Details", "Tickets", new { Id = ticket.Id }))'">@ticket.Summary</td>
+                            <td style="width: 12%">@ticket.CreateOn</td>
+                            <td style="width: 22%">@ticket.Assignee</td>
+                            <td style="width: 14%">
+                                @if (ticket.Status == "Closed")
+                                {
+                                    if (ticket.Rate != null)
+                                    {
+                                        <div class="rating">
+                                            <div class="stars">
+                                                @for (int i = 5; i >= 1; i--)
+                                                {
+                                                    if (@i <= ticket.Rate)
+                                                    {
+                                                        <input type="radio" class="starfill" name="rating" />
+                                                    }
+                                                    else
+                                                    {
+                                                        <input type="radio" class="star" name="rating" />
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="rating">
+                                            <div class="stars">
+                                                <input onclick="postToController(@ticket.Id);" type="radio" class="star" name="rating" value="5" />
+                                                <input onclick="postToController(@ticket.Id);" type="radio" class="star" name="rating" value="4" />
+                                                <input onclick="postToController(@ticket.Id);" type="radio" class="star" name="rating" value="3" />
+                                                <input onclick="postToController(@ticket.Id);" type="radio" class="star" name="rating" value="2" />
+                                                <input onclick="postToController(@ticket.Id);" type="radio" class="star" name="rating" value="1" />
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    <div style="padding-left: 13px; color: yellowgreen">@ticket.Status</div>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <nav aria-label="..." style="margin-left: 10px; margin-top: 5px;">
+                <ul class="pagination">
+                    <li class="page-item @if (!Model.HasPreviousPage) { <text>disabled</text> }">
+                        <a class="page-link" asp-action="MyTickets" asp-route-id="@Model.PreviousPageNumber">Previous</a>
+                    </li>
+                    @for (int i = Model.PageNumber - 2; i < Model.PageNumber; i++)
+                    {
+                        if (i > 0)
+                        {
+                            <li class="page-item"><a class="page-link" asp-action="MyTickets" asp-route-id="@i">@i</a></li>
+                        }
+                    }
+                    <li class="page-item active" aria-current="page">
+                        <span class="page-link">
+                            @Model.PageNumber
+                            <span class="sr-only">(current)</span>
+                        </span>
+                    </li>
+                    @for (int i = Model.PageNumber + 1; i <= Model.PageNumber + 2; i++)
+                    {
+                        if (i <= Model.PagesCount)
+                        {
+                            <li class="page-item"><a class="page-link" asp-action="MyTickets" asp-route-id="@i">@i</a></li>
+                        }
+                    }
+                    <li class="page-item @if (!Model.HasNextPage) { <text>disabled</text> }">
+                        <a class="page-link" asp-action="MyTickets" asp-route-id="@Model.NextPageNumber">Next</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</div>
+
+<form method="post" id="antiForgeryForm"></form>
+<script>function postToController(ticketId) {
+        var ratingValue = 0;
+        for (i = 0; i < document.getElementsByName('rating').length; i++) {
+            if (document.getElementsByName('rating')[i].checked == true) {
+                ratingValue = document.getElementsByName('rating')[i].value;
+                console.log(ratingValue);
+                break;
+            }
+        }
+
+        var antiForgeryToken = $('#antiForgeryForm input[name=__RequestVerificationToken]').val();
+        var data = { ticketId: ticketId, value: ratingValue };
+
+        $.ajax({
+            type: "POST",
+            url: "/api/Rates",
+            data: JSON.stringify(data),
+            headers: {
+                'X-CSRF-TOKEN': antiForgeryToken
+            },
+            success: function (data) {
+                console.log(data.value);
+            },
+            contentType: 'application/json',
+        });
+
+    }</script>
+
+@*<script>function rate() {
+for (i = 0; i < document.getElementsByName('rating').length; i++) {
+
+    if (@ticket.Rate == document.getElementsByName('rating')[i].value) {
+        document.getElementsByName('rating')[i].checked == true;
+        console.log(document.getElementsByName('rating')[i]);
+        break;
+    }
+}
+}</script>*@

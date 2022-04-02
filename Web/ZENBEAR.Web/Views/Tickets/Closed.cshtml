@@ -1,8 +1,9 @@
-﻿@model IEnumerable<ZENBEAR.Web.ViewModels.Tickets.ClosedTicketsViewModel>
+﻿@model ZENBEAR.Web.ViewModels.Tickets.ListClosedTicketsViewModel
 
 <script src="https://kit.fontawesome.com/a199d1b466.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="~/css/allticketstable.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/rate.css" asp-append-version="true" />
 
 @{
     this.ViewData["Title"] = "Closed Tickets";
@@ -23,7 +24,7 @@
         <div class="card material-table">
             <div class="table-header">
                 <span class="table-title">@this.ViewData["Title"]</span>
-                <button class="btn btn-link" type="submit">Open Tickets</button>
+                <button class="btn btn-link" type="button" onclick="location.href='@Url.Action("All", "Tickets")'">Open Tickets</button>
                 <div class="actions">
                     <form class="example" action="">
                         <input type="text" placeholder="Search.." name="search">
@@ -40,22 +41,61 @@
                         <th>Reporter</th>
                         <th onclick="sortTable(1)">Create On</th>
                         <th>Assignee</th>
+                        <th>Rating</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var ticket in Model)
+                    @foreach (var ticket in Model.ListClosedTickets)
                     {
                         <tr id="li" onclick="location.href = '@(Url.Action("Details", "Tickets", new { Id = ticket.Id }))'">
-                            <td style="width: 9%">@ticket.IssueType</td>
-                            <td style="width: 8%">TI-@ticket.Id</td>
+                            <td style="width: 5%; ">@ticket.IssueType</td>
+                            <td style="width: 5%; ">TI-@ticket.Id</td>
                             <td style="max-width: 150px; width: 30%">@ticket.Summary</td>
-                            <td style="max-width: 50px;">@ticket.Reporter</td>
-                            <td style="width: 18%">@ticket.CreateOn</td>
-                            <td style="width: 12%">@ticket.Assignee</td>
+                            <td style="width: 22%">@ticket.Reporter</td>
+                            <td style="width: 12%">@ticket.CreateOn</td>
+                            <td style="width: 22%">@ticket.Assignee</td>
+                            <td style="width: 10%">
+                                <div class="stars-outer">
+                                    <div class="stars-inner"></div>
+                                </div>
+                                <span class="number-rating"></span>
+                            </td>
                         </tr>
                     }
                 </tbody>
             </table>
+
+            <nav aria-label="..." style="margin-left: 10px; margin-top: 5px;">
+                <ul class="pagination">
+                    <li class="page-item @if (!Model.HasPreviousPage) { <text>disabled</text> }">
+                        <a class="page-link" asp-action="Closed" asp-route-id="@Model.PreviousPageNumber">Previous</a>
+                    </li>
+                    @for (int i = Model.PageNumber - 2; i < Model.PageNumber; i++)
+                    {
+                        if (i > 0)
+                        {
+                            <li class="page-item"><a class="page-link" asp-action="Closed" asp-route-id="@i">@i</a></li>
+                        }
+                    }
+                    <li class="page-item active" aria-current="page">
+                        <span class="page-link">
+                            @Model.PageNumber
+                            <span class="sr-only">(current)</span>
+                        </span>
+                    </li>
+                    @for (int i = Model.PageNumber + 1; i <= Model.PageNumber + 2; i++)
+                    {
+                        if (i <= Model.PagesCount)
+                        {
+                            <li class="page-item"><a class="page-link" asp-action="Closed" asp-route-id="@i">@i</a></li>
+                        }
+                    }
+                    <li class="page-item @if (!Model.HasNextPage) { <text>disabled</text> }">
+                        <a class="page-link" asp-action="Closed" asp-route-id="@Model.NextPageNumber">Next</a>
+                    </li>
+                </ul>
+            </nav>
+
         </div>
     </div>
 </div>

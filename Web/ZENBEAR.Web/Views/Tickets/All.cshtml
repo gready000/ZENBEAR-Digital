@@ -23,7 +23,7 @@
             <div class="card material-table">
                 <div class="table-header">
                     <span class="table-title">@this.ViewData["Title"]</span>
-                    <button class="btn btn-link" type="button" asp-action="Closed">Closed Tickets</button>
+                    <button class="btn btn-link" type="button" onclick="location.href='@Url.Action("Closed", "Tickets")'">Closed Tickets</button>
                     <div class="actions">
                         <form class="example" action="">
                             <input type="text" placeholder="Search.." name="search">
@@ -56,6 +56,7 @@
                         }
                     </tbody>
                 </table>
+                <partial name="_PagingPartial" model="@Model" />
             </div>
         </div>
     </div>

@@ -2,6 +2,7 @@
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/bin/Debug/net5.0/ApplicationRole.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/bin/Debug/net5.0/ApplicationUser.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/bin/Debug/net5.0/Users/EditUserInputModel.cs
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/bin/Debug/net5.0/wwwroot/attachments/tickets/9f724e7b-4920-4c05-8276-a618c0f58eec.srt
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/bin/Debug/net5.0/appsettings.Development.json
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/bin/Debug/net5.0/appsettings.json
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/bin/Debug/net5.0/bundleconfig.json
@@ -479,7 +480,10 @@
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Shared/_LoginPartial.cshtml.g.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Shared/_PagingPartial.cshtml.g.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Tickets/All.cshtml.g.cs
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Tickets/Closed.cshtml.g.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Tickets/Create.cshtml.g.cs
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Tickets/Details.cshtml.g.cs
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Tickets/MyTickets.cshtml.g.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Users/All.cshtml.g.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Users/Create.cshtml.g.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Users/Edit.cshtml.g.cs
@@ -493,6 +497,3 @@
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/ref/ZENBEAR.Web.dll
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/ZENBEAR.Web.pdb
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/ZENBEAR.Web.genruntimeconfig.cache
-/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/bin/Debug/net5.0/wwwroot/attachments/tickets/9f724e7b-4920-4c05-8276-a618c0f58eec.srt
-/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Tickets/Details.cshtml.g.cs
-/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Tickets/Closed.cshtml.g.cs

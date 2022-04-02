@@ -34,6 +34,8 @@
         public const int JobNameMinLength = 5;
         public const int JobNameMaxLength = 30;
 
+        public const int ItemsPerPage = 12;
+
         public const string ErrorLength = "The {0} must be at least {2} and at max {1} characters long.";
         public const string PassNotMatch = "The password and confirmation password do not match.";
         public const string InvalidLogin = "Invalid Username or Password";
