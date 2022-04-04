@@ -10,5 +10,7 @@
         public IEnumerable<AllOpenTicketsViewModel> OpenTickets { get; set; }
 
         public IEnumerable<SelectListItem> AssigneeList { get; set; }
+
+        public int Searched { get; set; }
     }
 }

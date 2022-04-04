@@ -565,6 +565,9 @@ namespace ZENBEAR.Data.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Preority")
                         .HasColumnType("int");
 

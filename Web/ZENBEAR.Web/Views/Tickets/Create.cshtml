@@ -1,5 +1,6 @@
 ﻿@model ZENBEAR.Web.ViewModels.Tickets.CreateTicketinputModel
 @using ZENBEAR.Data.Models.Enums
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
 <link rel="stylesheet" href="~/css/logoImport.css" asp-append-version="true" />
@@ -13,33 +14,33 @@
         <form method="post" id="createTicket" enctype="multipart/form-data">
             <h3 class="text-center">@this.ViewData["Title"]</h3>
             <hr />
-            <div id="childDiv" class="text-right" style="position:relative; left:-100px; top:190px;" >
+            <div id="childDiv" class="text-right" style="position:relative; left:-100px; top:190px;">
                 <img src="https://static1.squarespace.com/static/5ef66d7f1de9065ae3cd8f2e/t/60b776e8297d2d2c20e289d5/1622648836361/" style="width: 185px;" alt="logo">
                 <h4 class="mt-1 mb-5 pb-1"></h4>
             </div>
-            <div >
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <div class="form-group">
-                        <label asp-for="Project">Project*</label>
-                        <select id="Project" asp-for="Project" class="form-control">
-                            <option value="" selected="selected">Select Project</option>
-                        </select>
-                        <span asp-validation-for="Project" class="text-danger"></span>
+            <div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label asp-for="Project">Project*</label>
+                            <select id="Project" asp-for="Project" class="form-control">
+                                <option value="" selected="selected">Select Project</option>
+                            </select>
+                            <span asp-validation-for="Project" class="text-danger"></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <div class="form-group">
-                        <label asp-for="Issue">Issue Type*</label>
-                        <select id="Issue" asp-for="Issue" class="form-control">
-                            <option value="" selected="selected">Select Issue</option>
-                        </select>
-                        <span asp-validation-for="Issue" class="text-danger"></span>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label asp-for="Issue">Issue Type*</label>
+                            <select id="Issue" asp-for="Issue" class="form-control">
+                                <option value="" selected="selected">Select Issue</option>
+                            </select>
+                            <span asp-validation-for="Issue" class="text-danger"></span>
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>
 
             <div class="row">
@@ -57,6 +58,15 @@
                         <label asp-for="Description">Description*</label>
                         <textarea asp-for="Description" class="form-control" rows="6" placeholder="Description..."></textarea>
                         <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label asp-for="PhoneNumber">Phone Number</label>
+                        <input asp-for="PhoneNumber" type="text" class="form-control" placeholder="Phone Number.." />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                     </div>
                 </div>
             </div>
@@ -88,7 +98,7 @@
         </form>
     </div>
 </div>
-
+<hr/>
 
 <script type="text/javascript">
     var typeObject = @Html.Raw(Model.ListItems);

@@ -27,6 +27,8 @@
         [MinLength(GlobalConstants.DescriptionMaxLength)]
         public string Description { get; set; }
 
+        public string PhoneNumber { get; set; }
+
         public int RateId { get; set; }
 
         public Rate Rate { get; set; }

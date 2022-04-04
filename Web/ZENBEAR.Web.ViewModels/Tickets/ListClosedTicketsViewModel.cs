@@ -7,5 +7,7 @@
     public class ListClosedTicketsViewModel : PagingViewModel
     {
         public IEnumerable<ClosedTicketsViewModel> ListClosedTickets { get; set; }
+
+        public int Searched { get; set; }
     }
 }

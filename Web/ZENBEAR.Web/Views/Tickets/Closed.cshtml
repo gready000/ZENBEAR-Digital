@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="~/css/allticketstable.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/rate.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/rate.css" asp-append-version="true" />
 
 @{
     this.ViewData["Title"] = "Closed Tickets";
@@ -27,7 +28,7 @@
                 <button class="btn btn-link" type="button" onclick="location.href='@Url.Action("All", "Tickets")'">Open Tickets</button>
                 <div class="actions">
                     <form class="example" action="">
-                        <input type="text" placeholder="Search.." name="search">
+                        <input asp-for="@Model.Searched" type="text" placeholder="Search.." name="search">
                         <button type="submit"><i class="fa fa-search" style="font-size:18px;color:coral;"></i></button>
                     </form>
                 </div>
@@ -55,10 +56,36 @@
                             <td style="width: 12%">@ticket.CreateOn</td>
                             <td style="width: 22%">@ticket.Assignee</td>
                             <td style="width: 10%">
-                                <div class="stars-outer">
-                                    <div class="stars-inner"></div>
+                                @if (ticket.Rate != null)
+                                {
+                                <div class="rating">
+                                    <div class="stars">
+                                        @for (int i = 5; i >= 1; i--)
+                                        {
+                                            @if (@i <= ticket.Rate)
+                                            {
+                                                <input type="radio" class="starfill" name="rating" disabled />
+                                            }
+                                            else
+                                            {
+                                                <input type="radio" class="star" name="rating" disabled/>
+                                            }
+                                        }
+                                    </div>
                                 </div>
-                                <span class="number-rating"></span>
+                                }
+                                else
+                                {
+                                <div class="rating">
+                                    <div class="stars">
+                                        <input type="radio" class="star" name="rating" value="5" disabled/>
+                                        <input type="radio" class="star" name="rating" value="4" disabled/>
+                                        <input type="radio" class="star" name="rating" value="3" disabled/>
+                                        <input type="radio" class="star" name="rating" value="2" disabled/>
+                                        <input type="radio" class="star" name="rating" value="1" disabled/>
+                                    </div>
+                                </div>
+                                }
                             </td>
                         </tr>
                     }

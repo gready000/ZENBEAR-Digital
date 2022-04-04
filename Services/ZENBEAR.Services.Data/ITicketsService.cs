@@ -32,5 +32,7 @@
         int GetClosedTicketsCount();
 
         int GetOpenTicketsCount();
+
+        SearchedTicketViewModel GetSearchedTicket(int id);
     }
 }

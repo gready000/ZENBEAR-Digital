@@ -1,4 +1,5 @@
 ﻿@model ZENBEAR.Web.ViewModels.Tickets.AllTicketDetailsViewModel
+@using ZENBEAR.Data.Models.Enums
 
 <head>
     <script src="https://kit.fontawesome.com/a199d1b466.js" crossorigin="anonymous"></script>
@@ -204,7 +205,7 @@
                 <i class="fa-light fa-ballot-check"></i>
                 <h4 id="element2"><i class="fa-solid fa-envelope-open-text"></i> @Model.Ticket.Summary</h4>
                 <p id="element1">Priority</p>
-                <p id="element1">&#10071;@Model.Ticket.Priority</p>
+                <p id="element1" style="color:@(Model.Ticket.Priority == Priority.Urgent.ToString() ? "red" : "green");" >&#10071;@Model.Ticket.Priority</p>
                 <div id="element2">
                     <p>Attachments</p>
                     @if (Model.Ticket.Attachments != null)
@@ -225,7 +226,7 @@
             </div>
 
             <div id="right">
-                <h4 id="details">Details</h4>
+                <h4 id="details">&#8505;&#65039; Details</h4>
                 <hr />
 
                 <form id="assignee" method="post" asp-action="Assignee" asp-route-ticketId="@Model.Ticket.Id" asp-route-assigneeId="@Model.AssigneeId">
@@ -251,7 +252,7 @@
                         </tr>
                         <tr>
                             <td class="text-left">Telephone</td>
-                            <td class="text-left">No</td>
+                            <td class="text-left">@Model.Ticket.PhoneNumber</td>
                         <tr>
                             <td class="text-left">Email</td>
                             <td class="text-left">@Model.Ticket.Reporter.Email</td>

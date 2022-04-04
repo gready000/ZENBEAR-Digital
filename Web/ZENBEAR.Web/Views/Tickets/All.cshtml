@@ -25,9 +25,9 @@
                     <span class="table-title">@this.ViewData["Title"]</span>
                     <button class="btn btn-link" type="button" onclick="location.href='@Url.Action("Closed", "Tickets")'">Closed Tickets</button>
                     <div class="actions">
-                        <form class="example" action="">
-                            <input type="text" placeholder="Search.." name="search">
-                            <button type="submit"><i class="fa fa-search" style="font-size:18px;color:coral;"></i></button>
+                        <form class="example" >
+                            <input asp-for="@Model.Searched" type="text" placeholder="Search.." name="search">
+                            <button asp-controller="Tickets" asp-action="Search" type="submit"><i class="fa fa-search" style="font-size:18px;color:coral;"></i></button>
                         </form>
                     </div>
                 </div>

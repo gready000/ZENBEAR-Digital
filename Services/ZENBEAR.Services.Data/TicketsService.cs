@@ -134,6 +134,7 @@
                         Reporter = x.ReporterId,
                         Assignee = x.AssigneeId,
                         CreateOn = x.CreatedOn.ToString("dd/MM/yyyy"),
+                        Rate = x.Rate.Value,
                     })
                     .ToList();
 
@@ -175,6 +176,36 @@
             return this.ticketsRepo.AllAsNoTracking().FirstOrDefault(x => x.Id == id);
         }
 
+        public SearchedTicketViewModel GetSearchedTicket(int id)
+        {
+            var ticket = this.ticketsRepo.AllAsNoTracking()
+                .Where(x => x.Id == id)
+                .Select(x => new SearchedTicketViewModel
+                {
+                    Id = x.Id,
+                    IssueType = x.Issue.Name,
+                    Summary = x.Summary,
+                    Reporter = x.ReporterId,
+                    Assignee = x.AssigneeId,
+                    CreateOn = x.CreatedOn.ToString("dd/MM/yyyy"),
+                    Rate = x.Rate.Value,
+                })
+                .FirstOrDefault();
+
+            if (ticket.Assignee != null)
+            {
+                ticket.Assignee = this.usersService.GetEmployeeFullName(ticket.Assignee);
+            }
+            else
+            {
+                ticket.Assignee = "Unassigned";
+            }
+
+            ticket.Reporter = this.usersService.GetEmployeeFullName(ticket.Reporter);
+
+            return ticket;
+        }
+
         public TicketsDetailsViewModel GetTicketDetailById(int id)
         {
             var ticket = this.ticketsRepo
@@ -199,12 +230,17 @@
                         AddByUser = x.AddedByUser.FirstName + " " + x.AddedByUser.LastName,
                     }).ToList(),
                     Attachments = x.Attachments,
+                    PhoneNumber = x.PhoneNumber,
                 })
                 .FirstOrDefault();
 
             if (ticket.Assignee != null)
             {
                 ticket.Assignee = this.usersService.GetEmployeeFullName(ticket.Assignee);
+            }
+            else
+            {
+                ticket.Assignee = "Unassigned";
             }
 
             ticket.Reporter = this.usersService.GetReporterById(ticket.ReporterId);
@@ -267,6 +303,7 @@
                 Preority = input.Priority,
                 ReporterId = userId,
                 Status = Status.Open,
+                PhoneNumber = input.PhoneNumber,
             };
 
             if (input.Attachments != null)

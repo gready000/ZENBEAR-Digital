@@ -27,6 +27,8 @@
 
         public string Status { get; set; }
 
+        public string PhoneNumber { get; set; }
+
         public IEnumerable<string> Files { get; set; }
 
         public IEnumerable<Attachment> Attachments { get; set; }

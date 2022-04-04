@@ -497,3 +497,4 @@
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/ref/ZENBEAR.Web.dll
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/ZENBEAR.Web.pdb
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/ZENBEAR.Web.genruntimeconfig.cache
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/bin/Debug/net5.0/wwwroot/Logo/backgraund.jpg

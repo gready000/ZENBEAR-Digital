@@ -97,11 +97,43 @@
         }
 
         [HttpGet]
+        public IActionResult Search(int search)
+        {
+            if (search <= 0)
+            {
+                return this.NotFound();
+            }
+
+            var viewModel = this.ticketsService.GetSearchedTicket(search);
+
+            if (viewModel.Rate != null)
+            {
+                return this.View("All", viewModel);
+            }
+
+            return this.View("Closed", viewModel);
+        }
+
+        [HttpGet]
         public IActionResult Details(int id)
         {
             var viewModel = new AllTicketDetailsViewModel();
             viewModel.Ticket = this.ticketsService.GetTicketDetailById(id);
             viewModel.ListItems = this.ticketsService.GetAllProjectEmployees("IT Department");
+
+            if (viewModel == null)
+            {
+                return this.BadRequest();
+            }
+
+            return this.View(viewModel);
+        }
+
+        [HttpGet]
+        public IActionResult MyTicketDetails(int id)
+        {
+            var viewModel = new MyTicketDetailsViewModel();
+            viewModel.Ticket = this.ticketsService.GetTicketDetailById(id);
 
             if (viewModel == null)
             {

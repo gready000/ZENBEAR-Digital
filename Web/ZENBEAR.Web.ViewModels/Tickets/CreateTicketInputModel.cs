@@ -21,6 +21,8 @@
         [MinLength(GlobalConstants.DescriptionMaxLength)]
         public string Description { get; set; }
 
+        public string PhoneNumber { get; set; }
+
         [Required]
         public Priority Priority { get; set; }
 

@@ -13,5 +13,7 @@
         public string Assignee { get; set; }
 
         public string CreateOn { get; set; }
+
+        public byte? Rate { get; set; }
     }
 }
