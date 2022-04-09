@@ -59,6 +59,8 @@
     <None Remove="System.Security.Principal.Windows" />
     <None Remove="Mono.HttpUtility" />
     <None Remove="Views\Tickets\" />
+    <None Remove="Views\Projects\" />
+    <None Remove="Views\Issues\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Roles\" />
@@ -66,6 +68,8 @@
     <Folder Include="Views\Jobtitles\" />
     <Folder Include="Views\Users\" />
     <Folder Include="Views\Tickets\" />
+    <Folder Include="Views\Projects\" />
+    <Folder Include="Views\Issues\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Tickets\MyTicketDetails.cshtml" />

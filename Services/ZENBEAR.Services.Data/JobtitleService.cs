@@ -1,6 +1,5 @@
 ﻿namespace ZENBEAR.Services.Data
 {
-    using System;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -19,9 +18,11 @@
 
         public async Task CreateAsync(CreateJobtitleInputModel input)
         {
+            var departmentId = int.Parse(input.Department);
+
             var existJobtitle = this.jobtitleRepo
                 .AllWithDeleted()
-                .FirstOrDefault(x => x.Name == input.Name && x.Department.Id == input.DepartmentId);
+                .FirstOrDefault(x => x.Name == input.Name && x.Department.Id == departmentId);
 
             if (existJobtitle != null)
             {
@@ -32,7 +33,7 @@
                 var jobtitle = new JobTitle()
                 {
                     Name = input.Name,
-                    DepartmentId = input.DepartmentId,
+                    DepartmentId = departmentId,
                 };
 
                 await this.jobtitleRepo.AddAsync(jobtitle);

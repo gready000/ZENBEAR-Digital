@@ -29,8 +29,6 @@
         [HttpPost]
         public async Task<IActionResult> CreateAsync(CreateJobtitleInputModel input)
         {
-            input.DepartmentId = this.depService.GetIdByName(input.DepartmentName);
-
             if (!this.ModelState.IsValid)
             {
                 return this.View(input);
@@ -40,7 +38,7 @@
 
             this.TempData["Message"] = $"Jobtitle {input.Name} added successfully.";
 
-            return this.RedirectToAction("Index", "Home");
+            return this.RedirectToAction("All", "Departments");
         }
 
         [HttpGet]

@@ -15,39 +15,45 @@
     {
         private readonly IProjectsService projectsService;
         private readonly ITicketsService ticketsService;
+        private readonly IDepartmentsService departmentsService;
         private readonly ICommentsService commentsService;
-        private readonly IUsersService usersService;
+        private readonly IRoleService rolesService;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IWebHostEnvironment environment;
 
         public TicketsController(
             IProjectsService projectsService,
             ITicketsService ticketsService,
+            IDepartmentsService departmentsService,
             ICommentsService commentsService,
-            IUsersService usersService,
+            IRoleService rolesService,
             UserManager<ApplicationUser> userManager,
             IWebHostEnvironment environment)
         {
             this.projectsService = projectsService;
             this.ticketsService = ticketsService;
+            this.departmentsService = departmentsService;
             this.userManager = userManager;
             this.environment = environment;
             this.commentsService = commentsService;
-            this.usersService = usersService;
+            this.rolesService = rolesService;
         }
 
         [HttpGet]
-        public IActionResult All(int id = 1)
+        //[Authorize(Roles = "ITSupport, InfoSec")]
+        public async Task<IActionResult> OpenAsync(int id = 1)
         {
             if (id <= 0)
             {
                 return this.NotFound();
             }
 
-            var viewModel = new AllInOpenTicketsViewModel
+            var user = await this.userManager.GetUserAsync(this.User);
+            var project = this.projectsService.GetProjectByDepartmentId(user.DepartmentId);
+
+            var viewModel = new ListOpenTicketsViewModel
             {
-               OpenTickets = this.ticketsService.GetAllOpenTickets("IT Department", GlobalConstants.ItemsPerPage, id),
-               AssigneeList = this.ticketsService.GetAllProjectEmployees("IT Department"),
+               OpenTickets = this.ticketsService.GetOpenTickets(project, GlobalConstants.ItemsPerPage, id),
                ItemsPerPage = GlobalConstants.ItemsPerPage,
                PageNumber = id,
                ItemsCount = this.ticketsService.GetOpenTicketsCount(),
@@ -66,7 +72,7 @@
 
             var user = await this.userManager.GetUserAsync(this.User);
 
-            var viewModel = new MyTickesAllViiewModel
+            var viewModel = new AllMyTicketsViewModel
             {
                 ItemsPerPage = GlobalConstants.ItemsPerPage,
                 PageNumber = id,
@@ -78,16 +84,19 @@
         }
 
         [HttpGet]
-        public IActionResult Closed(int id = 1)
+        public async Task<IActionResult> ClosedAsync(int id = 1)
         {
             if (id <= 0)
             {
                 return this.NotFound();
             }
 
+            var user = await this.userManager.GetUserAsync(this.User);
+            var project = this.projectsService.GetProjectByDepartmentId(user.DepartmentId);
+
             var viewModel = new ListClosedTicketsViewModel
             {
-                ListClosedTickets = this.ticketsService.GetClosedTickets("IT Department", GlobalConstants.ItemsPerPage, id),
+                ListClosedTickets = this.ticketsService.GetClosedTickets(project, GlobalConstants.ItemsPerPage, id),
                 ItemsPerPage = GlobalConstants.ItemsPerPage,
                 PageNumber = id,
                 ItemsCount = this.ticketsService.GetClosedTicketsCount(),
@@ -97,29 +106,32 @@
         }
 
         [HttpGet]
-        public IActionResult Search(int search)
+        public IActionResult Search(string search)
         {
-            if (search <= 0)
+            bool parsed = int.TryParse(search, out int id);
+            var viewModel = new SearchedTicketViewModel();
+
+            if (parsed)
             {
-                return this.NotFound();
+                viewModel = this.ticketsService.GetSearchedTicket(id);
+            }
+            else
+            {
+                viewModel = null;
             }
 
-            var viewModel = this.ticketsService.GetSearchedTicket(search);
-
-            if (viewModel.Rate != null)
-            {
-                return this.View("All", viewModel);
-            }
-
-            return this.View("Closed", viewModel);
+            return this.View(viewModel);
         }
 
         [HttpGet]
-        public IActionResult Details(int id)
+        public async Task<IActionResult> DetailsAsync(int id)
         {
+            var user = await this.userManager.GetUserAsync(this.User);
+            var department = this.departmentsService.GetDepartmentById(user.DepartmentId);
+
             var viewModel = new AllTicketDetailsViewModel();
             viewModel.Ticket = this.ticketsService.GetTicketDetailById(id);
-            viewModel.ListItems = this.ticketsService.GetAllProjectEmployees("IT Department");
+            viewModel.ListItems = this.ticketsService.GetAllProjectEmployees(department.Name);
 
             if (viewModel == null)
             {
@@ -130,7 +142,7 @@
         }
 
         [HttpGet]
-        public IActionResult MyTicketDetails(int id)
+        public IActionResult MyTicketsDetails(int id)
         {
             var viewModel = new MyTicketDetailsViewModel();
             viewModel.Ticket = this.ticketsService.GetTicketDetailById(id);
@@ -141,15 +153,6 @@
             }
 
             return this.View(viewModel);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Comment(string content, int ticketId)
-        {
-            var user = await this.userManager.GetUserAsync(this.User);
-            await this.commentsService.CreateAsync(content, user.Id, ticketId);
-
-            return this.RedirectToAction("Details", "Tickets", new { @id = ticketId });
         }
 
         [HttpPost]
@@ -186,7 +189,7 @@
             this.TempData["Message"] = "Your request is successfully send ";
 
             // TODO: Redirect to recipe info page
-            return this.Redirect("All");
+            return this.Redirect("Open");
         }
 
         [HttpPost]
@@ -194,7 +197,7 @@
         {
             await this.ticketsService.ResolveTicketAsync(ticketId);
 
-            return this.Redirect("All");
+            return this.Redirect("Open");
         }
     }
 }

@@ -7,7 +7,7 @@
     public class CreateRoleInputModel
     {
         [Required]
-        [MinLength(GlobalConstants.RoleNameMinLength)]
+        [MinLength(GlobalConstants.RoleNameMinLength, ErrorMessage = GlobalMessages.RoleName)]
         public string Name { get; set; }
     }
 }

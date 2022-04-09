@@ -15,6 +15,10 @@ input[type="submit"] {
 
 }
 
+#li {
+    cursor: pointer;
+}
+
 div.material-table {
     padding: 0;
 }

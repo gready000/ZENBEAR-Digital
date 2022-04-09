@@ -62,5 +62,19 @@
 
             return roles;
         }
+
+        public IEnumerable<string> GetAllRolesByUserId(string id)
+        {
+            var roles = this.roleManager
+                .Roles
+                .Where(x => x.Id == id)
+                .Select(x => new
+                {
+                    x.Name,
+                })
+                .ToList();
+
+            return (IEnumerable<string>)roles;
+        }
     }
 }

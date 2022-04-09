@@ -12,7 +12,7 @@
 
         bool Exist(string email);
 
-        ICollection<AllListUsersViewModel> AllListUsers(SearchUserViewModel input, int id, int itemsPerPage);
+        ICollection<ListUsersViewModel> AllListUsers(SearchUserViewModel input, int id, int itemsPerPage);
 
         EditUserInputModel GetEditUserById(string id);
 

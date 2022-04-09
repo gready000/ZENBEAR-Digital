@@ -46,10 +46,10 @@
 
             this.TempData["Message"] = $"{input.FirstName} {input.LastName} added successfully.";
 
-            return this.RedirectToAction("Index", "Home");
+            return this.RedirectToAction("All");
         }
 
-        public IActionResult All(AllInListViewModel input, int id)
+        public IActionResult All(AllListUsersViewModel input, int id)
         {
             id = Math.Max(1, id);
 
@@ -62,7 +62,7 @@
 
             var users = this.usersService.AllListUsers(input.Search, id, ItemsPerPage);
 
-            var viewModel = new AllInListViewModel
+            var viewModel = new AllListUsersViewModel
             {
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,

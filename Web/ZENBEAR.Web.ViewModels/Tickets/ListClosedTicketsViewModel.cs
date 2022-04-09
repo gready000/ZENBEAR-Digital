@@ -8,6 +8,6 @@
     {
         public IEnumerable<ClosedTicketsViewModel> ListClosedTickets { get; set; }
 
-        public int Searched { get; set; }
+        public string Searched { get; set; }
     }
 }

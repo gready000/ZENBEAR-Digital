@@ -31,7 +31,7 @@
                     </a>
                     <ul class="nav justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="All">All Tickets</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="Open">All Tickets</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="MyTickets">MyTickets</a>
@@ -59,10 +59,12 @@
                                 Add
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Create">New User</a></li>
-                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Roles" asp-action="Create">New Role</a></li>
-                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Departments" asp-action="Create">New Department</a></li>
-                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Jobtitles" asp-action="Create">New Jobtitle</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Create">User</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Roles" asp-action="Create">Role</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Issues" asp-action="Create">Issue</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Projects" asp-action="Create">Project</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Jobtitles" asp-action="Create">Jobtitle</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Departments" asp-action="Create">Department</a></li>
                             </ul>
                         </li>
                     </ul>

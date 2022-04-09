@@ -10,8 +10,8 @@ using ZENBEAR.Data;
 namespace ZENBEAR.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220403230546_Initial")]
-    partial class Initial
+    [Migration("20220406232323_initiial")]
+    partial class initiial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -389,7 +389,7 @@ namespace ZENBEAR.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ProjectId")
+                    b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -718,9 +718,13 @@ namespace ZENBEAR.Data.Migrations
 
             modelBuilder.Entity("ZENBEAR.Data.Models.Issue", b =>
                 {
-                    b.HasOne("ZENBEAR.Data.Models.Project", null)
+                    b.HasOne("ZENBEAR.Data.Models.Project", "Project")
                         .WithMany("IssueTypes")
-                        .HasForeignKey("ProjectId");
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Project");
                 });
 
             modelBuilder.Entity("ZENBEAR.Data.Models.JobTitle", b =>

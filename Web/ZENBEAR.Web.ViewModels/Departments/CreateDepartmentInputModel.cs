@@ -1,13 +1,8 @@
 ﻿namespace ZENBEAR.Web.ViewModels.Departments
 {
-    using System.ComponentModel.DataAnnotations;
+    using ZENBEAR.Web.ViewModels.Administration;
 
-    using ZENBEAR.Common;
-
-    public class CreateDepartmentInputModel
+    public class CreateDepartmentInputModel : CreateBaseInputModel
     {
-        [Required]
-        [MinLength(GlobalConstants.DepartmentMinLength)]
-        public string Name { get; set; }
     }
 }

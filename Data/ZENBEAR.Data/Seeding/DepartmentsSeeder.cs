@@ -15,7 +15,7 @@
                 return;
             }
 
-            await dbContext.Departments.AddAsync(new Department { Name = "IT Department" });
+            await dbContext.Departments.AddAsync(new Department { Name = "IT Service" });
             await dbContext.Departments.AddAsync(new Department { Name = "InfoSec" });
             await dbContext.Departments.AddAsync(new Department { Name = "Development" });
 

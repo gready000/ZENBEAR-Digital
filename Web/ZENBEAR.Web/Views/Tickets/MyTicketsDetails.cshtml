@@ -1,0 +1,121 @@
+﻿@model ZENBEAR.Web.ViewModels.Tickets.MyTicketDetailsViewModel
+@using ZENBEAR.Data.Models.Enums
+
+<head>
+    <script src="https://kit.fontawesome.com/a199d1b466.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/finishbutton.css">
+    <link rel="stylesheet" href="~/css/comments.css">
+    <link rel="stylesheet" href="~/css/myTicketsDetails.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div id="sides">
+        <div class="tab">
+            <button id="backBtn" class="buttonLeft" onclick="history.back(-1)">&#8592; Back</button>
+            <p id="element">&#9889; @Model.Ticket.IssueType Issue</p>
+            <p id="element">&#9806; TI-@Model.Ticket.Id</p>
+        </div>
+        <hr />
+        <div id="sides">
+            <div id="left">
+                <i class="fa-light fa-ballot-check"></i>
+                <h4 id="element2"><i class="fa-solid fa-envelope-open-text"></i> @Model.Ticket.Summary</h4>
+                <p id="element1">Priority</p>
+                <p id="element1" style="color:@(Model.Ticket.Priority == Priority.Urgent.ToString() ? "red" : "green");">&#10071;@Model.Ticket.Priority</p>
+                <div id="element2">
+                    <p>Attachments</p>
+                    @if (Model.Ticket.Attachments != null)
+                    {
+                        @foreach (var item in Model.Ticket.Attachments)
+                        {
+                            var fileName = "/attachments/tickets/" + @item.Id + "." + @item.Extension;
+                            <i class="fa-solid fa-paperclip"></i><a href="@fileName" download>Download </a>
+                        }
+                    }
+                </div>
+                <div id="element2">
+                    <i class="fa-regular fa-keyboard"></i>
+                    <textarea asp-for="Ticket.Description" class="form-control" rows="7"></textarea>
+                    <span asp-validation-for="Ticket.Description" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <div id="right">
+                <h4 id="details">Details</h4>
+                <hr />
+                <table class="table-fill">
+                    <tbody class="table-hover">
+                        <tr>
+                            <td class="text-left">Assignee</td>
+                            <td class="text-left">@Model.Ticket.Assignee</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Reporter</td>
+                            <td class="text-left">@Model.Ticket.Reporter.FullName</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Telephone</td>
+                            <td class="text-left">No</td>
+                        <tr>
+                            <td class="text-left">Email</td>
+                            <td class="text-left">@Model.Ticket.Reporter.Email</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Department</td>
+                            <td class="text-left">@Model.Ticket.Reporter.Department</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Jobtitle</td>
+                            <td class="text-left">@Model.Ticket.Reporter.Jobtitle</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <input type="hidden" asp-for="Ticket.Id" />
+            <h5 id="commentHeding">Comments</h5>
+            @if (Model.Ticket.Comments != null)
+            {
+                @foreach (var comment in Model.Ticket.Comments)
+                {
+                    <div id="comment" class="comments-container">
+                        <ul id="comments-list" class="comments-list">
+                            <li>
+                                <div class="comment-main-level">
+                                    <div class="comment-box">
+                                        <div class="comment-head">
+                                            <h6 class="comment-name by-author">@comment.AddByUser</h6>
+                                            <span>@comment.CreatedOn.ToString("dd/MM/yyyy HH:mm")</span>
+                                            <i class="fa fa-reply"></i>
+                                            <i class="fa fa-heart"></i>
+                                        </div>
+                                        <div class="comment-content">
+                                            @comment.Content
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                }
+            }
+            <div id='buttons'>
+                <button id="show" style="margin-left: 38px; margin-top: 20px;" type="button" class="btn btn-info">Press for Comment</button>
+                <button id="hide" type="button" class="btn btn-light">Hide</button>
+            </div>
+
+            <form id='form' method="post" asp-controller="Comments" asp-action="Comment" asp-route-content="@Model.Content" asp-route-ticketId="@Model.Ticket.Id">
+                <textarea asp-for="@Model.Content" class="element5" id='textarea' placeholder="Your Comment..."></textarea>
+                <input id="element2" type="submit" class="btn btn-primary" value="Send">
+            </form>
+
+        </div>
+        <hr />
+
+    </div>
+</body>
+
+<script src="~/js/hideShowComment.js" asp-append-version="true"></script>

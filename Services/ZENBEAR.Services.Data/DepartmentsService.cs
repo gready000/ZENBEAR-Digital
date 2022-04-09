@@ -67,6 +67,7 @@
                 .Select(x => new SelectListItem()
                 {
                    Text = x.Name,
+                   Value = x.Id.ToString(),
                 })
                 .OrderBy(x => x.Text)
                 .ToList();
@@ -79,6 +80,22 @@
                 .Where(x => x.Name == name)
                 .Select(x => x.Id)
                 .FirstOrDefault();
+        }
+
+        public string GetNameById(int id)
+        {
+            return this.departmentsRepo
+                .AllAsNoTracking()
+                .Where(x => x.Id == id)
+                .Select(x => x.Name)
+                .FirstOrDefault();
+        }
+
+        public Department GetDepartmentById(int id)
+        {
+            return this.departmentsRepo
+                .AllAsNoTracking()
+                .FirstOrDefault(x => x.Id == id);
         }
 
         public IEnumerable<AllDepartmentsViewModel> AllDepartmentsAndJobs()

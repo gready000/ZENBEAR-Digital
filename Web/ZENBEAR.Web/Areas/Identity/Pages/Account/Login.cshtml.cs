@@ -85,21 +85,23 @@ namespace ZENBEAR.Web.Areas.Identity.Pages.Account
                 var result = await this.signInManager.PasswordSignInAsync(this.Input.Email, this.Input.Password, this.Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                    this.logger.LogInformation(GlobalConstants.SuccessLogin);
+                    this.logger.LogInformation(GlobalMessages.SuccessLogin);
                     return this.LocalRedirect(returnUrl);
                 }
+
                 if (result.RequiresTwoFactor)
                 {
                     return this.RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = this.Input.RememberMe });
                 }
+
                 if (result.IsLockedOut)
                 {
-                    this.logger.LogWarning("User account locked out.");
+                    this.logger.LogWarning(GlobalMessages.LockedAccound);
                     return this.RedirectToPage("./Lockout");
                 }
                 else
                 {
-                    this.ModelState.AddModelError(string.Empty, GlobalConstants.InvalidLogin);
+                    this.ModelState.AddModelError(string.Empty, GlobalMessages.InvalidLogin);
                     return this.Page();
                 }
             }

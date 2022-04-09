@@ -9,27 +9,17 @@
 @{
     this.ViewData["Title"] = "Closed Tickets";
 }
-<style>
-    body {
-        background-image: linear-gradient(135deg, tomato, rebeccapurple);
-    }
-
-    #li {
-        cursor: pointer;
-    }
-</style>
-
 
 <div class="row">
     <div id="admin" class="col s12">
         <div class="card material-table">
             <div class="table-header">
                 <span class="table-title">@this.ViewData["Title"]</span>
-                <button class="btn btn-link" type="button" onclick="location.href='@Url.Action("All", "Tickets")'">Open Tickets</button>
+                <button class="btn btn-link" type="button" onclick="location.href='@Url.Action("Open", "Tickets")'">Open Tickets</button>
                 <div class="actions">
                     <form class="example" action="">
-                        <input asp-for="@Model.Searched" type="text" placeholder="Search.." name="search">
-                        <button type="submit"><i class="fa fa-search" style="font-size:18px;color:coral;"></i></button>
+                        <input asp-for="@Model.Searched" type="text" placeholder="Search key.." name="search">
+                        <button asp-controller="Tickets" asp-action="Search" type="submit"><i class="fa fa-search" style="font-size:18px;color:coral;"></i></button>
                     </form>
                 </div>
             </div>
@@ -52,9 +42,9 @@
                             <td style="width: 5%; ">@ticket.IssueType</td>
                             <td style="width: 5%; ">TI-@ticket.Id</td>
                             <td style="max-width: 150px; width: 30%">@ticket.Summary</td>
-                            <td style="width: 22%">@ticket.Reporter</td>
+                            <td style="width: 20%">@ticket.Reporter</td>
                             <td style="width: 12%">@ticket.CreateOn</td>
-                            <td style="width: 22%">@ticket.Assignee</td>
+                            <td style="width: 20%">@ticket.Assignee</td>
                             <td style="width: 10%">
                                 @if (ticket.Rate != null)
                                 {

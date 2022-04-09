@@ -4,7 +4,7 @@
 
     using ZENBEAR.Web.ViewModels.Paging;
 
-    public class MyTickesAllViiewModel : PagingViewModel
+    public class AllMyTicketsViewModel : PagingViewModel
     {
         public IEnumerable<MyTicketsViewModel> MyTickets { get; set; }
     }

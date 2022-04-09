@@ -60,7 +60,8 @@
 
                     if (input.Department != null)
                     {
-                        query = query.Where(x => x.Department.Name == input.Department);
+                        var id = int.Parse(input.Department);
+                        query = query.Where(x => x.DepartmentId == id);
                     }
                 }
             }
@@ -68,7 +69,7 @@
             return query.ToList().Count();
         }
 
-        public ICollection<AllListUsersViewModel> AllListUsers(SearchUserViewModel input, int id, int itemsPerPage = 12)
+        public ICollection<ListUsersViewModel> AllListUsers(SearchUserViewModel input, int id, int itemsPerPage = 12)
         {
             var skip = (id - 1) * itemsPerPage;
             var query = this.usersRepo.AllAsNoTrackingWithDeleted();
@@ -91,7 +92,8 @@
 
                     if (input.Department != null)
                     {
-                        query = query.Where(x => x.Department.Name == input.Department);
+                        var departmentId = int.Parse(input.Department);
+                        query = query.Where(x => x.DepartmentId == departmentId);
                     }
                 }
             }
@@ -100,7 +102,7 @@
                     .OrderByDescending(x => x.CreatedOn)
                     .Skip(skip)
                     .Take(itemsPerPage)
-                    .Select(x => new AllListUsersViewModel
+                    .Select(x => new ListUsersViewModel
                     {
                         Id = x.Id,
                         FirstName = x.FirstName,

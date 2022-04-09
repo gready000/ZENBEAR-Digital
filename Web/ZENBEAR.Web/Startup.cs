@@ -80,6 +80,7 @@
             services.AddTransient<IProjectsService, ProjectsService>();
             services.AddTransient<ICommentsService, CommentsService>();
             services.AddTransient<IRatesService, RatesService>();
+            services.AddTransient<IIssuesService, IssuesService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -12,6 +12,10 @@
         [MinLength(GlobalConstants.IssueMinLength)]
         public string Name { get; set; }
 
+        public int ProjectId { get; set; }
+
+        public Project Project { get; set; }
+
         public ICollection<Ticket> Tickets { get; set; } = new HashSet<Ticket>();
     }
 }

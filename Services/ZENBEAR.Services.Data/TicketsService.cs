@@ -17,7 +17,6 @@
         private readonly IDeletableEntityRepository<Ticket> ticketsRepo;
         private readonly IDeletableEntityRepository<Project> projectsRepo;
         private readonly IDeletableEntityRepository<Issue> issuesRepo;
-        private readonly IDeletableEntityRepository<Department> departmentRepo;
         private readonly IDeletableEntityRepository<ApplicationUser> userRepo;
         private readonly IProjectsService projectsService;
         private readonly IUsersService usersService;
@@ -26,7 +25,6 @@
             IDeletableEntityRepository<Ticket> ticketsRepo,
             IDeletableEntityRepository<Project> projectsRepo,
             IDeletableEntityRepository<Issue> issuesRepo,
-            IDeletableEntityRepository<Department> departmentRepo,
             IDeletableEntityRepository<ApplicationUser> userRepo,
             IProjectsService projectsService,
             IUsersService usersService)
@@ -35,22 +33,22 @@
             this.projectsRepo = projectsRepo;
             this.issuesRepo = issuesRepo;
             this.projectsService = projectsService;
-            this.departmentRepo = departmentRepo;
             this.userRepo = userRepo;
             this.usersService = usersService;
         }
 
-        public IEnumerable<AllOpenTicketsViewModel> GetAllOpenTickets(string departmentName, int itemsPerPage, int page)
+        public IEnumerable<OpenTicketsViewModel> GetOpenTickets(string project, int itemsPerPage, int page)
         {
             var skip = (page - 1) * itemsPerPage;
 
             var openTickets = this.ticketsRepo
                 .All()
                     .Where(x => x.Status == Status.Open)
+                    .Where(x => x.Project.Name == project)
                     .OrderByDescending(x => x.CreatedOn)
                     .Skip(skip)
                     .Take(itemsPerPage)
-                    .Select(x => new AllOpenTicketsViewModel
+                    .Select(x => new OpenTicketsViewModel
                     {
                         Id = x.Id,
                         IssueType = x.Issue.Name,
@@ -93,7 +91,7 @@
                     Id = x.Id,
                     IssueType = x.Issue.Name,
                     Summary = x.Summary,
-                    ReporterId = userId,
+                    Reporter = userId,
                     Assignee = x.AssigneeId,
                     CreateOn = x.CreatedOn.ToString("dd/MM/yyyy"),
                     Status = x.Status.ToString(),
@@ -116,13 +114,14 @@
             return userTickets;
         }
 
-        public IEnumerable<ClosedTicketsViewModel> GetClosedTickets(string departmentName, int itemsPerPage, int page)
+        public IEnumerable<ClosedTicketsViewModel> GetClosedTickets(string project, int itemsPerPage, int page)
         {
             var skip = (page - 1) * itemsPerPage;
 
             var closedTickets = this.ticketsRepo
                 .All()
                     .Where(x => x.Status == Status.Closed)
+                    .Where(x => x.Project.Name == project)
                     .OrderByDescending(x => x.CreatedOn)
                     .Skip(skip)
                     .Take(itemsPerPage)
@@ -189,8 +188,14 @@
                     Assignee = x.AssigneeId,
                     CreateOn = x.CreatedOn.ToString("dd/MM/yyyy"),
                     Rate = x.Rate.Value,
+                    Status = x.Status.ToString(),
                 })
                 .FirstOrDefault();
+
+            if (ticket == null)
+            {
+                return null;
+            }
 
             if (ticket.Assignee != null)
             {

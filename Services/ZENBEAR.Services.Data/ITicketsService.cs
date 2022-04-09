@@ -11,9 +11,9 @@
     {
         Task CreateAsync(CreateTicketinputModel input, string userId, string imagePath);
 
-        IEnumerable<AllOpenTicketsViewModel> GetAllOpenTickets(string departmentName, int itemsPerPage, int page);
+        IEnumerable<OpenTicketsViewModel> GetOpenTickets(string project, int itemsPerPage, int page);
 
-        IEnumerable<ClosedTicketsViewModel> GetClosedTickets(string departmentName, int itemsPerPage, int page);
+        IEnumerable<ClosedTicketsViewModel> GetClosedTickets(string project, int itemsPerPage, int page);
 
         IEnumerable<MyTicketsViewModel> GetUserTickets(string userId, int page, int itemsPerPage);
 

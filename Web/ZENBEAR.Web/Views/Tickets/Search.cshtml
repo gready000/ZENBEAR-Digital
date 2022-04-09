@@ -1,0 +1,101 @@
+﻿@model ZENBEAR.Web.ViewModels.Tickets.SearchedTicketViewModel
+@using ZENBEAR.Data.Models.Enums
+
+<script src="https://kit.fontawesome.com/a199d1b466.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="~/css/allticketstable.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/rate.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/searchTicket.css" asp-append-version="true" />
+
+@if (Model == null)
+{
+    this.ViewData["Title"] = "Sorry, ticket doesn't exist, try again";
+}
+else
+{
+    this.ViewData["Title"] = "Searched Ticket";
+}
+
+@if (Model != null)
+{
+    <div class="row">
+        <div id="admin" class="col s12">
+            <div class="card material-table">
+                <div class="table-header">
+                    <span class="table-title">@this.ViewData["Title"]</span>
+                    <button class="btn btn-link" type="button" onclick="location.href='@Url.Action("Open", "Tickets")'">Open Tickets</button>
+                    <div class="actions">
+                        <form class="example" action="">
+                            <input asp-for="@Model.Searched" type="text" placeholder="Search key.." name="search">
+                            <button asp-controller="Tickets" asp-action="Search" type="submit"><i class="fa fa-search" style="font-size:18px;color:coral;"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <table id="datatable">
+                    <thead>
+                        <tr>
+                            <th>Issue Type</th>
+                            <th>Key</th>
+                            <th>Summary</th>
+                            <th>Create On</th>
+                            <th>Assignee</th>
+                            <th style="padding-left: 11px;">Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="li">
+                            <td style="width: 5%; ">@Model.IssueType</td>
+                            <td style="width: 5%; ">TI-@Model.Id</td>
+                            <td style="max-width: 150px; width: 30%" onclick="location.href = '@(Url.Action("Details", "Tickets", new { Id = Model.Id }))'">@Model.Summary</td>
+                            <td style="width: 12%">@Model.CreateOn</td>
+                            <td style="width: 22%">@Model.Assignee</td>
+                            <td style="width: 14%">
+                                @if (Model.Status == Status.Closed.ToString())
+                                {
+                                    <div class="rating">
+                                        <div class="stars">
+                                            @for (int i = 5; i >= 1; i--)
+                                            {
+                                                if (@i <= Model.Rate)
+                                                {
+                                                    <input type="radio" class="starfill" name="rating" disabled />
+                                                }
+                                                else
+                                                {
+                                                    <input type="radio" class="star" name="rating" disabled />
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div style="padding-left: 13px; color: yellowgreen">@Model.Status</div>
+                                }
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="row">
+        <div id="admin" class="col s12">
+            <div class="card material-table">
+                <div class="table-header">
+                    <span class="table-title">@this.ViewData["Title"]</span>
+                    <button class="btn btn-link" type="button" onclick="location.href='@Url.Action("Open", "Tickets")'">Open Tickets</button>
+                    <div class="actions">
+                        <form class="example" action="">
+                            <input asp-for="@Model.Searched" type="text" placeholder="Search key.." name="search">
+                            <button asp-controller="Tickets" asp-action="Search" type="submit"><i class="fa fa-search" style="font-size:18px;color:coral;"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

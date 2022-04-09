@@ -1,36 +1,13 @@
-﻿@model ZENBEAR.Web.ViewModels.Tickets.MyTickesAllViiewModel
+﻿@model ZENBEAR.Web.ViewModels.Tickets.AllMyTicketsViewModel
 
 <script src="https://kit.fontawesome.com/a199d1b466.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="~/css/allticketstable.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/rate.css" asp-append-version="true" />
 
-
 @{
     this.ViewData["Title"] = "My Tickets";
 }
-<style>
-    body {
-        background-image: linear-gradient(135deg, tomato, rebeccapurple);
-    }
-
-    #li {
-        cursor: pointer;
-    }
-
-    .element5 {
-        display: inline-block;
-        margin-left: 40px;
-        margin-right: 10px;
-        margin-top: 15px
-    }
-
-    #element2 {
-        display: inline-block;
-        margin-top: 10px;
-    }
-</style>
-
 
 <div class="row">
     <div id="admin" class="col s12">
@@ -55,7 +32,7 @@
                         <tr id="li">
                             <td style="width: 5%; ">@ticket.IssueType</td>
                             <td style="width: 5%; ">TI-@ticket.Id</td>
-                            <td style="max-width: 150px; width: 30%" onclick="location.href = '@(Url.Action("MyTicketDetails", "Tickets", new { Id = ticket.Id }))'">@ticket.Summary</td>
+                            <td style="max-width: 150px; width: 30%" onclick="location.href = '@(Url.Action("MyTicketsDetails", "Tickets", new { Id = ticket.Id }))'">@ticket.Summary</td>
                             <td style="width: 12%">@ticket.CreateOn</td>
                             <td style="width: 22%">@ticket.Assignee</td>
                             <td style="width: 14%">
@@ -163,16 +140,4 @@
             },
             contentType: 'application/json',
         });
-
     }</script>
-
-@*<script>function rate() {
-for (i = 0; i < document.getElementsByName('rating').length; i++) {
-
-    if (@ticket.Rate == document.getElementsByName('rating')[i].value) {
-        document.getElementsByName('rating')[i].checked == true;
-        console.log(document.getElementsByName('rating')[i]);
-        break;
-    }
-}
-}</script>*@

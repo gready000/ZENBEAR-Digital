@@ -65,12 +65,12 @@ namespace ZENBEAR.Web.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
-            [StringLength(25, ErrorMessage = GlobalConstants.ErrorLength, MinimumLength = 3)]
+            [StringLength(GlobalConstants.FirstNameMaxLength, ErrorMessage = GlobalMessages.ErrorLength, MinimumLength = GlobalConstants.FirstNameMinLength)]
             [Display(Name = "First Name")]
             public string FirstName { get; set; }
 
             [Required]
-            [StringLength(30, ErrorMessage = GlobalConstants.ErrorLength, MinimumLength = 5)]
+            [StringLength(GlobalConstants.LastNameMaxLength, ErrorMessage = GlobalMessages.ErrorLength, MinimumLength = GlobalConstants.LastNameMinLength)]
             [Display(Name = "Last Name")]
             public string LastName { get; set; }
 
@@ -92,14 +92,14 @@ namespace ZENBEAR.Web.Areas.Identity.Pages.Account
             public string Location { get; set; }
 
             [Required]
-            [StringLength(100, ErrorMessage = GlobalConstants.ErrorLength, MinimumLength = 6)]
+            [StringLength(GlobalConstants.PasswordMaxLength, ErrorMessage = GlobalMessages.ErrorLength, MinimumLength = GlobalConstants.PasswordMinLength)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
             public string Password { get; set; }
 
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = GlobalConstants.PassNotMatch)]
+            [Compare("Password", ErrorMessage = GlobalMessages.PassNotMatch)]
             public string ConfirmPassword { get; set; }
         }
 

@@ -14,5 +14,7 @@
         IList<SelectListItem> GetAllRoles();
 
         IList<SelectListItem> GetAllRolesByUser(IEnumerable<IdentityUserRole<string>> input);
+
+        IEnumerable<string> GetAllRolesByUserId(string id);
     }
 }

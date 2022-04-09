@@ -1,21 +1,16 @@
 ﻿namespace ZENBEAR.Web.ViewModels.Users
 {
-    public class AllListUsersViewModel
+    using System.Collections.Generic;
+
+    using Microsoft.AspNetCore.Mvc.Rendering;
+    using ZENBEAR.Web.ViewModels.Paging;
+
+    public class AllListUsersViewModel : PagingViewModel
     {
-        public string Id { get; set; }
+        public IEnumerable<ListUsersViewModel> AllUsers { get; set; }
 
-        public string FirstName { get; set; }
+        public SearchUserViewModel Search { get; set; }
 
-        public string LastName { get; set; }
-
-        public string Email { get; set; }
-
-        public string Department { get; set; }
-
-        public string Jobtitle { get; set; }
-
-        public bool IsActive { get; set; }
-
-        public string Location { get; set; }
+        public IEnumerable<SelectListItem> Departments { get; set; }
     }
 }

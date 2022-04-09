@@ -9,16 +9,18 @@
 
     public class CreateTicketinputModel
     {
+        [Required]
         public string Project { get; set; }
 
+        [Required]
         public string Issue { get; set; }
 
         [Required]
-        [MinLength(GlobalConstants.SummaryMinLength)]
+        [StringLength(GlobalConstants.SummaryMinLength, ErrorMessage = GlobalMessages.SummaryLength)]
         public string Summary { get; set; }
 
         [Required]
-        [MinLength(GlobalConstants.DescriptionMaxLength)]
+        [StringLength(GlobalConstants.DescriptionMaxLength, ErrorMessage = GlobalMessages.DescriptionLength)]
         public string Description { get; set; }
 
         public string PhoneNumber { get; set; }
