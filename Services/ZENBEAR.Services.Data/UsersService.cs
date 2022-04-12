@@ -1,6 +1,5 @@
 ﻿namespace ZENBEAR.Services.Data
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
@@ -8,7 +7,6 @@
     using Microsoft.AspNetCore.Identity;
     using ZENBEAR.Data.Common.Repositories;
     using ZENBEAR.Data.Models;
-    using ZENBEAR.Services.Mapping;
     using ZENBEAR.Web.ViewModels.Users;
 
     public class UsersService : IUsersService
@@ -69,7 +67,7 @@
             return query.ToList().Count();
         }
 
-        public ICollection<ListUsersViewModel> AllListUsers(SearchUserViewModel input, int id, int itemsPerPage = 12)
+        public ICollection<ListUsersViewModel> AllListUsers(SearchUserViewModel input, int id, int itemsPerPage)
         {
             var skip = (id - 1) * itemsPerPage;
             var query = this.usersRepo.AllAsNoTrackingWithDeleted();
@@ -145,9 +143,14 @@
             await this.userManager.AddToRoleAsync(user, input.Role);
         }
 
+        public bool Exist(string email, string id)
+        {
+           return this.usersRepo.AllAsNoTrackingWithDeleted().Any(x => x.Email == email && x.Id != id);
+        }
+
         public bool Exist(string email)
         {
-           return this.usersRepo.AllAsNoTrackingWithDeleted().Any(x => x.Email == email);
+            return this.usersRepo.AllAsNoTrackingWithDeleted().Any(x => x.Email == email);
         }
 
         public ReporterViewModel GetReporterById(string id)
@@ -186,7 +189,7 @@
                     LastName = x.LastName,
                     Email = x.Email,
                     Department = x.Department.Name,
-                    Jobtitle = x.JobTitle.Name,
+                    JobTitle = x.JobTitle.Name,
                     Location = x.Location,
                     IsActive = !x.IsDeleted,
                     UserRoles = x.Roles,
@@ -201,9 +204,9 @@
             var user = this.usersRepo.AllWithDeleted().FirstOrDefault(x => x.Id == id);
             var dj = this.departmentsService.GetJobs();
 
-            if (input.Jobtitle.All(char.IsDigit))
+            if (input.JobTitle.All(char.IsDigit))
             {
-                int index = int.Parse(input.Jobtitle);
+                int index = int.Parse(input.JobTitle);
                 var jobName = dj[input.Department].ElementAt(index);
                 var departmentId = this.departmentsService.GetIdByName(input.Department);
                 var jobTitleId = this.jobtitleService.GetIdByName(jobName);
@@ -231,6 +234,14 @@
             }
 
             await this.usersRepo.SaveChangesAsync();
+        }
+
+        public IEnumerable<ApplicationUser> GetDepartmentEmployees(string department)
+        {
+            var employees = this.usersRepo.AllAsNoTracking()
+                .Where(x => x.Department.Name == department).ToList();
+
+            return employees;
         }
     }
 }

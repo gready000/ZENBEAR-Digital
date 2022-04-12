@@ -4,8 +4,11 @@
     {
         public const string SystemName = "ZENBEAR";
 
-        public const string AdministratorRoleName = "Administrator";
+        public const string AdministratorRoleName = "Admin";
         public const string DefaultRole = "User";
+        public const string ITRole = "ITSupport";
+        public const string InfoSecRole = "InfoSec";
+        public const string ITorInfoSec = ITRole + "," + InfoSecRole;
 
         // Ticket
         public const int SummaryMinLength = 5;

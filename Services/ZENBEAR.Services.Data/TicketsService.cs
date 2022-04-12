@@ -15,26 +15,20 @@
     public class TicketsService : ITicketsService
     {
         private readonly IDeletableEntityRepository<Ticket> ticketsRepo;
-        private readonly IDeletableEntityRepository<Project> projectsRepo;
-        private readonly IDeletableEntityRepository<Issue> issuesRepo;
-        private readonly IDeletableEntityRepository<ApplicationUser> userRepo;
         private readonly IProjectsService projectsService;
         private readonly IUsersService usersService;
+        private readonly IIssuesService issuesService;
 
         public TicketsService(
             IDeletableEntityRepository<Ticket> ticketsRepo,
-            IDeletableEntityRepository<Project> projectsRepo,
-            IDeletableEntityRepository<Issue> issuesRepo,
-            IDeletableEntityRepository<ApplicationUser> userRepo,
             IProjectsService projectsService,
-            IUsersService usersService)
+            IUsersService usersService,
+            IIssuesService issuesService)
         {
             this.ticketsRepo = ticketsRepo;
-            this.projectsRepo = projectsRepo;
-            this.issuesRepo = issuesRepo;
             this.projectsService = projectsService;
-            this.userRepo = userRepo;
             this.usersService = usersService;
+            this.issuesService = issuesService;
         }
 
         public IEnumerable<OpenTicketsViewModel> GetOpenTickets(string project, int itemsPerPage, int page)
@@ -59,18 +53,11 @@
                     })
                     .ToList();
 
-            foreach (var rep in openTickets)
+            foreach (var ticket in openTickets)
             {
-                if (rep.Assignee != null)
-                {
-                    rep.Assignee = this.usersService.GetEmployeeFullName(rep.Assignee);
-                }
-                else
-                {
-                    rep.Assignee = "Unassigned";
-                }
+                ticket.Assignee = this.AssignNameToAssignee(ticket.Assignee);
 
-                rep.Reporter = this.usersService.GetEmployeeFullName(rep.Reporter);
+                ticket.Reporter = this.usersService.GetEmployeeFullName(ticket.Reporter);
             }
 
             return openTickets;
@@ -99,16 +86,9 @@
                 })
                 .ToList();
 
-            foreach (var rep in userTickets)
+            foreach (var ticket in userTickets)
             {
-                if (rep.Assignee != null)
-                {
-                    rep.Assignee = this.usersService.GetEmployeeFullName(rep.Assignee);
-                }
-                else
-                {
-                    rep.Assignee = "Unassigned";
-                }
+                ticket.Assignee = this.AssignNameToAssignee(ticket.Assignee);
             }
 
             return userTickets;
@@ -137,18 +117,11 @@
                     })
                     .ToList();
 
-            foreach (var rep in closedTickets)
+            foreach (var ticket in closedTickets)
             {
-                if (rep.Assignee != null)
-                {
-                    rep.Assignee = this.usersService.GetEmployeeFullName(rep.Assignee);
-                }
-                else
-                {
-                    rep.Assignee = "Unassigned";
-                }
+                ticket.Assignee = this.AssignNameToAssignee(ticket.Assignee);
 
-                rep.Reporter = this.usersService.GetEmployeeFullName(rep.Reporter);
+                ticket.Reporter = this.usersService.GetEmployeeFullName(ticket.Reporter);
             }
 
             return closedTickets;
@@ -175,10 +148,11 @@
             return this.ticketsRepo.AllAsNoTracking().FirstOrDefault(x => x.Id == id);
         }
 
-        public SearchedTicketViewModel GetSearchedTicket(int id)
+        public SearchedTicketViewModel GetSearchedTicket(int id, string projectName)
         {
             var ticket = this.ticketsRepo.AllAsNoTracking()
                 .Where(x => x.Id == id)
+                .Where(x => x.Project.Name == projectName)
                 .Select(x => new SearchedTicketViewModel
                 {
                     Id = x.Id,
@@ -197,14 +171,7 @@
                 return null;
             }
 
-            if (ticket.Assignee != null)
-            {
-                ticket.Assignee = this.usersService.GetEmployeeFullName(ticket.Assignee);
-            }
-            else
-            {
-                ticket.Assignee = "Unassigned";
-            }
+            ticket.Assignee = this.AssignNameToAssignee(ticket.Assignee);
 
             ticket.Reporter = this.usersService.GetEmployeeFullName(ticket.Reporter);
 
@@ -225,7 +192,7 @@
                     CreateOn = x.CreatedOn.ToShortDateString(),
                     Assignee = x.AssigneeId,
                     ReporterId = x.ReporterId,
-                    Priority = x.Preority.ToString(),
+                    Priority = x.Priority.ToString(),
                     Status = x.Status.ToString(),
                     Comments = x.Comments.OrderByDescending(x => x.CreatedOn)
                     .Select(x => new CommentDetailsViewModel
@@ -239,14 +206,7 @@
                 })
                 .FirstOrDefault();
 
-            if (ticket.Assignee != null)
-            {
-                ticket.Assignee = this.usersService.GetEmployeeFullName(ticket.Assignee);
-            }
-            else
-            {
-                ticket.Assignee = "Unassigned";
-            }
+            ticket.Assignee = this.AssignNameToAssignee(ticket.Assignee);
 
             ticket.Reporter = this.usersService.GetReporterById(ticket.ReporterId);
 
@@ -255,21 +215,24 @@
 
         public IEnumerable<SelectListItem> GetAllProjectEmployees(string departmentName)
         {
-            var dbEmployees = this.userRepo.AllAsNoTracking()
-                .Where(x => x.Department.Name == departmentName).ToList();
+            var dbEmployees = this.usersService.GetDepartmentEmployees(departmentName);
 
             var employees = new List<SelectListItem>();
 
-            foreach (var emp in dbEmployees)
+            foreach (var employee in dbEmployees)
             {
-                var temp = new SelectListItem();
-                temp.Text = emp.FirstName + " " + emp.LastName;
-                temp.Value = emp.Id;
+                var temp = new SelectListItem
+                {
+                    Text = employee.FirstName + " " + employee.LastName,
+                    Value = employee.Id,
+                };
                 employees.Add(temp);
             }
 
-            var unAssignee = new SelectListItem();
-            unAssignee.Text = "Unassigned";
+            var unAssignee = new SelectListItem
+            {
+                Text = "Unassigned",
+            };
             employees.Add(unAssignee);
 
             return employees;
@@ -294,10 +257,10 @@
         {
             int index = int.Parse(input.Issue);
 
-            var project = this.projectsRepo.AllAsNoTracking().FirstOrDefault(x => x.Name == input.Project);
+            var project = this.projectsService.GetProjectByName(input.Project);
             var pi = this.projectsService.GetProjectsItems();
             var issueIndex = pi[input.Project].ElementAt(index);
-            var issue = this.issuesRepo.AllAsNoTracking().FirstOrDefault(x => x.Name == issueIndex);
+            var issue = this.issuesService.GetIssueByName(issueIndex);
 
             var ticket = new Ticket
             {
@@ -305,7 +268,7 @@
                 IssueId = issue.Id,
                 Summary = input.Summary,
                 Description = input.Description,
-                Preority = input.Priority,
+                Priority = input.Priority,
                 ReporterId = userId,
                 Status = Status.Open,
                 PhoneNumber = input.PhoneNumber,
@@ -341,6 +304,20 @@
             ticket.Status = Status.Closed;
 
             await this.ticketsRepo.SaveChangesAsync();
+        }
+
+        private string AssignNameToAssignee(string assign)
+        {
+            if (assign != null)
+            {
+                assign = this.usersService.GetEmployeeFullName(assign);
+            }
+            else
+            {
+                assign = "Unassigned";
+            }
+
+            return assign;
         }
     }
 }

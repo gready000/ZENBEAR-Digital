@@ -20,5 +20,7 @@
         Project GetProjectById(int id);
 
         string GetProjectByDepartmentId(int id);
+
+        Project GetProjectByName(string projectName);
     }
 }

@@ -2,7 +2,6 @@
 @model RegisterModel
 
 <link href="~/css/Register.css" rel="stylesheet" type="text/css">
-
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -11,7 +10,7 @@
 <div class="container register gradient-custom-2">
     <div class="row">
         <div class="col-md-3 register-left">
-            <img src="https://thumbs.dreamstime.com/b/panda-yoga-meditation-pose-green-beads-bear-doing-relaxation-82086460.jpg" alt="" />
+            <img src="https://static1.squarespace.com/static/5ef66d7f1de9065ae3cd8f2e/t/60b776e8297d2d2c20e289d5/1622648836361/" alt="Logo" style="height:45px;width:100px"/>
             <h3>Welcome To ZENBEAR</h3>
             <p>Enjoy your new work!</p>
             <a class="btn btn-primary btn-rounded" asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Login</a><br />
@@ -20,7 +19,7 @@
             <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
                 <div class="tab-content">
                     <div class="tab-pane fade show active">
-                        <h3 class="register-heading">Apply as an Employee</h3>
+                        <h3 class="register-heading">Apply as Employee</h3>
                         <div class="row register-form">
                             <div class="col-md-6">
                                 <div asp-validation-summary="None" class="text-danger"></div>

@@ -16,8 +16,6 @@
         private readonly IProjectsService projectsService;
         private readonly ITicketsService ticketsService;
         private readonly IDepartmentsService departmentsService;
-        private readonly ICommentsService commentsService;
-        private readonly IRoleService rolesService;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IWebHostEnvironment environment;
 
@@ -25,8 +23,6 @@
             IProjectsService projectsService,
             ITicketsService ticketsService,
             IDepartmentsService departmentsService,
-            ICommentsService commentsService,
-            IRoleService rolesService,
             UserManager<ApplicationUser> userManager,
             IWebHostEnvironment environment)
         {
@@ -35,12 +31,30 @@
             this.departmentsService = departmentsService;
             this.userManager = userManager;
             this.environment = environment;
-            this.commentsService = commentsService;
-            this.rolesService = rolesService;
         }
 
+        //[HttpGet]
+        //[Authorize(Roles = "Admin")]
+        //public async Task<IActionResult> AllAsync(int id = 1)
+        //{
+        //    if (id <= 0)
+        //    {
+        //        return this.NotFound();
+        //    }
+
+        //    var viewModel = new ListOpenTicketsViewModel
+        //    {
+        //        OpenTickets = this.ticketsService.GetOpenTickets(GlobalConstants.ItemsPerPage, id),
+        //        ItemsPerPage = GlobalConstants.ItemsPerPage,
+        //        PageNumber = id,
+        //        ItemsCount = this.ticketsService.GetOpenTicketsCount(),
+        //    };
+
+        //    return this.View(viewModel);
+        //}
+
         [HttpGet]
-        //[Authorize(Roles = "ITSupport, InfoSec")]
+        [Authorize(Roles = GlobalConstants.ITorInfoSec)]
         public async Task<IActionResult> OpenAsync(int id = 1)
         {
             if (id <= 0)
@@ -63,6 +77,7 @@
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> MyTickets(int id = 1)
         {
             if (id <= 0)
@@ -84,6 +99,7 @@
         }
 
         [HttpGet]
+        [Authorize(Roles = GlobalConstants.ITorInfoSec)]
         public async Task<IActionResult> ClosedAsync(int id = 1)
         {
             if (id <= 0)
@@ -106,14 +122,18 @@
         }
 
         [HttpGet]
-        public IActionResult Search(string search)
+        [Authorize(Roles = GlobalConstants.ITorInfoSec + "," + GlobalConstants.AdministratorRoleName)]
+        public async Task<IActionResult> SearchAsync(string search)
         {
             bool parsed = int.TryParse(search, out int id);
             var viewModel = new SearchedTicketViewModel();
 
             if (parsed)
             {
-                viewModel = this.ticketsService.GetSearchedTicket(id);
+                var user = await this.userManager.GetUserAsync(this.User);
+                var project = this.projectsService.GetProjectByDepartmentId(user.DepartmentId);
+
+                viewModel = this.ticketsService.GetSearchedTicket(id, project);
             }
             else
             {
@@ -124,14 +144,17 @@
         }
 
         [HttpGet]
+        [Authorize(Roles = GlobalConstants.ITorInfoSec + "," + GlobalConstants.AdministratorRoleName)]
         public async Task<IActionResult> DetailsAsync(int id)
         {
             var user = await this.userManager.GetUserAsync(this.User);
             var department = this.departmentsService.GetDepartmentById(user.DepartmentId);
 
-            var viewModel = new AllTicketDetailsViewModel();
-            viewModel.Ticket = this.ticketsService.GetTicketDetailById(id);
-            viewModel.ListItems = this.ticketsService.GetAllProjectEmployees(department.Name);
+            var viewModel = new AllTicketDetailsViewModel
+            {
+                Ticket = this.ticketsService.GetTicketDetailById(id),
+                ListItems = this.ticketsService.GetAllProjectEmployees(department.Name),
+            };
 
             if (viewModel == null)
             {
@@ -142,10 +165,13 @@
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult MyTicketsDetails(int id)
         {
-            var viewModel = new MyTicketDetailsViewModel();
-            viewModel.Ticket = this.ticketsService.GetTicketDetailById(id);
+            var viewModel = new MyTicketDetailsViewModel
+            {
+                Ticket = this.ticketsService.GetTicketDetailById(id),
+            };
 
             if (viewModel == null)
             {
@@ -156,6 +182,7 @@
         }
 
         [HttpPost]
+        [Authorize(Roles = GlobalConstants.ITorInfoSec)]
         public async Task<IActionResult> Assignee(int ticketId, string assigneeId)
         {
             await this.ticketsService.AssigneeUserToTicketAsync(ticketId, assigneeId);
@@ -164,10 +191,13 @@
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult Create()
         {
-            var viewModel = new CreateTicketinputModel();
-            viewModel.ListItems = this.projectsService.LoadProjectsItems();
+            var viewModel = new CreateTicketinputModel
+            {
+                ListItems = this.projectsService.LoadProjectsItems(),
+            };
 
             return this.View(viewModel);
         }
@@ -188,11 +218,11 @@
 
             this.TempData["Message"] = "Your request is successfully send ";
 
-            // TODO: Redirect to recipe info page
-            return this.Redirect("Open");
+            return this.Redirect("MyTickets");
         }
 
         [HttpPost]
+        [Authorize(Roles = GlobalConstants.ITorInfoSec + "," + GlobalConstants.AdministratorRoleName)]
         public async Task<IActionResult> Resolve(int ticketId)
         {
             await this.ticketsService.ResolveTicketAsync(ticketId);

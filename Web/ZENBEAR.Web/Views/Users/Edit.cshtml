@@ -48,11 +48,11 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="form-group">
-                        <label asp-for="Jobtitle">Jobtitle</label>
-                        <select id="Jobtitle" asp-for="Jobtitle" class="form-control">
-                            <option value="@Model.Jobtitle" selected="selected">@Model.Jobtitle</option>
+                        <label asp-for="JobTitle">Jobtitle</label>
+                        <select id="Jobtitle" asp-for="JobTitle" class="form-control">
+                            <option value="@Model.JobTitle" selected="selected">@Model.JobTitle</option>
                         </select>
-                        <span asp-validation-for="Jobtitle" class="text-danger"></span>
+                        <span asp-validation-for="JobTitle" class="text-danger"></span>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 submit">
                     <div class="form-group">
                         <input type="submit" class="btn btn-success" value="Edit">
-                        <input type="button" class="btn btn-primary" value="Back" onclick="history.back()">
+                        <input type="button" class="btn btn-primary" value="Back" onclick="location.href='@Url.Action("All", "Users")'" >
                         <div style="float:right;">
                             <label asp-for="IsActive">Employee:</label>
                             <div class="d-inline-block me-1">Block</div>

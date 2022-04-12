@@ -1,5 +1,6 @@
 ﻿namespace ZENBEAR.Services.Data
 {
+    using System.Linq;
     using System.Threading.Tasks;
 
     using ZENBEAR.Data.Common.Repositories;
@@ -8,12 +9,12 @@
 
     public class IssuesService : IIssuesService
     {
-        private readonly IDeletableEntityRepository<Issue> issueRepo;
+        private readonly IDeletableEntityRepository<Issue> issuesRepo;
         private readonly IProjectsService projectsService;
 
-        public IssuesService(IDeletableEntityRepository<Issue> issueRepo, IProjectsService projectsService)
+        public IssuesService(IDeletableEntityRepository<Issue> issuesRepo, IProjectsService projectsService)
         {
-            this.issueRepo = issueRepo;
+            this.issuesRepo = issuesRepo;
             this.projectsService = projectsService;
         }
 
@@ -31,9 +32,16 @@
 
             project.IssueTypes.Add(issue);
 
-            await this.issueRepo.AddAsync(issue);
+            await this.issuesRepo.AddAsync(issue);
 
-            await this.issueRepo.SaveChangesAsync();
+            await this.issuesRepo.SaveChangesAsync();
+        }
+
+        public Issue GetIssueByName(string issueName)
+        {
+            var issue = this.issuesRepo.AllAsNoTracking().FirstOrDefault(x => x.Name == issueName);
+
+            return issue;
         }
     }
 }

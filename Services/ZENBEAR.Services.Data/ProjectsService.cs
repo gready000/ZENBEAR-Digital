@@ -13,12 +13,10 @@
     public class ProjectsService : IProjectsService
     {
         private readonly IDeletableEntityRepository<Project> projectsRepo;
-        private readonly IDepartmentsService departmentsService;
 
-        public ProjectsService(IDeletableEntityRepository<Project> projectsRepo, IDepartmentsService departmentsService)
+        public ProjectsService(IDeletableEntityRepository<Project> projectsRepo)
         {
             this.projectsRepo = projectsRepo;
-            this.departmentsService = departmentsService;
         }
 
         public IDictionary<string, List<string>> GetProjectsItems()
@@ -35,8 +33,8 @@
 
         public string LoadProjectsItems()
         {
-            var pi = this.GetProjectsItems();
-            var reload = JsonConvert.SerializeObject(pi);
+            var projectItems = this.GetProjectsItems();
+            var reload = JsonConvert.SerializeObject(projectItems);
 
             return reload;
         }
@@ -82,6 +80,13 @@
                 })
                 .OrderBy(x => x.Text)
                 .ToList();
+        }
+
+        public Project GetProjectByName(string projectName)
+        {
+            var project = this.projectsRepo.AllAsNoTracking().FirstOrDefault(x => x.Name == projectName);
+
+            return project;
         }
     }
 }

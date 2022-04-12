@@ -3,8 +3,10 @@
     using System;
     using System.Threading.Tasks;
 
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using Newtonsoft.Json;
+    using ZENBEAR.Common;
     using ZENBEAR.Services.Data;
     using ZENBEAR.Web.ViewModels.Users;
 
@@ -22,16 +24,20 @@
         }
 
         [HttpGet]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public IActionResult Create()
         {
-            var viewModel = new CreateUserInputModel();
-            viewModel.ListItems = this.ReloadUserForm();
-            viewModel.Roles = this.roleService.GetAllRoles();
+            var viewModel = new CreateUserInputModel
+            {
+                ListItems = this.ReloadUserForm(),
+                Roles = this.roleService.GetAllRoles(),
+            };
 
             return this.View(viewModel);
         }
 
         [HttpPost]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public async Task<IActionResult> CreateAsync(CreateUserInputModel input)
         {
             if (!this.ModelState.IsValid || this.EmailExist(input.Email))
@@ -49,6 +55,7 @@
             return this.RedirectToAction("All");
         }
 
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public IActionResult All(AllListUsersViewModel input, int id)
         {
             id = Math.Max(1, id);
@@ -58,13 +65,11 @@
                 return this.NotFound();
             }
 
-            const int ItemsPerPage = 12;
-
-            var users = this.usersService.AllListUsers(input.Search, id, ItemsPerPage);
+            var users = this.usersService.AllListUsers(input.Search, id, GlobalConstants.ItemsPerPage);
 
             var viewModel = new AllListUsersViewModel
             {
-                ItemsPerPage = ItemsPerPage,
+                ItemsPerPage = GlobalConstants.ItemsPerPage,
                 PageNumber = id,
                 Departments = this.departmentsService.GetAllDepNames(),
                 AllUsers = users,
@@ -75,6 +80,7 @@
         }
 
         [HttpGet]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public IActionResult Edit(string id)
         {
             var viewModel = this.usersService.GetEditUserById(id);
@@ -91,12 +97,13 @@
         }
 
         [HttpPost]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public async Task<IActionResult> EditAsync(string id, EditUserInputModel input)
         {
-            if (!this.ModelState.IsValid)
+            if (!this.ModelState.IsValid || this.EmailExist(input.Email, id))
             {
                 input.ListItems = this.ReloadUserForm();
-                input.Roles = this.roleService.GetAllRolesByUser(input.UserRoles);
+                input.Roles = this.roleService.GetAllRoles();
 
                 return this.View(input);
             }
@@ -114,13 +121,26 @@
             return reload;
         }
 
+        public bool EmailExist(string email, string id)
+        {
+            var isExist = this.usersService.Exist(email, id);
+
+            if (isExist)
+            {
+                this.ModelState.TryAddModelError("Email", GlobalMessages.EmailExist);
+                return true;
+            }
+
+            return false;
+        }
+
         public bool EmailExist(string email)
         {
             var isExist = this.usersService.Exist(email);
 
             if (isExist)
             {
-                this.ModelState.TryAddModelError("Email", $"This {email} already exists");
+                this.ModelState.TryAddModelError("Email", GlobalMessages.EmailExist);
                 return true;
             }
 

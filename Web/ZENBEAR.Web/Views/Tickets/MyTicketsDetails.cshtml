@@ -59,7 +59,15 @@
                         </tr>
                         <tr>
                             <td class="text-left">Telephone</td>
-                            <td class="text-left">No</td>
+                            @if (Model.Ticket.PhoneNumber != null)
+                            {
+                                <td class="text-left">@Model.Ticket.PhoneNumber</td>
+                            }
+                            else
+                            {
+                                <td class="text-left">None</td>
+                            }
+                        </tr>
                         <tr>
                             <td class="text-left">Email</td>
                             <td class="text-left">@Model.Ticket.Reporter.Email</td>

@@ -18,6 +18,7 @@
             await dbContext.Departments.AddAsync(new Department { Name = "IT Service" });
             await dbContext.Departments.AddAsync(new Department { Name = "InfoSec" });
             await dbContext.Departments.AddAsync(new Department { Name = "Development" });
+            await dbContext.Departments.AddAsync(new Department { Name = "Accounting" });
 
             await dbContext.SaveChangesAsync();
         }

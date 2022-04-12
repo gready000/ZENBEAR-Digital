@@ -34,7 +34,7 @@
         public Rate Rate { get; set; }
 
         [Required]
-        public Priority Preority { get; set; }
+        public Priority Priority { get; set; }
 
         public Status Status { get; set; }
 

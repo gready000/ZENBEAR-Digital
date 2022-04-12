@@ -33,6 +33,6 @@
 
         int GetOpenTicketsCount();
 
-        SearchedTicketViewModel GetSearchedTicket(int id);
+        SearchedTicketViewModel GetSearchedTicket(int id, string projectName);
     }
 }

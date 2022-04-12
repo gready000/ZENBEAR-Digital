@@ -21,9 +21,11 @@
 
         public async Task CreateAsync(CreateRoleInputModel input)
         {
-            var role = new ApplicationRole(input.Name);
+            var role = new ApplicationRole(input.Name)
+            {
+                CreatedOn = DateTime.UtcNow,
+            };
 
-            role.CreatedOn = DateTime.UtcNow;
             await this.roleManager.CreateAsync(role);
         }
 

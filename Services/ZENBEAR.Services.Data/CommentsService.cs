@@ -9,16 +9,13 @@
     {
         private readonly IRepository<Comment> commentsRepo;
         private readonly ITicketsService ticketsService;
-        private readonly IUsersService usersService;
 
         public CommentsService(
             ITicketsService ticketsService,
-            IRepository<Comment> commentsRepo,
-            IUsersService usersService)
+            IRepository<Comment> commentsRepo)
         {
             this.ticketsService = ticketsService;
             this.commentsRepo = commentsRepo;
-            this.usersService = usersService;
         }
 
         public async Task CreateAsync(string content, string userId, int ticketId)

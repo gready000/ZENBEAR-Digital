@@ -5,6 +5,11 @@
 <link rel="stylesheet" href="~/css/allticketstable.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/rate.css" asp-append-version="true" />
 
+@if (this.TempData.ContainsKey("Message"))
+{
+    <div class="alert alert-success">@this.TempData["Message"]</div>
+}
+
 @{
     this.ViewData["Title"] = "My Tickets";
 }
@@ -46,11 +51,11 @@
                                                 {
                                                     if (@i <= ticket.Rate)
                                                     {
-                                                        <input type="radio" class="starfill" name="rating" disabled/>
+                                                        <input type="radio" class="starfill" name="rating" disabled />
                                                     }
                                                     else
                                                     {
-                                                        <input type="radio" class="star" name="rating" disabled/>
+                                                        <input type="radio" class="star" name="rating" disabled />
                                                     }
                                                 }
                                             </div>

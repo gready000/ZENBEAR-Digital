@@ -24,7 +24,9 @@
 
             await dbContext.JobTitles.AddAsync(new JobTitle { Name = "Back End Developer", DepartmentId = 3 });
             await dbContext.JobTitles.AddAsync(new JobTitle { Name = "Front End Developer", DepartmentId = 3 });
-            await dbContext.JobTitles.AddAsync(new JobTitle { Name = "Database Arhitecture", DepartmentId = 3 });
+            await dbContext.JobTitles.AddAsync(new JobTitle { Name = "ZenBear Admin", DepartmentId = 3 });
+
+            await dbContext.JobTitles.AddAsync(new JobTitle { Name = "Accountant", DepartmentId = 4 });
 
             await dbContext.SaveChangesAsync();
         }

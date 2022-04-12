@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{B90D1067-FE4C-400E-BA78-5413E30AB9ED}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Web/ZENBEAR.Web/Controllers/TicketsController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Data/ZENBEAR.Data/Seeding/TicketsSeeder.cs">
     <Files>
-      <File FileName="ZENBEAR.Common/GlobalConstants.cs" Line="31" Column="48" />
-      <File FileName="ZENBEAR.Common/GlobalMessages.cs" />
-      <File FileName="Web/ZENBEAR.Web/Controllers/TicketsController.cs" Line="33" Column="52" />
+      <File FileName="Web/ZENBEAR.Web/Controllers/TicketsController.cs" Line="225" Column="101" />
+      <File FileName="Web/ZENBEAR.Web/Views/Shared/_Layout.cshtml" Line="49" Column="81" />
+      <File FileName="ZENBEAR.Common/GlobalConstants.cs" Line="11" Column="69" />
+      <File FileName="Data/ZENBEAR.Data/Seeding/TicketsSeeder.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,13 +12,13 @@
           <Node name="ZENBEAR" expanded="True">
             <Node name="Data" expanded="True">
               <Node name="ZENBEAR.Data" expanded="True">
-                <Node name="Configurations" expanded="True" />
-                <Node name="Seeding" expanded="True" />
+                <Node name="Seeding" expanded="True">
+                  <Node name="TicketsSeeder.cs" selected="True" />
+                </Node>
               </Node>
-              <Node name="ZENBEAR.Data.Common" expanded="True">
-                <Node name="Models" expanded="True" />
+              <Node name="ZENBEAR.Data.Models" expanded="True">
+                <Node name="Enums" expanded="True" />
               </Node>
-              <Node name="ZENBEAR.Data.Models" expanded="True" />
             </Node>
             <Node name="Services" expanded="True">
               <Node name="ZENBEAR.Services.Data" expanded="True" />
@@ -34,20 +35,20 @@
                     </Node>
                   </Node>
                 </Node>
-                <Node name="Controllers" expanded="True">
-                  <Node name="TicketsController.cs" selected="True" />
+                <Node name="Controllers" expanded="True" />
+                <Node name="Views" expanded="True">
+                  <Node name="Home" expanded="True" />
+                  <Node name="Shared" expanded="True" />
+                  <Node name="Tickets" expanded="True" />
                 </Node>
-                <Node name="Views" expanded="True" />
                 <Node name="wwwroot" expanded="True">
-                  <Node name="attachments" expanded="True">
-                    <Node name="tickets" expanded="True" />
-                  </Node>
                   <Node name="css" expanded="True" />
                   <Node name="js" expanded="True" />
-                  <Node name="Logo" expanded="True" />
                 </Node>
               </Node>
-              <Node name="ZENBEAR.Web.ViewModels" expanded="True" />
+              <Node name="ZENBEAR.Web.ViewModels" expanded="True">
+                <Node name="Users" expanded="True" />
+              </Node>
             </Node>
             <Node name="ZENBEAR.Common" expanded="True" />
           </Node>

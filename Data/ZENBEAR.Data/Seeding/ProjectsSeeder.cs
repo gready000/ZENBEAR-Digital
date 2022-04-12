@@ -15,8 +15,8 @@
                 return;
             }
 
-            await dbContext.Projects.AddAsync(new Project { Name = "IT Service desk", DepartmentId = 1 });
-            await dbContext.Projects.AddAsync(new Project { Name = "InfoSec", DepartmentId = 2 });
+            await dbContext.Projects.AddAsync(new Project { Name = "IT Service desk", DepartmentId = 1, IssueTypes = new Issue[] { new Issue { Name = "Software" }, new Issue { Name = "Hardware" } } });
+            await dbContext.Projects.AddAsync(new Project { Name = "InfoSec", DepartmentId = 2, IssueTypes = new Issue[] { new Issue { Name = "Access" }, new Issue { Name = "Virus" } } });
 
             await dbContext.SaveChangesAsync();
         }

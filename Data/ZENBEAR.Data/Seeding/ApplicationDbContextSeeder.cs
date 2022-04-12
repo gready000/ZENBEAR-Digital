@@ -29,6 +29,10 @@
                               new SettingsSeeder(),
                               new DepartmentsSeeder(),
                               new JobtitlesSeeder(),
+                              new ProjectsSeeder(),
+                              new IssuesSeeder(),
+                              new UsersSeeder(),
+                              new TicketsSeeder(),
                           };
 
             foreach (var seeder in seeders)

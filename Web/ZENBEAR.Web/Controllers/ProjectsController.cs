@@ -2,7 +2,9 @@
 {
     using System.Threading.Tasks;
 
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using ZENBEAR.Common;
     using ZENBEAR.Services.Data;
     using ZENBEAR.Web.ViewModels.Projects;
 
@@ -18,6 +20,7 @@
         }
 
         [HttpGet]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public IActionResult Create()
         {
             var viewModel = new CreateProjectInputModel
@@ -29,6 +32,7 @@
         }
 
         [HttpPost]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public async Task<IActionResult> Create(CreateProjectInputModel input)
         {
             if (!this.ModelState.IsValid)

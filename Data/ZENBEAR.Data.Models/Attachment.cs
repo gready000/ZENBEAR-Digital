@@ -17,8 +17,6 @@
 
         public string Extension { get; set; }
 
-        //// The contents of the attach is in the file system
-
         public string AddedByUserId { get; set; }
 
         public ApplicationUser AddedByUser { get; set; }

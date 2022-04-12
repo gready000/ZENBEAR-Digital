@@ -11,5 +11,6 @@
         public const string BaseName = "Name Length must be minimum {2}";
         public const string RoleName = "Role must be minimum {1} characters long";
         public const string LockedAccound = "User account locked out.";
+        public const string EmailExist = "This Email already exists";
     }
 }

@@ -2,7 +2,9 @@
 {
     using System.Threading.Tasks;
 
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using ZENBEAR.Common;
     using ZENBEAR.Services.Data;
     using ZENBEAR.Web.ViewModels.Departments;
 
@@ -15,6 +17,7 @@
             this.departmentsService = departmentsService;
         }
 
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public IActionResult All()
         {
             var allDepartments = this.departmentsService
@@ -24,12 +27,14 @@
         }
 
         [HttpGet]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public IActionResult Create()
         {
             return this.View();
         }
 
         [HttpPost]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public async Task<IActionResult> CreateAsync(CreateDepartmentInputModel input)
         {
             if (!this.ModelState.IsValid)
@@ -45,6 +50,7 @@
         }
 
         [HttpGet]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public IActionResult Edit(int id)
         {
             var viewModel = this.departmentsService.DepartmentById(id);
@@ -58,6 +64,7 @@
         }
 
         [HttpPost]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public async Task<IActionResult> Edit(int id, EditDepartmentViewModel input)
         {
             if (!this.ModelState.IsValid)
@@ -72,6 +79,7 @@
             return this.RedirectToAction("All", "Departments");
         }
 
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public async Task<IActionResult> Delete(int id)
         {
             var success = await this.departmentsService.DeleteByIdAsync(id);

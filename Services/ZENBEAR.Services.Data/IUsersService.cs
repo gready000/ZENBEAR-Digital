@@ -12,6 +12,8 @@
 
         bool Exist(string email);
 
+        bool Exist(string email, string id);
+
         ICollection<ListUsersViewModel> AllListUsers(SearchUserViewModel input, int id, int itemsPerPage);
 
         EditUserInputModel GetEditUserById(string id);
@@ -27,5 +29,7 @@
         ReporterViewModel GetReporterById(string id);
 
         ApplicationUser GetUserById(string id);
+
+        IEnumerable<ApplicationUser> GetDepartmentEmployees(string department);
     }
 }

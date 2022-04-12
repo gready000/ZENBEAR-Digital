@@ -3,8 +3,10 @@
     using System.Linq;
     using System.Threading.Tasks;
 
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using ZENBEAR.Common;
     using ZENBEAR.Data.Models;
     using ZENBEAR.Services.Data;
     using ZENBEAR.Web.ViewModels.Roles;
@@ -20,6 +22,7 @@
             this.roleManager = roleManager;
         }
 
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public IActionResult All()
         {
             var roles = this.roleManager.Roles.ToList();
@@ -27,12 +30,14 @@
         }
 
         [HttpGet]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public IActionResult Create()
         {
             return this.View();
         }
 
         [HttpPost]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public async Task<IActionResult> CreateAsync(CreateRoleInputModel input)
         {
             if (!this.ModelState.IsValid)

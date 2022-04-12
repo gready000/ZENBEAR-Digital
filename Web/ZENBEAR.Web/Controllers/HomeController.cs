@@ -2,16 +2,19 @@
 {
     using System.Diagnostics;
 
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using ZENBEAR.Web.ViewModels;
 
     public class HomeController : BaseController
     {
+        [Authorize]
         public IActionResult Index()
         {
             return this.View();
         }
 
+        [Authorize]
         public IActionResult Privacy()
         {
             return this.View();

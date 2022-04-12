@@ -16,11 +16,11 @@
         public string Issue { get; set; }
 
         [Required]
-        [StringLength(GlobalConstants.SummaryMinLength, ErrorMessage = GlobalMessages.SummaryLength)]
+        [MinLength(GlobalConstants.SummaryMinLength, ErrorMessage = GlobalMessages.SummaryLength)]
         public string Summary { get; set; }
 
         [Required]
-        [StringLength(GlobalConstants.DescriptionMaxLength, ErrorMessage = GlobalMessages.DescriptionLength)]
+        [MinLength(GlobalConstants.DescriptionMaxLength, ErrorMessage = GlobalMessages.DescriptionLength)]
         public string Description { get; set; }
 
         public string PhoneNumber { get; set; }
