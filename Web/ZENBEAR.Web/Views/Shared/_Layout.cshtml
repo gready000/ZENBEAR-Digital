@@ -23,53 +23,61 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                        <img src="https://static1.squarespace.com/static/5ef66d7f1de9065ae3cd8f2e/t/60b776e8297d2d2c20e289d5/1622648836361/" width="80" height="40"
+                        <img src="https://static1.squarespace.com/static/5ef66d7f1de9065ae3cd8f2e/t/60b776e8297d2d2c20e289d5/1622648836361/" width="90" height="40"
                              class="me-3"
                              alt="MDB Logo"
                              loading="lazy" />
                         <small></small>
                     </a>
                     <ul class="nav justify-content-center">
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Reports" asp-action="TicketsMonthReport">&#128202; Reports</a>
+                        </li>
+
                         @if (User.IsInRole(GlobalConstants.ITRole) || User.IsInRole(GlobalConstants.InfoSecRole))
                         {
-            <li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="Open">&#128452; Manage Tickets</a>
-            </li>}
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="Open">&#128452; Manage Tickets</a>
+                    </li>
+}
                         @if (User.Identity.IsAuthenticated)
                         {
-            <li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="MyTickets">&#128451; MyTickets</a>
-            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="Create">&#128395; Create Ticket</a>
-                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">&#128477; Privacy</a>
-                                            </li>}
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="MyTickets">&#128451; MyTickets</a>
+                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="Create">&#128395; Create Ticket</a>
+                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">&#128477; Privacy</a>
+                                                    </li>
+}
                         @if (User.IsInRole(GlobalConstants.AdministratorRoleName))
                         {
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-dark" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    &#128218; Manage
-                </a>
-                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="All">Users</a></li>
-                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Departments" asp-action="All">Departments</a></li>
-                </ul>
-            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-dark" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    &#9999; Add
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Create">User</a></li>
-                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Roles" asp-action="Create">Role</a></li>
-                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Issues" asp-action="Create">Issue</a></li>
-                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Projects" asp-action="Create">Project</a></li>
-                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Jobtitles" asp-action="Create">Jobtitle</a></li>
-                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Departments" asp-action="Create">Department</a></li>
-                                </ul>
-                            </li>}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            &#128218; Manage
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="All">Users</a></li>
+                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Departments" asp-action="All">Departments</a></li>
+                        </ul>
+                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle text-dark" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            &#10133; Add
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Create">User</a></li>
+                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Roles" asp-action="Create">Role</a></li>
+                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Issues" asp-action="Create">Issue</a></li>
+                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Projects" asp-action="Create">Project</a></li>
+                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Jobtitles" asp-action="Create">Jobtitle</a></li>
+                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Departments" asp-action="Create">Department</a></li>
+                                        </ul>
+                                    </li>
+}
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

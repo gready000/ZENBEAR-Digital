@@ -1,0 +1,76 @@
+﻿@model ZENBEAR.Web.ViewModels.Reports.TicketsMonthReportViewModel
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<link rel="stylesheet" href="~/css/monthReprt.css" asp-append-version="true" />
+
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+        This chart shows number of tickets for all projects independently if they are open or closed.
+        we can see here total count for created tickets for every month and every project we have in our company.
+        This chart is accessible only for users in Admin role, they can send data to department's Head's.
+    </p>
+</figure>
+
+@*@foreach (var item in Model.ITServiceTickets)
+{
+    <p>@item.Month</p>
+    <p>@item.TicketsCount</p>
+}*@
+
+@*<script src="~/lib/jquery/dist/monthReport.js" asp-append-version="true"></script>*@
+
+<script>
+
+    Highcharts.chart('container', {
+        chart: {
+            type: 'spline'
+        },
+        title: {
+            text: 'Monthly Tickets Report'
+        },
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        yAxis: {
+            title: {
+                text: 'Tickets'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value;
+                }
+            }
+        },
+        tooltip: {
+            crosshairs: true,
+            shared: true
+        },
+        plotOptions: {
+            spline: {
+                marker: {
+                    radius: 4,
+                    lineColor: '#666666',
+                    lineWidth: 1
+                }
+            }
+        },
+        series: [{
+            name: 'IT Service Desk',
+            marker: {
+                symbol: 'square'
+            },
+            data: @Html.Raw(Model.ITServiceTickets)
+
+        }, {
+            name: 'InfoSec',
+            marker: {
+                symbol: 'diamond'
+            },
+            data: @Html.Raw(Model.InfoSecTickets)
+        }]
+    });</script>

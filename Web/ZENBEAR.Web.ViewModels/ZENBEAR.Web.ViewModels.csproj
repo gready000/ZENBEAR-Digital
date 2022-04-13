@@ -36,6 +36,7 @@
     <None Remove="Projects\" />
     <None Remove="Issues\" />
     <None Remove="Comments\" />
+    <None Remove="Reports\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Departments\" />
@@ -48,6 +49,7 @@
     <Folder Include="Projects\" />
     <Folder Include="Issues\" />
     <Folder Include="Comments\" />
+    <Folder Include="Reports\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Users\EditUserInputModel.cs">

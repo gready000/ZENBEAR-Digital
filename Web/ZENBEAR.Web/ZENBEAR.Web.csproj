@@ -61,6 +61,7 @@
     <None Remove="Views\Tickets\" />
     <None Remove="Views\Projects\" />
     <None Remove="Views\Issues\" />
+    <None Remove="Views\Reports\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Roles\" />
@@ -70,6 +71,7 @@
     <Folder Include="Views\Tickets\" />
     <Folder Include="Views\Projects\" />
     <Folder Include="Views\Issues\" />
+    <Folder Include="Views\Reports\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Tickets\MyTicketDetails.cshtml" />

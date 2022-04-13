@@ -502,3 +502,4 @@
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Projects/Create.cshtml.g.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Issues/Create.cshtml.g.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Tickets/MyTicketsDetails.cshtml.g.cs
+/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/obj/Debug/net5.0/Razor/Views/Reports/TicketsMonthReport.cshtml.g.cs
