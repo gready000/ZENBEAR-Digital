@@ -1,0 +1,19 @@
+﻿@model ZENBEAR.Web.ViewModels.Reports.IssuesTypeReportViewModel
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<link rel="stylesheet" href="~/css/issuesTypeReport.css" asp-append-version="true" />
+
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+        This chart shows issues type share only in this project. It is dynamic and it has been change by every new ticket.
+    </p>
+</figure>
+
+<script type="text/javascript">
+    var issuesType = @Html.Raw(Model.IssuesTypeReport);
+</script>
+<script type="text/javascript" src="~/js/issuesTypeReport.js" asp-append-version="true"></script>

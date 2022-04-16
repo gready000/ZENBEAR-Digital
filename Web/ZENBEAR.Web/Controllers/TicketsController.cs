@@ -33,26 +33,6 @@
             this.environment = environment;
         }
 
-        //[HttpGet]
-        //[Authorize(Roles = "Admin")]
-        //public async Task<IActionResult> AllAsync(int id = 1)
-        //{
-        //    if (id <= 0)
-        //    {
-        //        return this.NotFound();
-        //    }
-
-        //    var viewModel = new ListOpenTicketsViewModel
-        //    {
-        //        OpenTickets = this.ticketsService.GetOpenTickets(GlobalConstants.ItemsPerPage, id),
-        //        ItemsPerPage = GlobalConstants.ItemsPerPage,
-        //        PageNumber = id,
-        //        ItemsCount = this.ticketsService.GetOpenTicketsCount(),
-        //    };
-
-        //    return this.View(viewModel);
-        //}
-
         [HttpGet]
         [Authorize(Roles = GlobalConstants.ITorInfoSec)]
         public async Task<IActionResult> OpenAsync(int id = 1)

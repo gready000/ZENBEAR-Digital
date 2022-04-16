@@ -1,17 +1,13 @@
 ﻿<Properties StartupConfiguration="{B90D1067-FE4C-400E-BA78-5413E30AB9ED}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Web/ZENBEAR.Web/Controllers/ReportsController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Services/ZENBEAR.Services.Data/ReportsService.cs">
     <Files>
-      <File FileName="Web/ZENBEAR.Web/Views/Reports/TicketsMonthReport.cshtml" Line="27" Column="1" IsPinned="True" />
-      <File FileName="Services/ZENBEAR.Services.Data/ReportsService.cs" Line="47" Column="18" IsPinned="True" />
-      <File FileName="Services/ZENBEAR.Services.Data/IReportsService.cs" Line="9" Column="14" IsPinned="True" />
-      <File FileName="Web/ZENBEAR.Web/Controllers/TicketsController.cs" Line="202" Column="13" />
-      <File FileName="Web/ZENBEAR.Web/Views/Shared/_Layout.cshtml" Line="121" Column="5" />
-      <File FileName="Services/ZENBEAR.Services.Data/TicketsService.cs" Line="20" Column="9" />
-      <File FileName="Web/ZENBEAR.Web/Controllers/ReportsController.cs" Line="23" Column="15" />
-      <File FileName="Web/ZENBEAR.Web.ViewModels/Reports/TicketsMonthReportViewModel.cs" Line="7" Column="21" />
-      <File FileName="Web/ZENBEAR.Web.ViewModels/Reports/ITServiceMonthReportViewModel.cs" Line="7" Column="19" />
-      <File FileName="Web/ZENBEAR.Web.ViewModels/Reports/InfoSecMonthReportViewModel.cs" Line="7" Column="19" />
-      <File FileName="Web/ZENBEAR.Web/wwwroot/js/monthReport.js" Line="15" Column="11" />
+      <File FileName="Services/ZENBEAR.Services.Data/ReportsService.cs" Line="100" Column="53" IsPinned="True" />
+      <File FileName="Services/ZENBEAR.Services.Data/IReportsService.cs" Line="13" Column="33" IsPinned="True" />
+      <File FileName="Web/ZENBEAR.Web/Views/Shared/_Layout.cshtml" Line="35" Column="124" />
+      <File FileName="Web/ZENBEAR.Web/Controllers/ReportsController.cs" Line="65" Column="1" />
+      <File FileName="Web/ZENBEAR.Web/Views/Reports/TicketsMonthReport.cshtml" Line="1" Column="1" />
+      <File FileName="Web/ZENBEAR.Web/Views/Reports/IssuesTypeReport.cshtml" Line="19" Column="58" />
+      <File FileName="Web/ZENBEAR.Web.ViewModels/Reports/IssueTypeViewModoel.cs" Line="3" Column="37" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,7 +20,9 @@
               <Node name="ZENBEAR.Data.Models" expanded="True" />
             </Node>
             <Node name="Services" expanded="True">
-              <Node name="ZENBEAR.Services.Data" expanded="True" />
+              <Node name="ZENBEAR.Services.Data" expanded="True">
+                <Node name="ReportsService.cs" selected="True" />
+              </Node>
             </Node>
             <Node name="Web" expanded="True">
               <Node name="ZENBEAR.Web" expanded="True">
@@ -38,9 +36,7 @@
                     </Node>
                   </Node>
                 </Node>
-                <Node name="Controllers" expanded="True">
-                  <Node name="ReportsController.cs" selected="True" />
-                </Node>
+                <Node name="Controllers" expanded="True" />
                 <Node name="Views" expanded="True">
                   <Node name="Reports" expanded="True" />
                   <Node name="Shared" expanded="True" />
@@ -67,8 +63,7 @@
   <MonoDevelop.Ide.ItemProperties.Web.ZENBEAR.Web PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/Views/Reports/TicketsMonthReport.cshtml" relfile="Web/ZENBEAR.Web/Views/Reports/TicketsMonthReport.cshtml" line="27" column="1" />
-      <Breakpoint file="/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/Views/Reports/TicketsMonthReport.cshtml" relfile="Web/ZENBEAR.Web/Views/Reports/TicketsMonthReport.cshtml" line="68" column="1" />
+      <Breakpoint file="/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/ReportsService.cs" relfile="Services/ZENBEAR.Services.Data/ReportsService.cs" line="107" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

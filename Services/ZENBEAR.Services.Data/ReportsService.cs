@@ -10,10 +10,14 @@
     public class ReportsService : IReportsService
     {
         private readonly IDeletableEntityRepository<Ticket> ticketsRepo;
+        private readonly IDeletableEntityRepository<Issue> issueRepo;
 
-        public ReportsService(IDeletableEntityRepository<Ticket> ticketsRepo)
+        public ReportsService(
+            IDeletableEntityRepository<Ticket> ticketsRepo,
+            IDeletableEntityRepository<Issue> issueRepo)
         {
             this.ticketsRepo = ticketsRepo;
+            this.issueRepo = issueRepo;
         }
 
         public int[] GetITServiceMonthReport()
@@ -82,6 +86,21 @@
             }
 
             return report;
+        }
+
+        public List<IssueTypeViewModoel> IssuesTypeReport(string project)
+        {
+            var issuesTypeReport = this.issueRepo
+                .All()
+                .Where(x => x.Project.Name == project)
+                .Select(x => new IssueTypeViewModoel
+                {
+                    Name = x.Name,
+                    y = x.Tickets.Count(),
+                })
+                .ToList();
+
+            return issuesTypeReport;
         }
     }
 }

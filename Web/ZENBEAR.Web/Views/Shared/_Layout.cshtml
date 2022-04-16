@@ -32,6 +32,10 @@
                     <ul class="nav justify-content-center">
 
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Reports" asp-action="IssuesTypeReport">&#128202; UserReports</a>
+                        </li>
+
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Reports" asp-action="TicketsMonthReport">&#128202; Reports</a>
                         </li>
 
@@ -39,8 +43,7 @@
                         {
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="Open">&#128452; Manage Tickets</a>
-                    </li>
-}
+                    </li>}
                         @if (User.Identity.IsAuthenticated)
                         {
                     <li class="nav-item">
@@ -51,8 +54,7 @@
                                     </li>
                                                     <li class="nav-item">
                                                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">&#128477; Privacy</a>
-                                                    </li>
-}
+                                                    </li>}
                         @if (User.IsInRole(GlobalConstants.AdministratorRoleName))
                         {
                     <li class="nav-item dropdown">
@@ -76,8 +78,7 @@
                                             <li><a class="nav-link text-dark" asp-area="" asp-controller="Jobtitles" asp-action="Create">Jobtitle</a></li>
                                             <li><a class="nav-link text-dark" asp-area="" asp-controller="Departments" asp-action="Create">Department</a></li>
                                         </ul>
-                                    </li>
-}
+                                    </li>}
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
