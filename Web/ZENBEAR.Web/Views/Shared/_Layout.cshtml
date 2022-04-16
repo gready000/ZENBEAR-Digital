@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/baseLayout.css" asp-append-version="true" />
     <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
 </head>
 
@@ -29,57 +30,62 @@
                              loading="lazy" />
                         <small></small>
                     </a>
+
                     <ul class="nav justify-content-center">
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Reports" asp-action="IssuesTypeReport">&#128202; UserReports</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Reports" asp-action="TicketsMonthReport">&#128202; Reports</a>
-                        </li>
-
-                        @if (User.IsInRole(GlobalConstants.ITRole) || User.IsInRole(GlobalConstants.InfoSecRole))
-                        {
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="Open">&#128452; Manage Tickets</a>
-                    </li>}
                         @if (User.Identity.IsAuthenticated)
                         {
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="MyTickets">&#128451; MyTickets</a>
-                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="Create">&#128395; Create Ticket</a>
-                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">&#128477; Privacy</a>
-                                                    </li>}
-                        @if (User.IsInRole(GlobalConstants.AdministratorRoleName))
-                        {
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-dark" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            &#128218; Manage
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="All">Users</a></li>
-                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Departments" asp-action="All">Departments</a></li>
-                        </ul>
-                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle text-dark" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            &#10133; Add
-                                        </a>
-                                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Create">User</a></li>
-                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Roles" asp-action="Create">Role</a></li>
-                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Issues" asp-action="Create">Issue</a></li>
-                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Projects" asp-action="Create">Project</a></li>
-                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Jobtitles" asp-action="Create">Jobtitle</a></li>
-                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Departments" asp-action="Create">Department</a></li>
-                                        </ul>
-                                    </li>}
+                @if (User.IsInRole(GlobalConstants.ITRole) || User.IsInRole(GlobalConstants.InfoSecRole))
+                {
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="Open">&#128452; Manage Tickets</a>
+                </li>}
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="MyTickets">&#128451; MyTickets</a>
+                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="Create">&#128395; Create Ticket</a>
+                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">&#128477; Privacy</a>
+                                                                </li>
+
+                                                                                @if (User.IsInRole(GlobalConstants.AdministratorRoleName))
+                                                                                {
+                                                                <li class="nav-item dropdown">
+                                                                    <a class="nav-link dropdown-toggle text-dark" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                        &#128218; Manage
+                                                                    </a>
+                                                                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                                                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="All">Users</a></li>
+                                                                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Departments" asp-action="All">Departments</a></li>
+                                                                    </ul>
+                                                                </li>
+                                                                                    <li class="nav-item dropdown">
+                                                                                        <a class="nav-link dropdown-toggle text-dark" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                            &#10133; Add
+                                                                                        </a>
+                                                                                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                                                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Create">User</a></li>
+                                                                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Roles" asp-action="Create">Role</a></li>
+                                                                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Issues" asp-action="Create">Issue</a></li>
+                                                                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Projects" asp-action="Create">Project</a></li>
+                                                                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Jobtitles" asp-action="Create">Jobtitle</a></li>
+                                                                                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Departments" asp-action="Create">Department</a></li>
+                                                                                        </ul>
+                                                                                    </li>
+                                                                                                        <li class="nav-item">
+                                                                                                            <a class="nav-link text-dark" asp-area="" asp-controller="Reports" asp-action="TicketsMonthReport">&#128202; Report</a>
+                                                                                                        </li>}
+
+                                                                                                @if (User.IsInRole(GlobalConstants.ITRole) || User.IsInRole(GlobalConstants.InfoSecRole))
+                                                                                                {
+                                                                                <li class="nav-item">
+                                                                                    <a class="nav-link text-dark" asp-area="" asp-controller="Reports" asp-action="IssuesTypeReport">&#128202; Report</a>
+                                                                                </li>}}
                     </ul>
+
                     <partial name="_LoginPartial" />
                 </div>
             </div>
@@ -92,22 +98,6 @@
             @this.RenderBody()
         </main>
     </div>
-
-    <style type="text/css">
-        body {
-            background-image: linear-gradient(135deg, tomato, rebeccapurple);
-        }
-
-        #footer {
-            position: absolute;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            background-color: white;
-        }
-    </style>
 
     <footer id="footer" class="bg-light text-center text-lg-start">
         <!-- Copyright -->

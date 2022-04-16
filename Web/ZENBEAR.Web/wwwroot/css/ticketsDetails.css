@@ -167,3 +167,7 @@ td {
 #backBtn {
     margin-top: 15px
 }
+
+body {
+    background-image: linear-gradient(135deg, tomato, rebeccapurple);
+}

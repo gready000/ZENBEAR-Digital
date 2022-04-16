@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="~/css/comments.css">
     <link rel="stylesheet" href="~/css/ticketsDetails.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <style>
+        body {
+            background-image: linear-gradient(135deg, tomato, rebeccapurple);
+        }
+    </style>
 </head>
 
 <body>
@@ -17,7 +21,7 @@
             <button id="backBtn" class="buttonLeft" onclick="history.back(-1)">&#8592; Back</button>
             <p id="element">&#9889; @Model.Ticket.IssueType Issue</p>
             <p id="element">&#9806; TI-@Model.Ticket.Id</p>
-            @if (Model.Ticket.Status == "Open")
+            @if (Model.Ticket.Status == Status.Open.ToString())
             {
                 <form id="resolve" method="post" asp-action="Resolve" asp-route-ticketId="@Model.Ticket.Id">
                     <button type="submit" class="btn btn-success">Resolve Issue</button>

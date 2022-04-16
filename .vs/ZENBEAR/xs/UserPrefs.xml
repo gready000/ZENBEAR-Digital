@@ -1,13 +1,12 @@
 ﻿<Properties StartupConfiguration="{B90D1067-FE4C-400E-BA78-5413E30AB9ED}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Services/ZENBEAR.Services.Data/ReportsService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Web/ZENBEAR.Web/Views/Reports/IssuesTypeReport.cshtml">
     <Files>
-      <File FileName="Services/ZENBEAR.Services.Data/ReportsService.cs" Line="100" Column="53" IsPinned="True" />
+      <File FileName="Services/ZENBEAR.Services.Data/ReportsService.cs" Line="103" Column="1" IsPinned="True" />
       <File FileName="Services/ZENBEAR.Services.Data/IReportsService.cs" Line="13" Column="33" IsPinned="True" />
-      <File FileName="Web/ZENBEAR.Web/Views/Shared/_Layout.cshtml" Line="35" Column="124" />
-      <File FileName="Web/ZENBEAR.Web/Controllers/ReportsController.cs" Line="65" Column="1" />
+      <File FileName="Web/ZENBEAR.Web/Views/Shared/_Layout.cshtml" Line="87" Column="26" />
+      <File FileName="Web/ZENBEAR.Web/Controllers/ReportsController.cs" Line="30" Column="18" />
       <File FileName="Web/ZENBEAR.Web/Views/Reports/TicketsMonthReport.cshtml" Line="1" Column="1" />
       <File FileName="Web/ZENBEAR.Web/Views/Reports/IssuesTypeReport.cshtml" Line="19" Column="58" />
-      <File FileName="Web/ZENBEAR.Web.ViewModels/Reports/IssueTypeViewModoel.cs" Line="3" Column="37" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,9 +19,7 @@
               <Node name="ZENBEAR.Data.Models" expanded="True" />
             </Node>
             <Node name="Services" expanded="True">
-              <Node name="ZENBEAR.Services.Data" expanded="True">
-                <Node name="ReportsService.cs" selected="True" />
-              </Node>
+              <Node name="ZENBEAR.Services.Data" expanded="True" />
             </Node>
             <Node name="Web" expanded="True">
               <Node name="ZENBEAR.Web" expanded="True">
@@ -38,8 +35,11 @@
                 </Node>
                 <Node name="Controllers" expanded="True" />
                 <Node name="Views" expanded="True">
-                  <Node name="Reports" expanded="True" />
+                  <Node name="Reports" expanded="True">
+                    <Node name="IssuesTypeReport.cshtml" selected="True" />
+                  </Node>
                   <Node name="Shared" expanded="True" />
+                  <Node name="Tickets" expanded="True" />
                   <Node name="Users" expanded="True" />
                 </Node>
                 <Node name="wwwroot" expanded="True">
@@ -62,9 +62,7 @@
   <MonoDevelop.Ide.ItemProperties.Tests.Sandbox PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.ItemProperties.Web.ZENBEAR.Web PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/ReportsService.cs" relfile="Services/ZENBEAR.Services.Data/ReportsService.cs" line="107" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
