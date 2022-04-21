@@ -10,5 +10,7 @@
         Task CreateAsync(CreateIssueInputModel input);
 
         Issue GetIssueByName(string issueName);
+
+        int GetCount();
     }
 }

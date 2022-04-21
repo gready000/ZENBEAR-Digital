@@ -119,13 +119,11 @@
         public async Task CreateAsync(CreateUserInputModel input)
         {
             int index = int.Parse(input.JobTitle);
-
             var dj = this.departmentsService.GetJobs();
 
             var jobName = dj[input.Department].ElementAt(index);
 
             var departmentId = this.departmentsService.GetIdByName(input.Department);
-
             var jobTitleId = this.jobtitleService.GetIdByName(jobName);
 
             var user = new ApplicationUser()

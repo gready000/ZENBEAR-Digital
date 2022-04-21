@@ -73,7 +73,7 @@
             services.AddTransient<IEmailSender, NullMessageSender>();
             services.AddTransient<ISettingsService, SettingsService>();
             services.AddTransient<IJobtitleService, JobtitleService>();
-            services.AddTransient<IDepartmentsService, DepartmentsService>();
+            services.AddTransient<IDepartmentsService, JobTitlesService>();
             services.AddTransient<IRoleService, RoleService>();
             services.AddTransient<IUsersService, UsersService>();
             services.AddTransient<ITicketsService, TicketsService>();

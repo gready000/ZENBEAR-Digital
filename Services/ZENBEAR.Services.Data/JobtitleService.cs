@@ -88,5 +88,17 @@
 
             return true;
         }
+
+        public JobTitle GetJobtitleById(int id)
+        {
+            return this.jobtitleRepo
+                .All()
+                .FirstOrDefault(x => x.Id == id);
+        }
+
+        public int GetCount()
+        {
+            return this.jobtitleRepo.AllAsNoTracking().Count();
+        }
     }
 }

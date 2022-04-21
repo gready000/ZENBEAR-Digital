@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7xkQTEnIcsz5yWJnlGcoj2qV8J3CJeDIwo3MZX+ogvtdq7OXK7ZQnk8wOq2OvQRqzf1s8FBkvwEVP+YobLxkYQ==",
+  "dgSpecHash": "n2KjhrtPfvZJePXAUyjiTpIkbdkS9KXxtOHFmhet91OJ2dQoRjXg5G8DvjagefYENPRwHLn8l5uYhCFTwm2/Zw==",
   "success": true,
   "projectFilePath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/ZENBEAR.Web.Tests/ZENBEAR.Web.Tests.csproj",
   "expectedPackageFiles": [
@@ -58,9 +58,9 @@
     "/Users/emilanov/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/microsoft.data.sqlclient/2.0.1/microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/microsoft.data.sqlclient.sni.runtime/2.0.1/microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
-    "/Users/emilanov/.nuget/packages/microsoft.entityframeworkcore/5.0.12/microsoft.entityframeworkcore.5.0.12.nupkg.sha512",
-    "/Users/emilanov/.nuget/packages/microsoft.entityframeworkcore.abstractions/5.0.12/microsoft.entityframeworkcore.abstractions.5.0.12.nupkg.sha512",
-    "/Users/emilanov/.nuget/packages/microsoft.entityframeworkcore.analyzers/5.0.12/microsoft.entityframeworkcore.analyzers.5.0.12.nupkg.sha512",
+    "/Users/emilanov/.nuget/packages/microsoft.entityframeworkcore/5.0.16/microsoft.entityframeworkcore.5.0.16.nupkg.sha512",
+    "/Users/emilanov/.nuget/packages/microsoft.entityframeworkcore.abstractions/5.0.16/microsoft.entityframeworkcore.abstractions.5.0.16.nupkg.sha512",
+    "/Users/emilanov/.nuget/packages/microsoft.entityframeworkcore.analyzers/5.0.16/microsoft.entityframeworkcore.analyzers.5.0.16.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/microsoft.entityframeworkcore.relational/5.0.12/microsoft.entityframeworkcore.relational.5.0.12.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/microsoft.entityframeworkcore.sqlserver/5.0.6/microsoft.entityframeworkcore.sqlserver.5.0.6.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/microsoft.extensions.caching.abstractions/5.0.0/microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",

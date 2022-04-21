@@ -22,5 +22,7 @@
         string GetProjectByDepartmentId(int id);
 
         Project GetProjectByName(string projectName);
+
+        int GetCount();
     }
 }

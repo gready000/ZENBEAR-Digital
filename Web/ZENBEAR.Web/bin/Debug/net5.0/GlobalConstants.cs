@@ -10,6 +10,10 @@
         public const string InfoSecRole = "InfoSec";
         public const string ITorInfoSec = ITRole + "," + InfoSecRole;
 
+        // Projects
+        public const string ITProject = "IT Service Desk";
+        public const string InfoSecProject = "InfoSec";
+
         // Ticket
         public const int SummaryMinLength = 5;
         public const int DescriptionMaxLength = 15;

@@ -88,5 +88,10 @@
 
             return project;
         }
+
+        public int GetCount()
+        {
+            return this.projectsRepo.AllAsNoTracking().Count();
+        }
     }
 }

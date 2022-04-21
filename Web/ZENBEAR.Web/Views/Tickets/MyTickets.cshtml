@@ -1,4 +1,5 @@
 ﻿@model ZENBEAR.Web.ViewModels.Tickets.AllMyTicketsViewModel
+@using ZENBEAR.Data.Models.Enums
 
 <script src="https://kit.fontawesome.com/a199d1b466.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -41,7 +42,7 @@
                             <td style="width: 12%">@ticket.CreateOn</td>
                             <td style="width: 22%">@ticket.Assignee</td>
                             <td style="width: 14%">
-                                @if (ticket.Status == "Closed")
+                                @if (ticket.Status == Status.Closed.ToString())
                                 {
                                     if (ticket.Rate != null)
                                     {
@@ -120,7 +121,8 @@
 </div>
 
 <form method="post" id="antiForgeryForm"></form>
-<script>function postToController(ticketId) {
+<script>
+    function postToController(ticketId) {
         var ratingValue = 0;
         for (i = 0; i < document.getElementsByName('rating').length; i++) {
             if (document.getElementsByName('rating')[i].checked == true) {
@@ -145,4 +147,5 @@
             },
             contentType: 'application/json',
         });
-    }</script>
+    }
+</script>

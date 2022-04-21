@@ -1,5 +1,6 @@
 ﻿namespace ZENBEAR.Data.Models
 {
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
@@ -49,5 +50,10 @@
         public ICollection<Comment> Comments { get; set; } = new HashSet<Comment>();
 
         public ICollection<Attachment> Attachments { get; set; } = new HashSet<Attachment>();
+
+        public static implicit operator Ticket(Ticket v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

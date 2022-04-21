@@ -28,5 +28,7 @@
         string GetNameById(int id);
 
         Department GetDepartmentById(int id);
+
+        int GetCount();
     }
 }

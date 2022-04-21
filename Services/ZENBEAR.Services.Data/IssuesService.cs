@@ -43,5 +43,10 @@
 
             return issue;
         }
+
+        public int GetCount()
+        {
+            return this.issuesRepo.AllAsNoTracking().Count();
+        }
     }
 }

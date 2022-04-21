@@ -1,25 +1,26 @@
 ﻿<Properties StartupConfiguration="{B90D1067-FE4C-400E-BA78-5413E30AB9ED}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Web/ZENBEAR.Web/Views/Reports/IssuesTypeReport.cshtml">
-    <Files>
-      <File FileName="Services/ZENBEAR.Services.Data/ReportsService.cs" Line="103" Column="1" IsPinned="True" />
-      <File FileName="Services/ZENBEAR.Services.Data/IReportsService.cs" Line="13" Column="33" IsPinned="True" />
-      <File FileName="Web/ZENBEAR.Web/Views/Shared/_Layout.cshtml" Line="87" Column="26" />
-      <File FileName="Web/ZENBEAR.Web/Controllers/ReportsController.cs" Line="30" Column="18" />
-      <File FileName="Web/ZENBEAR.Web/Views/Reports/TicketsMonthReport.cshtml" Line="1" Column="1" />
-      <File FileName="Web/ZENBEAR.Web/Views/Reports/IssuesTypeReport.cshtml" Line="19" Column="58" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ZENBEAR" expanded="True">
             <Node name="Data" expanded="True">
-              <Node name="ZENBEAR.Data" expanded="True">
-                <Node name="Seeding" expanded="True" />
+              <Node name="ZENBEAR.Data" expanded="True" />
+              <Node name="ZENBEAR.Data.Common" expanded="True">
+                <Node name="Repositories" expanded="True" />
               </Node>
-              <Node name="ZENBEAR.Data.Models" expanded="True" />
+              <Node name="ZENBEAR.Data.Models" expanded="True">
+                <Node name="Enums" expanded="True" />
+              </Node>
             </Node>
             <Node name="Services" expanded="True">
               <Node name="ZENBEAR.Services.Data" expanded="True" />
+            </Node>
+            <Node name="Tests" expanded="True">
+              <Node name="ZENBEAR.Services.Data.Tests" expanded="True">
+                <Node name="DepartmentsServiceTests.cs" selected="True" />
+              </Node>
+              <Node name="ZENBEAR.Web.Tests" expanded="True" />
             </Node>
             <Node name="Web" expanded="True">
               <Node name="ZENBEAR.Web" expanded="True">
@@ -35,9 +36,7 @@
                 </Node>
                 <Node name="Controllers" expanded="True" />
                 <Node name="Views" expanded="True">
-                  <Node name="Reports" expanded="True">
-                    <Node name="IssuesTypeReport.cshtml" selected="True" />
-                  </Node>
+                  <Node name="Reports" expanded="True" />
                   <Node name="Shared" expanded="True" />
                   <Node name="Tickets" expanded="True" />
                   <Node name="Users" expanded="True" />
@@ -48,10 +47,23 @@
                 </Node>
               </Node>
               <Node name="ZENBEAR.Web.ViewModels" expanded="True">
-                <Node name="Reports" expanded="True" />
+                <Node name="Users" expanded="True" />
               </Node>
             </Node>
             <Node name="ZENBEAR.Common" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="ZENBEAR" expanded="True">
+            <Node name="Tests" expanded="True">
+              <Node name="ZENBEAR.Services.Data.Tests" expanded="True">
+                <Node name="ZENBEAR.Services.Data.Tests" expanded="True">
+                  <Node name="TicketsServiceTests" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>

@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Linq;
 
+    using ZENBEAR.Common;
     using ZENBEAR.Data.Common.Repositories;
     using ZENBEAR.Data.Models;
     using ZENBEAR.Web.ViewModels.Reports;
@@ -24,7 +25,7 @@
         {
             var monthTickets = this.ticketsRepo
                 .All()
-                .Where(x => x.Project.Name == "IT Service desk")
+                .Where(x => x.Project.Name == GlobalConstants.ITProject)
                 .GroupBy(x => new
                 {
                     x.CreatedOn.Month,
@@ -58,7 +59,7 @@
         {
             var infoSecTickets = this.ticketsRepo
                 .All()
-                .Where(x => x.Project.Name == "InfoSec")
+                .Where(x => x.Project.Name == GlobalConstants.InfoSecProject)
                 .GroupBy(d => new
                 {
                     d.CreatedOn.Month,

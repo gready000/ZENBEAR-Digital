@@ -10,11 +10,11 @@
     using ZENBEAR.Web.ViewModels.Departments;
     using ZENBEAR.Web.ViewModels.Jobtitles;
 
-    public class DepartmentsService : IDepartmentsService
+    public class JobTitlesService : IDepartmentsService
     {
         private readonly IDeletableEntityRepository<Department> departmentsRepo;
 
-        public DepartmentsService(IDeletableEntityRepository<Department> departmentsRepo)
+        public JobTitlesService(IDeletableEntityRepository<Department> departmentsRepo)
         {
             this.departmentsRepo = departmentsRepo;
         }
@@ -158,6 +158,11 @@
             await this.departmentsRepo.SaveChangesAsync();
 
             return true;
+        }
+
+        public int GetCount()
+        {
+            return this.departmentsRepo.AllAsNoTracking().Count();
         }
     }
 }

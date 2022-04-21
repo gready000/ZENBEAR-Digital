@@ -47,5 +47,10 @@
 
             return rate.Value;
         }
+
+        public int GetCount()
+        {
+            return this.ratesRepo.AllAsNoTracking().Count();
+        }
     }
 }
