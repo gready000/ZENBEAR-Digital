@@ -23,8 +23,6 @@
         {
         }
 
-        public DbSet<Setting> Settings { get; set; }
-
         public DbSet<Department> Departments { get; set; }
 
         public DbSet<JobTitle> Jobtitles { get; set; }

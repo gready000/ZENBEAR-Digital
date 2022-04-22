@@ -31,6 +31,38 @@
             this.issuesService = issuesService;
         }
 
+        public IEnumerable<MyTicketsViewModel> GetAllTickets(int itemsPerPage, int page)
+        {
+            var skip = (page - 1) * itemsPerPage;
+
+            var allTickets = this.ticketsRepo
+                .All()
+                    .OrderByDescending(x => x.CreatedOn)
+                    .OrderBy(x => x.ProjectId)
+                    .Skip(skip)
+                    .Take(itemsPerPage)
+                    .Select(x => new MyTicketsViewModel
+                    {
+                        Id = x.Id,
+                        IssueType = x.Issue.Name,
+                        Summary = x.Summary,
+                        Reporter = x.ReporterId,
+                        Assignee = x.AssigneeId,
+                        CreateOn = x.CreatedOn.ToString("dd/MM/yyyy"),
+                        Status = x.Status.ToString(),
+                    })
+                    .ToList();
+
+            foreach (var ticket in allTickets)
+            {
+                ticket.Assignee = this.AssignNameToAssignee(ticket.Assignee);
+
+                ticket.Reporter = this.usersService.GetEmployeeFullName(ticket.Reporter);
+            }
+
+            return allTickets;
+        }
+
         public IEnumerable<OpenTicketsViewModel> GetOpenTickets(string project, int itemsPerPage, int page)
         {
             var skip = (page - 1) * itemsPerPage;
@@ -304,6 +336,11 @@
             ticket.Status = Status.Closed;
 
             await this.ticketsRepo.SaveChangesAsync();
+        }
+
+        public int GetCount()
+        {
+            return this.ticketsRepo.AllAsNoTracking().Count();
         }
 
         private string AssignNameToAssignee(string assign)

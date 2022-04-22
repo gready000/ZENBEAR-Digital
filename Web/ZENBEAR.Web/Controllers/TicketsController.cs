@@ -34,6 +34,26 @@
         }
 
         [HttpGet]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+        public IActionResult AllTickets(int id = 1)
+        {
+            if (id <= 0)
+            {
+                return this.NotFound();
+            }
+
+            var viewModel = new AllTicketsAdminViewModel
+            {
+                AllTickets = this.ticketsService.GetAllTickets(GlobalConstants.ItemsPerPage, id),
+                ItemsPerPage = GlobalConstants.ItemsPerPage,
+                PageNumber = id,
+                ItemsCount = this.ticketsService.GetCount(),
+            };
+
+            return this.View(viewModel);
+        }
+
+        [HttpGet]
         [Authorize(Roles = GlobalConstants.ITorInfoSec)]
         public async Task<IActionResult> OpenAsync(int id = 1)
         {

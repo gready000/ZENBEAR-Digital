@@ -1,0 +1,95 @@
+﻿@model ZENBEAR.Web.ViewModels.Tickets.AllTicketsAdminViewModel
+@using ZENBEAR.Data.Models.Enums
+
+<script src="https://kit.fontawesome.com/a199d1b466.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="~/css/allticketstable.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/rate.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/rate.css" asp-append-version="true" />
+
+@{
+    this.ViewData["Title"] = "All Tickets";
+}
+
+<div class="row">
+    <div id="admin" class="col s12">
+        <div class="card material-table">
+            <div class="table-header">
+                <span class="table-title">@this.ViewData["Title"]</span>
+                <div class="actions">
+                </div>
+            </div>
+            <table id="datatable">
+                <thead>
+                    <tr>
+                        <th>Issue Type</th>
+                        <th>Key</th>
+                        <th>Summary</th>
+                        <th>Reporter</th>
+                        <th>Create On</th>
+                        <th>Assignee</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var ticket in Model.AllTickets)
+                    {
+                        <tr id="li" onclick="location.href = '@(Url.Action("MyTicketsDetails", "Tickets", new { Id = ticket.Id }))'">
+                            <td style="width: 5%; ">@ticket.IssueType</td>
+                            <td style="width: 5%; ">TI-@ticket.Id</td>
+                            <td style="max-width: 150px; width: 30%">@ticket.Summary</td>
+                            <td style="width: 20%">@ticket.Reporter</td>
+                            <td style="width: 12%">@ticket.CreateOn</td>
+                            <td style="width: 20%">@ticket.Assignee</td>
+                            <td style="width: 10%">
+                                @if (ticket.Status == Status.Closed.ToString())
+                                {
+                                    <div style="padding-left: 13px; color: blue">@ticket.Status</div>
+                                }
+                                else
+                                {
+                                    <div style="padding-left: 13px; color: green">@ticket.Status</div>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <nav aria-label="..." style="margin-left: 10px; margin-top: 5px;">
+                <ul class="pagination">
+                    <li class="page-item @if (!Model.HasPreviousPage) { <text>disabled</text> }">
+                        <a class="page-link" asp-action="Closed" asp-route-id="@Model.PreviousPageNumber">Previous</a>
+                    </li>
+                    @for (int i = Model.PageNumber - 2; i < Model.PageNumber; i++)
+                    {
+                        if (i > 0)
+                        {
+                            <li class="page-item"><a class="page-link" asp-action="Closed" asp-route-id="@i">@i</a></li>
+                        }
+                    }
+                    <li class="page-item active" aria-current="page">
+                        <span class="page-link">
+                            @Model.PageNumber
+                            <span class="sr-only">(current)</span>
+                        </span>
+                    </li>
+                    @for (int i = Model.PageNumber + 1; i <= Model.PageNumber + 2; i++)
+                    {
+                        if (i <= Model.PagesCount)
+                        {
+                            <li class="page-item"><a class="page-link" asp-action="Closed" asp-route-id="@i">@i</a></li>
+                        }
+                    }
+                    <li class="page-item @if (!Model.HasNextPage) { <text>disabled</text> }">
+                        <a class="page-link" asp-action="Closed" asp-route-id="@Model.NextPageNumber">Next</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</div>
+
+<script src="~/js/allticketstable.js" asp-append-version="true"></script>
+

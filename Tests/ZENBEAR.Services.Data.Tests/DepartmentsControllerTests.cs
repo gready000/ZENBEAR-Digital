@@ -3,7 +3,7 @@
     using Microsoft.AspNetCore.Mvc;
     using Moq;
     using Xunit;
-    using ZENBEAR.Web.Areas.ManageDep.Controllers;
+    using ZENBEAR.Web.Controllers;
     using ZENBEAR.Web.ViewModels.Departments;
 
     public class DepartmentsControllerTests

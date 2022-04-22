@@ -20,7 +20,7 @@
         [Fact]
         public async Task TestGetCountAndCreateMethods()
         {
-            this.context.JobTitles.Add(new JobTitle { Name = "Test", DepartmentId = 1 });
+            this.context.Jobtitles.Add(new JobTitle { Name = "Test", DepartmentId = 1 });
 
             await this.context.SaveChangesAsync();
             var jobtitlesRepo = new EfDeletableEntityRepository<JobTitle>(this.context);
@@ -32,7 +32,7 @@
         [Fact]
         public async Task TestGetIdByNameShouldReturn1()
         {
-            this.context.JobTitles.Add(new JobTitle { Name = "Test" });
+            this.context.Jobtitles.Add(new JobTitle { Name = "Test" });
 
             await this.context.SaveChangesAsync();
 
@@ -46,7 +46,7 @@
         [Fact]
         public async Task TestUpdateJobtitleShouldChangeTheName()
         {
-            this.context.JobTitles.Add(new JobTitle { Name = "Test" });
+            this.context.Jobtitles.Add(new JobTitle { Name = "Test" });
 
             await this.context.SaveChangesAsync();
 
@@ -63,7 +63,7 @@
         [Fact]
         public async Task TestDeleteDepartmentShouldReturnTrue()
         {
-            this.context.JobTitles.Add(new JobTitle { Name = "Test" });
+            this.context.Jobtitles.Add(new JobTitle { Name = "Test" });
 
             await this.context.SaveChangesAsync();
 

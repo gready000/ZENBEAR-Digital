@@ -34,5 +34,9 @@
         int GetOpenTicketsCount();
 
         SearchedTicketViewModel GetSearchedTicket(int id, string projectName);
+
+        IEnumerable<MyTicketsViewModel> GetAllTickets(int itemsPerPage, int page);
+
+        int GetCount();
     }
 }

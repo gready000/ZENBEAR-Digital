@@ -19,7 +19,7 @@
         [Fact]
         public async Task GetIssueByNameReturnTestGetCount()
         {
-            this.context.applicationUser.Add(new Issue { Name = "Test", ProjectId = 1 });
+            this.context.Issues.Add(new Issue { Name = "Test", ProjectId = 1 });
 
             await this.context.SaveChangesAsync();
 

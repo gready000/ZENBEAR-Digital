@@ -29,6 +29,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\ZENBEAR.Data\ZENBEAR.Data.csproj" />
     <ProjectReference Include="..\..\Services\ZENBEAR.Services.Data\ZENBEAR.Services.Data.csproj" />
+    <ProjectReference Include="..\..\Web\ZENBEAR.Web\ZENBEAR.Web.csproj" />
   </ItemGroup>
 
 </Project>

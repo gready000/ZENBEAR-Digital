@@ -36,15 +36,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\ZENBEAR.Common\ZENBEAR.Common.csproj" />
+    <ProjectReference Include="..\..\Data\ZENBEAR.Data.Models\ZENBEAR.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Data\ZENBEAR.Data\ZENBEAR.Data.csproj" />
+    <ProjectReference Include="..\..\Services\ZENBEAR.Services.Data\ZENBEAR.Services.Data.csproj" />
     <ProjectReference Include="..\..\Services\ZENBEAR.Services.Mapping\ZENBEAR.Services.Mapping.csproj" />
     <ProjectReference Include="..\..\Services\ZENBEAR.Services.Messaging\ZENBEAR.Services.Messaging.csproj" />
     <ProjectReference Include="..\..\Services\ZENBEAR.Services\ZENBEAR.Services.csproj" />
     <ProjectReference Include="..\ZENBEAR.Web.Infrastructure\ZENBEAR.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\ZENBEAR.Web.ViewModels\ZENBEAR.Web.ViewModels.csproj" />
-    <ProjectReference Include="..\..\Tests\ZENBEAR.Services.Data.Tests\ZENBEAR.Services.Data.Tests.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-      <Private>False</Private>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
@@ -61,7 +61,12 @@
     <None Remove="Views\Tickets\" />
     <None Remove="Views\Projects\" />
     <None Remove="Views\Issues\" />
-    <None Remove="Views\Reports\" />
+    <None Remove="Areas\Departments\" />
+    <None Remove="Areas\Departments\Views\Departments\" />
+    <None Remove="Areas\Charts\" />
+    <None Remove="Areas\Charts\Controllers\" />
+    <None Remove="Areas\Charts\Views\" />
+    <None Remove="Areas\Charts\Views\Reports\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Roles\" />
@@ -71,7 +76,10 @@
     <Folder Include="Views\Tickets\" />
     <Folder Include="Views\Projects\" />
     <Folder Include="Views\Issues\" />
-    <Folder Include="Views\Reports\" />
+    <Folder Include="Areas\Statistics\" />
+    <Folder Include="Areas\Statistics\Controllers\" />
+    <Folder Include="Areas\Statistics\Views\" />
+    <Folder Include="Areas\Statistics\Views\Reports\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Tickets\MyTicketDetails.cshtml" />

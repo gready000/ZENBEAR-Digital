@@ -1,9 +1,7 @@
 ﻿<Properties StartupConfiguration="{B90D1067-FE4C-400E-BA78-5413E30AB9ED}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Tests/ZENBEAR.Services.Data.Tests/DepartmentsControllerTests.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Web/ZENBEAR.Web/Views/Shared/_Layout.cshtml">
     <Files>
-      <File FileName="Data/ZENBEAR.Data/Seeding/JobtitlesSeeder.cs" Line="29" Column="38" />
-      <File FileName="Data/ZENBEAR.Data/ApplicationDbContext.cs" Line="30" Column="41" />
-      <File FileName="Tests/ZENBEAR.Services.Data.Tests/DepartmentsControllerTests.cs" Line="6" Column="23" />
+      <File FileName="Web/ZENBEAR.Web/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,40 +23,26 @@
               <Node name="ZENBEAR.Services.Data" expanded="True" />
             </Node>
             <Node name="Tests" expanded="True">
-              <Node name="ZENBEAR.Services.Data.Tests" expanded="True">
-                <Node name="Dependencies" expanded="True" />
-              </Node>
+              <Node name="Sandbox" expanded="True" />
+              <Node name="ZENBEAR.Services.Data.Tests" expanded="True" />
               <Node name="ZENBEAR.Web.Tests" expanded="True" />
             </Node>
             <Node name="Web" expanded="True">
               <Node name="ZENBEAR.Web" expanded="True">
-                <Node name="Dependencies" expanded="True">
-                  <Node name="ProjectDependencies" expanded="True" selected="True" />
-                </Node>
                 <Node name="Areas" expanded="True">
-                  <Node name="Identity" expanded="True">
-                    <Node name="Pages" expanded="True">
-                      <Node name="Account" expanded="True">
-                        <Node name="Login.cshtml" expanded="True" />
-                        <Node name="Register.cshtml" expanded="True" />
-                      </Node>
+                  <Node name="Statistics" expanded="True">
+                    <Node name="Controllers" expanded="True" />
+                    <Node name="Views" expanded="True">
+                      <Node name="Reports" expanded="True" />
                     </Node>
                   </Node>
                 </Node>
                 <Node name="Controllers" expanded="True" />
                 <Node name="Views" expanded="True">
-                  <Node name="Reports" expanded="True" />
-                  <Node name="Shared" expanded="True" />
-                  <Node name="Tickets" expanded="True" />
-                  <Node name="Users" expanded="True" />
+                  <Node name="Shared" expanded="True">
+                    <Node name="_Layout.cshtml" selected="True" />
+                  </Node>
                 </Node>
-                <Node name="wwwroot" expanded="True">
-                  <Node name="css" expanded="True" />
-                  <Node name="js" expanded="True" />
-                </Node>
-              </Node>
-              <Node name="ZENBEAR.Web.ViewModels" expanded="True">
-                <Node name="Users" expanded="True" />
               </Node>
             </Node>
             <Node name="ZENBEAR.Common" expanded="True" />
@@ -68,7 +52,11 @@
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
           <Node name="ZENBEAR" expanded="True" selected="True">
-            <Node name="Tests" expanded="True" />
+            <Node name="Tests" expanded="True">
+              <Node name="ZENBEAR.Services.Data.Tests" expanded="True">
+                <Node name="ZENBEAR.Services.Data.Tests" expanded="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>

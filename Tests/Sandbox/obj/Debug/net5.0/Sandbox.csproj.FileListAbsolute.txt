@@ -1,3 +1,8 @@
+/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/obj/Debug/net5.0/Sandbox.csproj.AssemblyReference.cache
+/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/obj/Debug/net5.0/Sandbox.GeneratedMSBuildEditorConfig.editorconfig
+/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/obj/Debug/net5.0/Sandbox.AssemblyInfoInputs.cache
+/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/obj/Debug/net5.0/Sandbox.AssemblyInfo.cs
+/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/obj/Debug/net5.0/Sandbox.csproj.CoreCompileInputs.cache
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/bin/Debug/net5.0/GlobalConstants.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/bin/Debug/net5.0/ApplicationRole.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/bin/Debug/net5.0/ApplicationUser.cs
@@ -73,11 +78,6 @@
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/bin/Debug/net5.0/ZENBEAR.Services.Messaging.pdb
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/bin/Debug/net5.0/ZENBEAR.Services.pdb
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/bin/Debug/net5.0/ZENBEAR.Web.ViewModels.pdb
-/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/obj/Debug/net5.0/Sandbox.csproj.AssemblyReference.cache
-/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/obj/Debug/net5.0/Sandbox.GeneratedMSBuildEditorConfig.editorconfig
-/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/obj/Debug/net5.0/Sandbox.AssemblyInfoInputs.cache
-/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/obj/Debug/net5.0/Sandbox.AssemblyInfo.cs
-/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/obj/Debug/net5.0/Sandbox.csproj.CoreCompileInputs.cache
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/obj/Debug/net5.0/Sandbox.csproj.CopyComplete
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/obj/Debug/net5.0/Sandbox.dll
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/obj/Debug/net5.0/ref/Sandbox.dll

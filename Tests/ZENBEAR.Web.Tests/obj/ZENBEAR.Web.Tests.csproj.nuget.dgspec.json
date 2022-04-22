@@ -519,98 +519,6 @@
         }
       }
     },
-    "/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/ZENBEAR.Services.Data.Tests/ZENBEAR.Services.Data.Tests.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/ZENBEAR.Services.Data.Tests/ZENBEAR.Services.Data.Tests.csproj",
-        "projectName": "ZENBEAR.Services.Data.Tests",
-        "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/ZENBEAR.Services.Data.Tests/ZENBEAR.Services.Data.Tests.csproj",
-        "packagesPath": "/Users/emilanov/.nuget/packages/",
-        "outputPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/ZENBEAR.Services.Data.Tests/obj/",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "/Users/emilanov/.config/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net5.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
-            "projectReferences": {
-              "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data/ZENBEAR.Data.csproj": {
-                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data/ZENBEAR.Data.csproj"
-              },
-              "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/ZENBEAR.Services.Data.csproj": {
-                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/ZENBEAR.Services.Data.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore.InMemory": {
-              "target": "Package",
-              "version": "[5.0.6, )"
-            },
-            "Microsoft.NET.Test.Sdk": {
-              "target": "Package",
-              "version": "[16.9.4, )"
-            },
-            "Moq": {
-              "target": "Package",
-              "version": "[4.16.1, )"
-            },
-            "StyleCop.Analyzers": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.2.0-beta.312, )"
-            },
-            "xunit": {
-              "target": "Package",
-              "version": "[2.4.1, )"
-            },
-            "xunit.runner.visualstudio": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.4.3, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.407/RuntimeIdentifierGraph.json"
-        }
-      }
-    },
     "/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/ZENBEAR.Web.Tests/ZENBEAR.Web.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -869,6 +777,15 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Models/ZENBEAR.Data.Models.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Models/ZENBEAR.Data.Models.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data/ZENBEAR.Data.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data/ZENBEAR.Data.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/ZENBEAR.Services.Data.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/ZENBEAR.Services.Data.csproj"
+              },
               "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/ZENBEAR.Services.Mapping.csproj": {
                 "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Mapping/ZENBEAR.Services.Mapping.csproj"
               },
@@ -878,14 +795,14 @@
               "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services/ZENBEAR.Services.csproj": {
                 "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services/ZENBEAR.Services.csproj"
               },
-              "/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/ZENBEAR.Services.Data.Tests/ZENBEAR.Services.Data.Tests.csproj": {
-                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/ZENBEAR.Services.Data.Tests/ZENBEAR.Services.Data.Tests.csproj"
-              },
               "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.Infrastructure/ZENBEAR.Web.Infrastructure.csproj": {
                 "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.Infrastructure/ZENBEAR.Web.Infrastructure.csproj"
               },
               "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/ZENBEAR.Web.ViewModels.csproj": {
                 "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.ViewModels/ZENBEAR.Web.ViewModels.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/ZENBEAR.Common.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/ZENBEAR.Common.csproj"
               }
             }
           }

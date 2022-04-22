@@ -8,6 +8,7 @@
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/ZENBEAR.Web.Tests/bin/Debug/net5.0/ApplicationUser.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/ZENBEAR.Web.Tests/bin/Debug/net5.0/Users/EditUserInputModel.cs
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/ZENBEAR.Web.Tests/bin/Debug/net5.0/wwwroot/attachments/tickets/9f724e7b-4920-4c05-8276-a618c0f58eec.srt
+/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/ZENBEAR.Web.Tests/bin/Debug/net5.0/wwwroot/Logo/backgraund.jpg
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/ZENBEAR.Web.Tests/bin/Debug/net5.0/appsettings.Development.json
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/ZENBEAR.Web.Tests/bin/Debug/net5.0/appsettings.json
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/ZENBEAR.Web.Tests/bin/Debug/net5.0/bundleconfig.json
@@ -545,4 +546,3 @@
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/ZENBEAR.Web.Tests/obj/Debug/net5.0/ref/ZENBEAR.Web.Tests.dll
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/ZENBEAR.Web.Tests/obj/Debug/net5.0/ZENBEAR.Web.Tests.pdb
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/ZENBEAR.Web.Tests/obj/Debug/net5.0/ZENBEAR.Web.Tests.genruntimeconfig.cache
-/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/ZENBEAR.Web.Tests/bin/Debug/net5.0/wwwroot/Logo/backgraund.jpg
