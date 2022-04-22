@@ -36,15 +36,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ZENBEAR.Common\ZENBEAR.Common.csproj" />
-    <ProjectReference Include="..\..\Data\ZENBEAR.Data.Models\ZENBEAR.Data.Models.csproj" />
-    <ProjectReference Include="..\..\Data\ZENBEAR.Data\ZENBEAR.Data.csproj" />
-    <ProjectReference Include="..\..\Services\ZENBEAR.Services.Data\ZENBEAR.Services.Data.csproj" />
     <ProjectReference Include="..\..\Services\ZENBEAR.Services.Mapping\ZENBEAR.Services.Mapping.csproj" />
     <ProjectReference Include="..\..\Services\ZENBEAR.Services.Messaging\ZENBEAR.Services.Messaging.csproj" />
     <ProjectReference Include="..\..\Services\ZENBEAR.Services\ZENBEAR.Services.csproj" />
     <ProjectReference Include="..\ZENBEAR.Web.Infrastructure\ZENBEAR.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\ZENBEAR.Web.ViewModels\ZENBEAR.Web.ViewModels.csproj" />
+    <ProjectReference Include="..\..\Tests\ZENBEAR.Services.Data.Tests\ZENBEAR.Services.Data.Tests.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+      <Private>False</Private>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Remove="Microsoft.EntityFrameworkCore.Design" />

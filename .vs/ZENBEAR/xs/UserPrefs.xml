@@ -1,11 +1,19 @@
 ﻿<Properties StartupConfiguration="{B90D1067-FE4C-400E-BA78-5413E30AB9ED}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Tests/ZENBEAR.Services.Data.Tests/DepartmentsControllerTests.cs">
+    <Files>
+      <File FileName="Data/ZENBEAR.Data/Seeding/JobtitlesSeeder.cs" Line="29" Column="38" />
+      <File FileName="Data/ZENBEAR.Data/ApplicationDbContext.cs" Line="30" Column="41" />
+      <File FileName="Tests/ZENBEAR.Services.Data.Tests/DepartmentsControllerTests.cs" Line="6" Column="23" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ZENBEAR" expanded="True">
             <Node name="Data" expanded="True">
-              <Node name="ZENBEAR.Data" expanded="True" />
+              <Node name="ZENBEAR.Data" expanded="True">
+                <Node name="Migrations" expanded="True" />
+                <Node name="Seeding" expanded="True" />
+              </Node>
               <Node name="ZENBEAR.Data.Common" expanded="True">
                 <Node name="Repositories" expanded="True" />
               </Node>
@@ -18,12 +26,15 @@
             </Node>
             <Node name="Tests" expanded="True">
               <Node name="ZENBEAR.Services.Data.Tests" expanded="True">
-                <Node name="DepartmentsServiceTests.cs" selected="True" />
+                <Node name="Dependencies" expanded="True" />
               </Node>
               <Node name="ZENBEAR.Web.Tests" expanded="True" />
             </Node>
             <Node name="Web" expanded="True">
               <Node name="ZENBEAR.Web" expanded="True">
+                <Node name="Dependencies" expanded="True">
+                  <Node name="ProjectDependencies" expanded="True" selected="True" />
+                </Node>
                 <Node name="Areas" expanded="True">
                   <Node name="Identity" expanded="True">
                     <Node name="Pages" expanded="True">
@@ -56,14 +67,8 @@
       </Pad>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
-          <Node name="ZENBEAR" expanded="True">
-            <Node name="Tests" expanded="True">
-              <Node name="ZENBEAR.Services.Data.Tests" expanded="True">
-                <Node name="ZENBEAR.Services.Data.Tests" expanded="True">
-                  <Node name="TicketsServiceTests" expanded="True" />
-                </Node>
-              </Node>
-            </Node>
+          <Node name="ZENBEAR" expanded="True" selected="True">
+            <Node name="Tests" expanded="True" />
           </Node>
         </State>
       </Pad>

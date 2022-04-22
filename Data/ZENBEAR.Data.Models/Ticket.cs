@@ -50,10 +50,5 @@
         public ICollection<Comment> Comments { get; set; } = new HashSet<Comment>();
 
         public ICollection<Attachment> Attachments { get; set; } = new HashSet<Attachment>();
-
-        public static implicit operator Ticket(Ticket v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

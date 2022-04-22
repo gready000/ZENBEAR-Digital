@@ -27,11 +27,11 @@
 
         public DbSet<Department> Departments { get; set; }
 
-        public DbSet<JobTitle> JobTitles { get; set; }
+        public DbSet<JobTitle> Jobtitles { get; set; }
 
         public DbSet<Project> Projects { get; set; }
 
-        public DbSet<Issue> applicationUser { get; set; }
+        public DbSet<Issue> Issues { get; set; }
 
         public DbSet<Attachment> Attachments { get; set; }
 
