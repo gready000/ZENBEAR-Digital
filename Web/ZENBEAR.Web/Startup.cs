@@ -70,7 +70,7 @@
             services.AddScoped<IDbQueryRunner, DbQueryRunner>();
 
             // Application services
-            services.AddTransient<IEmailSender, NullMessageSender>();
+            services.AddTransient<IEmailSender>(x => new SendGridEmailSender(this.configuration["SendGrid:ApiKey"]));
             services.AddTransient<IJobtitleService, JobtitleService>();
             services.AddTransient<IDepartmentsService, JobTitlesService>();
             services.AddTransient<IRoleService, RoleService>();

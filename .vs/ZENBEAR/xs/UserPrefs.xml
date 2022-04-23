@@ -1,7 +1,11 @@
 ﻿<Properties StartupConfiguration="{B90D1067-FE4C-400E-BA78-5413E30AB9ED}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Web/ZENBEAR.Web/Views/Shared/_Layout.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Data/ZENBEAR.Data/Seeding/JobtitlesSeeder.cs">
     <Files>
-      <File FileName="Web/ZENBEAR.Web/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
+      <File FileName="Web/ZENBEAR.Web/Startup.cs" Line="73" Column="83" />
+      <File FileName="Web/ZENBEAR.Web/appsettings.json" />
+      <File FileName="Web/ZENBEAR.Web/Controllers/TicketsController.cs" Line="247" Column="1" />
+      <File FileName="Services/ZENBEAR.Services.Data/TicketsService.cs" />
+      <File FileName="Data/ZENBEAR.Data/Seeding/JobtitlesSeeder.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -9,8 +13,9 @@
           <Node name="ZENBEAR" expanded="True">
             <Node name="Data" expanded="True">
               <Node name="ZENBEAR.Data" expanded="True">
-                <Node name="Migrations" expanded="True" />
-                <Node name="Seeding" expanded="True" />
+                <Node name="Seeding" expanded="True">
+                  <Node name="JobtitlesSeeder.cs" selected="True" />
+                </Node>
               </Node>
               <Node name="ZENBEAR.Data.Common" expanded="True">
                 <Node name="Repositories" expanded="True" />
@@ -22,14 +27,17 @@
             <Node name="Services" expanded="True">
               <Node name="ZENBEAR.Services.Data" expanded="True" />
             </Node>
-            <Node name="Tests" expanded="True">
-              <Node name="Sandbox" expanded="True" />
-              <Node name="ZENBEAR.Services.Data.Tests" expanded="True" />
-              <Node name="ZENBEAR.Web.Tests" expanded="True" />
-            </Node>
             <Node name="Web" expanded="True">
               <Node name="ZENBEAR.Web" expanded="True">
                 <Node name="Areas" expanded="True">
+                  <Node name="Identity" expanded="True">
+                    <Node name="Pages" expanded="True">
+                      <Node name="Account" expanded="True">
+                        <Node name="Login.cshtml" expanded="True" />
+                        <Node name="Register.cshtml" expanded="True" />
+                      </Node>
+                    </Node>
+                  </Node>
                   <Node name="Statistics" expanded="True">
                     <Node name="Controllers" expanded="True" />
                     <Node name="Views" expanded="True">
@@ -39,24 +47,11 @@
                 </Node>
                 <Node name="Controllers" expanded="True" />
                 <Node name="Views" expanded="True">
-                  <Node name="Shared" expanded="True">
-                    <Node name="_Layout.cshtml" selected="True" />
-                  </Node>
+                  <Node name="Shared" expanded="True" />
                 </Node>
               </Node>
             </Node>
             <Node name="ZENBEAR.Common" expanded="True" />
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="ZENBEAR" expanded="True" selected="True">
-            <Node name="Tests" expanded="True">
-              <Node name="ZENBEAR.Services.Data.Tests" expanded="True">
-                <Node name="ZENBEAR.Services.Data.Tests" expanded="True" />
-              </Node>
-            </Node>
           </Node>
         </State>
       </Pad>
@@ -67,7 +62,10 @@
   <MonoDevelop.Ide.ItemProperties.Tests.Sandbox PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.ItemProperties.Web.ZENBEAR.Web PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/Controllers/TicketsController.cs" relfile="Web/ZENBEAR.Web/Controllers/TicketsController.cs" line="241" column="1" />
+      <Breakpoint file="/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web/Controllers/TicketsController.cs" relfile="Web/ZENBEAR.Web/Controllers/TicketsController.cs" line="227" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

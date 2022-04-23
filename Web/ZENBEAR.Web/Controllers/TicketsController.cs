@@ -1,5 +1,6 @@
 ﻿namespace ZENBEAR.Web.Controllers
 {
+    using System.Text;
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Authorization;
@@ -9,6 +10,7 @@
     using ZENBEAR.Common;
     using ZENBEAR.Data.Models;
     using ZENBEAR.Services.Data;
+    using ZENBEAR.Services.Messaging;
     using ZENBEAR.Web.ViewModels.Tickets;
 
     public class TicketsController : Controller
@@ -18,19 +20,22 @@
         private readonly IDepartmentsService departmentsService;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IWebHostEnvironment environment;
+        private readonly IEmailSender emailSender;
 
         public TicketsController(
             IProjectsService projectsService,
             ITicketsService ticketsService,
             IDepartmentsService departmentsService,
             UserManager<ApplicationUser> userManager,
-            IWebHostEnvironment environment)
+            IWebHostEnvironment environment,
+            IEmailSender emailSender)
         {
             this.projectsService = projectsService;
             this.ticketsService = ticketsService;
             this.departmentsService = departmentsService;
             this.userManager = userManager;
             this.environment = environment;
+            this.emailSender = emailSender;
         }
 
         [HttpGet]
@@ -67,10 +72,10 @@
 
             var viewModel = new ListOpenTicketsViewModel
             {
-               OpenTickets = this.ticketsService.GetOpenTickets(project, GlobalConstants.ItemsPerPage, id),
-               ItemsPerPage = GlobalConstants.ItemsPerPage,
-               PageNumber = id,
-               ItemsCount = this.ticketsService.GetOpenTicketsCount(),
+                OpenTickets = this.ticketsService.GetOpenTickets(project, GlobalConstants.ItemsPerPage, id),
+                ItemsPerPage = GlobalConstants.ItemsPerPage,
+                PageNumber = id,
+                ItemsCount = this.ticketsService.GetOpenTicketsCount(),
             };
 
             return this.View(viewModel);
@@ -217,6 +222,7 @@
             await this.ticketsService.CreateAsync(input, user.Id, $"{this.environment.WebRootPath}/attachments");
 
             this.TempData["Message"] = "Your request is successfully send ";
+            await this.SendEmail(input.Project);
 
             return this.Redirect("MyTickets");
         }
@@ -228,6 +234,18 @@
             await this.ticketsService.ResolveTicketAsync(ticketId);
 
             return this.Redirect("Open");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SendEmail(string project)
+        {
+            var email = project == GlobalConstants.ITProject ? "gready000@gmail.com" : "gready000@abv.bg";
+            var subject = "New Issue Request";
+
+            var message = "Hello, you have new request created. See it in open tickets. Have a nice day!";
+            await this.emailSender.SendEmailAsync("recepti@recepti.com", "MoiteRecepti", email, subject, message);
+
+            return new EmptyResult();
         }
     }
 }
