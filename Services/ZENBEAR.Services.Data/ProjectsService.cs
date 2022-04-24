@@ -39,6 +39,11 @@
             return reload;
         }
 
+        public List<Project> GetAllProjects()
+        {
+            return this.projectsRepo.All().ToList();
+        }
+
         public Project GetProjectById(int id)
         {
             return this.projectsRepo.AllAsNoTracking().FirstOrDefault(x => x.Id == id);

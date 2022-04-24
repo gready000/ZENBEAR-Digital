@@ -13,7 +13,8 @@
           "ZENBEAR.Data.Common": "1.0.0",
           "ZENBEAR.Data.Models": "1.0.0",
           "ZENBEAR.Services.Mapping": "1.0.0",
-          "ZENBEAR.Web.ViewModels": "1.0.0"
+          "ZENBEAR.Web.ViewModels": "1.0.0",
+          "NCrontab": "3.3.1"
         },
         "runtime": {
           "ZENBEAR.Services.Data.dll": {}
@@ -702,6 +703,14 @@
           "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
             "assemblyVersion": "4.1.1.0",
             "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
+      "NCrontab/3.3.1": {
+        "runtime": {
+          "lib/netstandard2.0/NCrontab.dll": {
+            "assemblyVersion": "3.3.1.0",
+            "fileVersion": "3.3.1.0"
           }
         }
       },
@@ -2083,6 +2092,13 @@
       "sha512": "sha512-+FWlwd//+Tt56316p00hVePBCouXyEzT86Jb3+AuRotTND0IYn0OO3obs1gnQEs/txEnt+rF2JBGLItTG+Be6A==",
       "path": "microsoft.win32.registry/4.5.0",
       "hashPath": "microsoft.win32.registry.4.5.0.nupkg.sha512"
+    },
+    "NCrontab/3.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-G3tzcIIgsiyZyVbHNPyn5+adaM9UjeVNgjrRsvXU7wo2sMhpvpQrir29dcjIND53H/fuTdgg9nI3SfFFg7barA==",
+      "path": "ncrontab/3.3.1",
+      "hashPath": "ncrontab.3.3.1.nupkg.sha512"
     },
     "NETStandard.Library/1.6.1": {
       "type": "package",

@@ -301,6 +301,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[1.2.0-beta.312, )"
+            },
+            "ncrontab": {
+              "target": "Package",
+              "version": "[3.3.1, )"
             }
           },
           "imports": [
@@ -498,6 +502,88 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.407/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZenBearCronJobs/ZenBearCronJobs.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZenBearCronJobs/ZenBearCronJobs.csproj",
+        "projectName": "ZenBearCronJobs",
+        "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZenBearCronJobs/ZenBearCronJobs.csproj",
+        "packagesPath": "/Users/emilanov/.nuget/packages/",
+        "outputPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZenBearCronJobs/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/emilanov/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Common/ZENBEAR.Data.Common.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Common/ZENBEAR.Data.Common.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Models/ZENBEAR.Data.Models.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Data/ZENBEAR.Data.Models/ZENBEAR.Data.Models.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/ZENBEAR.Services.Data.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/ZENBEAR.Services.Data.csproj"
+              },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/ZENBEAR.Common.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/ZENBEAR.Common/ZENBEAR.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Hangfire.AspNetCore": {
+              "target": "Package",
+              "version": "[1.7.28, )"
+            },
+            "Hangfire.Core": {
+              "target": "Package",
+              "version": "[1.7.28, )"
+            },
+            "Hangfire.SqlServer": {
+              "target": "Package",
+              "version": "[1.7.28, )"
             }
           },
           "imports": [
@@ -795,6 +881,9 @@
               "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services/ZENBEAR.Services.csproj": {
                 "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services/ZENBEAR.Services.csproj"
               },
+              "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZenBearCronJobs/ZenBearCronJobs.csproj": {
+                "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZenBearCronJobs/ZenBearCronJobs.csproj"
+              },
               "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.Infrastructure/ZENBEAR.Web.Infrastructure.csproj": {
                 "projectPath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Web/ZENBEAR.Web.Infrastructure/ZENBEAR.Web.Infrastructure.csproj"
               },
@@ -820,6 +909,18 @@
             "BuildBundlerMinifier": {
               "target": "Package",
               "version": "[3.2.449, )"
+            },
+            "Hangfire.AspNetCore": {
+              "target": "Package",
+              "version": "[1.7.28, )"
+            },
+            "Hangfire.Core": {
+              "target": "Package",
+              "version": "[1.7.28, )"
+            },
+            "Hangfire.SqlServer": {
+              "target": "Package",
+              "version": "[1.7.28, )"
             },
             "HtmlSanitizer": {
               "target": "Package",

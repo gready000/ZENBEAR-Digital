@@ -16,6 +16,10 @@
 
         public Department Department { get; set; }
 
+        public ICollection<Statistic> Statistics { get; set; } = new HashSet<Statistic>();
+
         public ICollection<Issue> IssueTypes { get; set; } = new HashSet<Issue>();
+
+        public ICollection<Ticket> Tickets { get; set; } = new HashSet<Ticket>();
     }
 }

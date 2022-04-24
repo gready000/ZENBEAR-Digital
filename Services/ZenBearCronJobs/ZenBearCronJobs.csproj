@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Hangfire.Core" />
+    <None Remove="Hangfire.AspNetCore" />
+    <None Remove="Hangfire.SqlServer" />
+    <None Remove="Controller\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Hangfire.Core" Version="1.7.28" />
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.7.28" />
+    <PackageReference Include="Hangfire.SqlServer" Version="1.7.28" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ZENBEAR.Common\ZENBEAR.Common.csproj" />
+    <ProjectReference Include="..\..\Data\ZENBEAR.Data.Models\ZENBEAR.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Data\ZENBEAR.Data.Common\ZENBEAR.Data.Common.csproj" />
+    <ProjectReference Include="..\ZENBEAR.Services.Data\ZENBEAR.Services.Data.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\" />
+  </ItemGroup>
+</Project>

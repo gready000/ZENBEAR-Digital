@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "n781J3iavvv7Al4JzUUa6GUmtZV0TZyrAJ0PFhXIsIYd/RQRKqXGW0lltbhR9hMZyMIdp4WxIHxobSyfIOgtoQ==",
+  "dgSpecHash": "1bI2B22PgtsfcJZzFz41W4mkgh9tss0vnyxWr2UQRWZch5PKYgLehh6vBbtNJHEHLBYUPaFqTWfbUmovnLJ4vQ==",
   "success": true,
   "projectFilePath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/ZENBEAR.Services.Data.csproj",
   "expectedPackageFiles": [
@@ -62,6 +62,7 @@
     "/Users/emilanov/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/microsoft.win32.primitives/4.3.0/microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/microsoft.win32.registry/4.5.0/microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "/Users/emilanov/.nuget/packages/ncrontab/3.3.1/ncrontab.3.3.1.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/newtonsoft.json/11.0.2/newtonsoft.json.11.0.2.nupkg.sha512",
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder/newtonsoft.json.bson/1.0.1/newtonsoft.json.bson.1.0.1.nupkg.sha512",

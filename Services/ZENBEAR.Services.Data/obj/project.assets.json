@@ -780,6 +780,15 @@
           }
         }
       },
+      "NCrontab/3.3.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NCrontab.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NCrontab.dll": {}
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -3157,6 +3166,24 @@
         "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "NCrontab/3.3.1": {
+      "sha512": "G3tzcIIgsiyZyVbHNPyn5+adaM9UjeVNgjrRsvXU7wo2sMhpvpQrir29dcjIND53H/fuTdgg9nI3SfFFg7barA==",
+      "type": "package",
+      "path": "ncrontab/3.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "COPYING.txt",
+        "lib/net35/NCrontab.dll",
+        "lib/net35/NCrontab.pdb",
+        "lib/netstandard1.0/NCrontab.dll",
+        "lib/netstandard1.0/NCrontab.pdb",
+        "lib/netstandard2.0/NCrontab.dll",
+        "lib/netstandard2.0/NCrontab.pdb",
+        "ncrontab.3.3.1.nupkg.sha512",
+        "ncrontab.nuspec"
       ]
     },
     "NETStandard.Library/1.6.1": {
@@ -7018,7 +7045,8 @@
       "ZENBEAR.Data.Common >= 1.0.0",
       "ZENBEAR.Data.Models >= 1.0.0",
       "ZENBEAR.Services.Mapping >= 1.0.0",
-      "ZENBEAR.Web.ViewModels >= 1.0.0"
+      "ZENBEAR.Web.ViewModels >= 1.0.0",
+      "ncrontab >= 3.3.1"
     ]
   },
   "packageFolders": {
@@ -7080,6 +7108,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[1.2.0-beta.312, )"
+          },
+          "ncrontab": {
+            "target": "Package",
+            "version": "[3.3.1, )"
           }
         },
         "imports": [

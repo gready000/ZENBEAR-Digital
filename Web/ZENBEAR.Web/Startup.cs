@@ -1,8 +1,11 @@
 ﻿namespace ZENBEAR.Web
 {
+    using System;
     using System.Reflection;
 
     using Ganss.XSS;
+    using Hangfire;
+    using Hangfire.SqlServer;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -22,6 +25,7 @@
     using ZENBEAR.Services.Mapping;
     using ZENBEAR.Services.Messaging;
     using ZENBEAR.Web.ViewModels;
+    using ZenBearCronJobs.Controller;
 
     public class Startup
     {
@@ -62,6 +66,23 @@
                 options.HeaderName = "X-CSRF-TOKEN";
             });
 
+            // Add Hangfire services.
+            services.AddHangfire(configuration => configuration
+                .SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
+                .UseSimpleAssemblyNameTypeSerializer()
+                .UseRecommendedSerializerSettings()
+                .UseSqlServerStorage(this.configuration.GetConnectionString("DefaultConnection"), new SqlServerStorageOptions
+                {
+                    CommandBatchMaxTimeout = TimeSpan.FromMinutes(5),
+                    SlidingInvisibilityTimeout = TimeSpan.FromMinutes(5),
+                    QueuePollInterval = TimeSpan.Zero,
+                    UseRecommendedIsolationLevel = true,
+                    DisableGlobalLocks = true,
+                }));
+
+            // Add the processing server as IHostedService
+            services.AddHangfireServer();
+
             services.AddSingleton(this.configuration);
 
             // Data repositories
@@ -81,6 +102,7 @@
             services.AddTransient<IRatesService, RatesService>();
             services.AddTransient<IIssuesService, IssuesService>();
             services.AddTransient<IReportsService, ReportsService>();
+            services.AddTransient<GenerateTicketsReports>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -107,6 +129,8 @@
                 app.UseHsts();
             }
 
+            app.UseHangfireDashboard();
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
@@ -122,6 +146,7 @@
                     endpoints.MapControllerRoute("areaRoute", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
                     endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                     endpoints.MapRazorPages();
+                    endpoints.MapHangfireDashboard();
                 });
         }
     }

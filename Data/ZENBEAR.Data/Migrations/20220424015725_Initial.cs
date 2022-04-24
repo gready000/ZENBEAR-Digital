@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ZENBEAR.Data.Migrations
 {
-    public partial class initiial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -43,24 +43,6 @@ namespace ZENBEAR.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Settings",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Value = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Settings", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -82,7 +64,7 @@ namespace ZENBEAR.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "JobTitles",
+                name: "Jobtitles",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -96,9 +78,9 @@ namespace ZENBEAR.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_JobTitles", x => x.Id);
+                    table.PrimaryKey("PK_Jobtitles", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_JobTitles_Departments_DepartmentId",
+                        name: "FK_Jobtitles_Departments_DepartmentId",
                         column: x => x.DepartmentId,
                         principalTable: "Departments",
                         principalColumn: "Id",
@@ -168,9 +150,9 @@ namespace ZENBEAR.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_AspNetUsers_JobTitles_JobTitleId",
+                        name: "FK_AspNetUsers_Jobtitles_JobTitleId",
                         column: x => x.JobTitleId,
-                        principalTable: "JobTitles",
+                        principalTable: "Jobtitles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -193,6 +175,29 @@ namespace ZENBEAR.Data.Migrations
                     table.PrimaryKey("PK_Issues", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Issues_Projects_ProjectId",
+                        column: x => x.ProjectId,
+                        principalTable: "Projects",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Statistics",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Month = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TicketsCount = table.Column<int>(type: "int", nullable: false),
+                    ProjectId = table.Column<int>(type: "int", nullable: false),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Statistics", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Statistics_Projects_ProjectId",
                         column: x => x.ProjectId,
                         principalTable: "Projects",
                         principalColumn: "Id",
@@ -296,7 +301,7 @@ namespace ZENBEAR.Data.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RateId = table.Column<int>(type: "int", nullable: false),
-                    Preority = table.Column<int>(type: "int", nullable: false),
+                    Priority = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false),
                     ReporterId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ReporterId1 = table.Column<string>(type: "nvarchar(450)", nullable: true),
@@ -344,6 +349,35 @@ namespace ZENBEAR.Data.Migrations
                         name: "FK_Tickets_Projects_ProjectId",
                         column: x => x.ProjectId,
                         principalTable: "Projects",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "IssuesReports",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IssueId = table.Column<int>(type: "int", nullable: false),
+                    IssueTicketsCount = table.Column<int>(type: "int", nullable: false),
+                    StatisticId = table.Column<int>(type: "int", nullable: true),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_IssuesReports", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_IssuesReports_Issues_IssueId",
+                        column: x => x.IssueId,
+                        principalTable: "Issues",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_IssuesReports_Statistics_StatisticId",
+                        column: x => x.StatisticId,
+                        principalTable: "Statistics",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -536,13 +570,23 @@ namespace ZENBEAR.Data.Migrations
                 column: "ProjectId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_JobTitles_DepartmentId",
-                table: "JobTitles",
+                name: "IX_IssuesReports_IssueId",
+                table: "IssuesReports",
+                column: "IssueId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_IssuesReports_StatisticId",
+                table: "IssuesReports",
+                column: "StatisticId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Jobtitles_DepartmentId",
+                table: "Jobtitles",
                 column: "DepartmentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_JobTitles_IsDeleted",
-                table: "JobTitles",
+                name: "IX_Jobtitles_IsDeleted",
+                table: "Jobtitles",
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
@@ -567,9 +611,9 @@ namespace ZENBEAR.Data.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Settings_IsDeleted",
-                table: "Settings",
-                column: "IsDeleted");
+                name: "IX_Statistics_ProjectId",
+                table: "Statistics",
+                column: "ProjectId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Tickets_AssigneeId",
@@ -631,13 +675,16 @@ namespace ZENBEAR.Data.Migrations
                 name: "Comments");
 
             migrationBuilder.DropTable(
+                name: "IssuesReports");
+
+            migrationBuilder.DropTable(
                 name: "Rates");
 
             migrationBuilder.DropTable(
-                name: "Settings");
+                name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "AspNetRoles");
+                name: "Statistics");
 
             migrationBuilder.DropTable(
                 name: "Tickets");
@@ -649,7 +696,7 @@ namespace ZENBEAR.Data.Migrations
                 name: "Issues");
 
             migrationBuilder.DropTable(
-                name: "JobTitles");
+                name: "Jobtitles");
 
             migrationBuilder.DropTable(
                 name: "Projects");

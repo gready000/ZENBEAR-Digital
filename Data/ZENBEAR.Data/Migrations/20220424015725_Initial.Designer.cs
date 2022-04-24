@@ -10,15 +10,15 @@ using ZENBEAR.Data;
 namespace ZENBEAR.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220406232323_initiial")]
-    partial class initiial
+    [Migration("20220424015725_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.6")
+                .HasAnnotation("ProductVersion", "5.0.16")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -401,6 +401,37 @@ namespace ZENBEAR.Data.Migrations
                     b.ToTable("Issues");
                 });
 
+            modelBuilder.Entity("ZENBEAR.Data.Models.IssueReport", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("IssueId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IssueTicketsCount")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("StatisticId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IssueId");
+
+                    b.HasIndex("StatisticId");
+
+                    b.ToTable("IssuesReports");
+                });
+
             modelBuilder.Entity("ZENBEAR.Data.Models.JobTitle", b =>
                 {
                     b.Property<int>("Id")
@@ -433,7 +464,7 @@ namespace ZENBEAR.Data.Migrations
 
                     b.HasIndex("IsDeleted");
 
-                    b.ToTable("JobTitles");
+                    b.ToTable("Jobtitles");
                 });
 
             modelBuilder.Entity("ZENBEAR.Data.Models.Project", b =>
@@ -503,7 +534,7 @@ namespace ZENBEAR.Data.Migrations
                     b.ToTable("Rates");
                 });
 
-            modelBuilder.Entity("ZENBEAR.Data.Models.Setting", b =>
+            modelBuilder.Entity("ZENBEAR.Data.Models.Statistic", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -513,26 +544,23 @@ namespace ZENBEAR.Data.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("DeletedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Month")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Value")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TicketsCount")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IsDeleted");
+                    b.HasIndex("ProjectId");
 
-                    b.ToTable("Settings");
+                    b.ToTable("Statistics");
                 });
 
             modelBuilder.Entity("ZENBEAR.Data.Models.Ticket", b =>
@@ -570,7 +598,7 @@ namespace ZENBEAR.Data.Migrations
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Preority")
+                    b.Property<int>("Priority")
                         .HasColumnType("int");
 
                     b.Property<int>("ProjectId")
@@ -727,6 +755,21 @@ namespace ZENBEAR.Data.Migrations
                     b.Navigation("Project");
                 });
 
+            modelBuilder.Entity("ZENBEAR.Data.Models.IssueReport", b =>
+                {
+                    b.HasOne("ZENBEAR.Data.Models.Issue", "Issue")
+                        .WithMany()
+                        .HasForeignKey("IssueId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ZENBEAR.Data.Models.Statistic", null)
+                        .WithMany("IssuesStatistic")
+                        .HasForeignKey("StatisticId");
+
+                    b.Navigation("Issue");
+                });
+
             modelBuilder.Entity("ZENBEAR.Data.Models.JobTitle", b =>
                 {
                     b.HasOne("ZENBEAR.Data.Models.Department", "Department")
@@ -766,6 +809,17 @@ namespace ZENBEAR.Data.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("ZENBEAR.Data.Models.Statistic", b =>
+                {
+                    b.HasOne("ZENBEAR.Data.Models.Project", "Project")
+                        .WithMany("Statistics")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Project");
+                });
+
             modelBuilder.Entity("ZENBEAR.Data.Models.Ticket", b =>
                 {
                     b.HasOne("ZENBEAR.Data.Models.ApplicationUser", null)
@@ -785,7 +839,7 @@ namespace ZENBEAR.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("ZENBEAR.Data.Models.Project", "Project")
-                        .WithMany()
+                        .WithMany("Tickets")
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -842,6 +896,15 @@ namespace ZENBEAR.Data.Migrations
             modelBuilder.Entity("ZENBEAR.Data.Models.Project", b =>
                 {
                     b.Navigation("IssueTypes");
+
+                    b.Navigation("Statistics");
+
+                    b.Navigation("Tickets");
+                });
+
+            modelBuilder.Entity("ZENBEAR.Data.Models.Statistic", b =>
+                {
+                    b.Navigation("IssuesStatistic");
                 });
 
             modelBuilder.Entity("ZENBEAR.Data.Models.Ticket", b =>

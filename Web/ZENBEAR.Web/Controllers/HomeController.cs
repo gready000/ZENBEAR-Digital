@@ -5,12 +5,16 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using ZENBEAR.Web.ViewModels;
+    using ZenBearCronJobs.Controller;
 
     public class HomeController : BaseController
     {
         [Authorize]
         public IActionResult Index()
         {
+            GenerateTicketsReports cron = new GenerateTicketsReports();
+            cron.Recurring();
+
             return this.View();
         }
 

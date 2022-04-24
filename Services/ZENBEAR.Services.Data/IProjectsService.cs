@@ -24,5 +24,7 @@
         Project GetProjectByName(string projectName);
 
         int GetCount();
+
+        List<Project> GetAllProjects();
     }
 }

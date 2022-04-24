@@ -83,3 +83,4 @@
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/obj/Debug/net5.0/ref/Sandbox.dll
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/obj/Debug/net5.0/Sandbox.pdb
 /Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/obj/Debug/net5.0/Sandbox.genruntimeconfig.cache
+/Users/emilanov/Downloads/ZENBEAR-Digital/Tests/Sandbox/bin/Debug/net5.0/NCrontab.dll

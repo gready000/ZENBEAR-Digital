@@ -33,6 +33,9 @@
     <PackageReference Include="MvcCheckBoxList" Version="1.4.5" />
     <PackageReference Include="System.Security.Principal.Windows" Version="5.0.0" />
     <PackageReference Include="Mono.HttpUtility" Version="1.0.0" />
+    <PackageReference Include="Hangfire.Core" Version="1.7.28" />
+    <PackageReference Include="Hangfire.SqlServer" Version="1.7.28" />
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.7.28" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,6 +48,9 @@
     <ProjectReference Include="..\..\Services\ZENBEAR.Services\ZENBEAR.Services.csproj" />
     <ProjectReference Include="..\ZENBEAR.Web.Infrastructure\ZENBEAR.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\ZENBEAR.Web.ViewModels\ZENBEAR.Web.ViewModels.csproj" />
+    <ProjectReference Include="..\..\Services\ZenBearCronJobs\ZenBearCronJobs.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
@@ -67,6 +73,9 @@
     <None Remove="Areas\Charts\Controllers\" />
     <None Remove="Areas\Charts\Views\" />
     <None Remove="Areas\Charts\Views\Reports\" />
+    <None Remove="Hangfire.Core" />
+    <None Remove="Hangfire.SqlServer" />
+    <None Remove="Hangfire.AspNetCore" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Roles\" />

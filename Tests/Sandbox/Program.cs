@@ -2,6 +2,7 @@
 {
     using System;
     using System.Diagnostics;
+    using System.Globalization;
     using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
@@ -30,6 +31,8 @@
             var serviceCollection = new ServiceCollection();
             ConfigureServices(serviceCollection);
             IServiceProvider serviceProvider = serviceCollection.BuildServiceProvider(true);
+
+            Console.WriteLine(DateTime.Now.Month.ToString());
 
             // Seed data on application startup
             using (var serviceScope = serviceProvider.CreateScope())

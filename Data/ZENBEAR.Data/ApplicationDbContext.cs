@@ -39,6 +39,10 @@
 
         public DbSet<Rate> Rates { get; set; }
 
+        public DbSet<IssueReport> IssuesReports { get; set; }
+
+        public DbSet<Statistic> Statistics { get; set; }
+
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
