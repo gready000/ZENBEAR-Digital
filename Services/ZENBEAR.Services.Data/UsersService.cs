@@ -26,7 +26,7 @@
 
         public string GetEmployeeFullName(string id)
         {
-            var employee = this.usersRepo.AllAsNoTracking().FirstOrDefault(x => x.Id == id);
+            var employee = this.usersRepo.AllAsNoTrackingWithDeleted().FirstOrDefault(x => x.Id == id);
 
             return employee.FirstName + " " + employee.LastName;
         }

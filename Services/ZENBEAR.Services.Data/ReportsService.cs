@@ -8,17 +8,20 @@
     using ZENBEAR.Data.Models;
     using ZENBEAR.Web.ViewModels.Reports;
 
-    public class ReportsService : IReportsService
+    public class ReportsService : IDeletableEntityRepository
     {
         private readonly IDeletableEntityRepository<Ticket> ticketsRepo;
         private readonly IDeletableEntityRepository<Issue> issueRepo;
+        private readonly IRepository<Statistic> statisticRepo;
 
         public ReportsService(
             IDeletableEntityRepository<Ticket> ticketsRepo,
-            IDeletableEntityRepository<Issue> issueRepo)
+            IDeletableEntityRepository<Issue> issueRepo,
+            IRepository<Statistic> statisticRepo)
         {
             this.ticketsRepo = ticketsRepo;
             this.issueRepo = issueRepo;
+            this.statisticRepo = statisticRepo;
         }
 
         public int[] GetITServiceMonthReport()

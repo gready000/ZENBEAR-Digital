@@ -25,3 +25,5 @@
 /Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZenBearCronJobs/bin/Debug/netstandard2.1/ZENBEAR.Services.Data.pdb
 /Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZenBearCronJobs/bin/Debug/netstandard2.1/ZENBEAR.Services.Mapping.pdb
 /Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZenBearCronJobs/bin/Debug/netstandard2.1/ZENBEAR.Web.ViewModels.pdb
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZenBearCronJobs/bin/Debug/netstandard2.1/ZENBEAR.Services.Messaging.dll
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZenBearCronJobs/bin/Debug/netstandard2.1/ZENBEAR.Services.Messaging.pdb

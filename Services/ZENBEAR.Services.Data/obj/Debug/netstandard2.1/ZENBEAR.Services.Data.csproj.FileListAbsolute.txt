@@ -23,3 +23,5 @@
 /Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/obj/Debug/netstandard2.1/ZENBEAR.Services.Data.csproj.CopyComplete
 /Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/obj/Debug/netstandard2.1/ZENBEAR.Services.Data.dll
 /Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/obj/Debug/netstandard2.1/ZENBEAR.Services.Data.pdb
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/bin/Debug/netstandard2.1/ZENBEAR.Services.Messaging.dll
+/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZENBEAR.Services.Data/bin/Debug/netstandard2.1/ZENBEAR.Services.Messaging.pdb

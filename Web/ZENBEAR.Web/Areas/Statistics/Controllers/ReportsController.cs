@@ -14,12 +14,12 @@
     [Area("Statistics")]
     public class ReportsController : Controller
     {
-        private readonly IReportsService reportsService;
+        private readonly IDeletableEntityRepository reportsService;
         private readonly IProjectsService projectsService;
         private readonly UserManager<ApplicationUser> userManager;
 
         public ReportsController(
-            IReportsService reportsService,
+            IDeletableEntityRepository reportsService,
             IProjectsService projectsService,
             UserManager<ApplicationUser> userManager)
         {

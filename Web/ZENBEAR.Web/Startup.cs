@@ -101,7 +101,7 @@
             services.AddTransient<ICommentsService, CommentsService>();
             services.AddTransient<IRatesService, RatesService>();
             services.AddTransient<IIssuesService, IssuesService>();
-            services.AddTransient<IReportsService, ReportsService>();
+            services.AddTransient<IDeletableEntityRepository, ReportsService>();
             services.AddTransient<GenerateTicketsReports>();
         }
 

@@ -222,9 +222,8 @@
             await this.ticketsService.CreateAsync(input, user.Id, $"{this.environment.WebRootPath}/attachments");
 
             this.TempData["Message"] = "Your request is successfully send ";
-            await this.SendEmail(input.Project);
 
-            return this.Redirect("MyTickets");
+            return await this.SendEmail(input);
         }
 
         [HttpPost]
@@ -237,15 +236,19 @@
         }
 
         [HttpPost]
-        public async Task<IActionResult> SendEmail(string project)
+        public async Task<IActionResult> SendEmail(CreateTicketinputModel ticket)
         {
-            var email = project == GlobalConstants.ITProject ? "gready000@gmail.com" : "gready000@abv.bg";
-            var subject = "New Issue Request";
+            var email = ticket.Project == GlobalConstants.ITProject ? "gready000@gmail.com" : "gready000@abv.bg";
+            var subject = ticket.Summary;
+            var message = $"Hello, you have new {ticket.Project} request with {ticket.Priority} priority. See it in open tickets. Have a nice day!";
 
-            var message = "Hello, you have new request created. See it in open tickets. Have a nice day!";
-            await this.emailSender.SendEmailAsync("recepti@recepti.com", "MoiteRecepti", email, subject, message);
+            var html = new StringBuilder();
+            html.AppendLine($"<h1>{subject}</h1>");
+            html.AppendLine($"<h3>{message}</h3>");
 
-            return new EmptyResult();
+            await this.emailSender.SendEmailAsync("gready000@students.softuni.bg", "ZenBear", email, subject, html.ToString());
+
+            return this.Redirect("MyTickets");
         }
     }
 }

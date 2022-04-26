@@ -4116,6 +4116,7 @@
           "ZENBEAR.Data.Common": "1.0.0",
           "ZENBEAR.Data.Models": "1.0.0",
           "ZENBEAR.Services.Mapping": "1.0.0",
+          "ZENBEAR.Services.Messaging": "1.0.0",
           "ZENBEAR.Web.ViewModels": "1.0.0",
           "ncrontab": "3.3.1"
         },

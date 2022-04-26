@@ -4,7 +4,7 @@
 
     using ZENBEAR.Web.ViewModels.Reports;
 
-    public interface IReportsService
+    public interface IDeletableEntityRepository
     {
         int[] GetITServiceMonthReport();
 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EVsBcSqPEuX7DPHCDU9TNPflx0J2dXXZC6Opuy0n1Gz65jDl+SKQB4sxJujIxNNXuykTt1LSbCyLBSTLYE76Fg==",
+  "dgSpecHash": "3bX0tic/B2sFgym9IVmQSH+Apu5bffnnSXSNHXzIQZ+870umgLhXt46hGy7k4j5PF11BIcMqWlpiShUEydr3tg==",
   "success": true,
   "projectFilePath": "/Users/emilanov/Downloads/ZENBEAR-Digital/Services/ZenBearCronJobs/ZenBearCronJobs.csproj",
   "expectedPackageFiles": [
@@ -89,6 +89,8 @@
     "/Users/emilanov/.nuget/packages/runtime.win-arm64.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/runtime.win-x64.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "/Users/emilanov/.nuget/packages/sendgrid/9.23.1/sendgrid.9.23.1.nupkg.sha512",
+    "/Users/emilanov/.nuget/packages/starkbank-ecdsa/1.3.1/starkbank-ecdsa.1.3.1.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/system.appcontext/4.3.0/system.appcontext.4.3.0.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512",
     "/Users/emilanov/.nuget/packages/system.collections/4.3.0/system.collections.4.3.0.nupkg.sha512",
